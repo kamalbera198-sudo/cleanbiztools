@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Cleaning Pricing Calculator | CleanBizTools</title>
+<meta name="description" content="Use this free cleaning pricing calculator to estimate house cleaning prices based on home size, service type, labor, expenses, and profit margin.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#075985">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #172033;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #075985, #0f766e);
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+
+header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(27px, 5vw, 38px);
+}
+
+.container {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 0 14px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.07);
+}
+
+h2 {
+  color: #075985;
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 16px;
+  background: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+button {
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 12px 8px 0 0;
+}
+
+.primary {
+  background: #0284c7;
+  color: white;
+}
+
+.secondary {
+  background: #e2e8f0;
+  color: #172033;
+}
+
+.results {
+  margin-top: 20px;
+  padding: 20px;
+  background: #d1fae5;
+  border-radius: 12px;
+}
+
+.result-value {
+  font-size: 30px;
+  font-weight: bold;
+  color: #047857;
+  overflow-wrap: anywhere;
+}
+
+.result-item {
+  margin: 10px 0;
+}
+
+.notice {
+  padding: 12px;
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+  border-radius: 7px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.links a {
+  display: inline-block;
+  padding: 9px 12px;
+  background: #e0f2fe;
+  color: #075985;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 12px;
+  color: #475569;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 17px;
+  }
+}
+
+@media print {
+  header, button, footer {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+
+  .card {
+    box-shadow: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cleaning Pricing Calculator</h1>
+  <p>Estimate cleaning prices and plan your business profit.</p>
+</header>
+
+<div class="container">
+
+  <nav class="card">
+    <a href="index.html">Home</a> |
+    <a href="cleaning-profit.html">Profit Calculator</a> |
+    <a href="cleaning-quote.html">Quote Generator</a> |
+    <a href="cleaning-checklist.html">Cleaning Checklist</a>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2>Calculate Your Cleaning Price</h2>
+
+      <p>
+        Enter your estimated job details to calculate a suggested cleaning
+        price. Adjust the values to match your local market and business costs.
+      </p>
+
+      <div class="grid">
+        <div>
+          <label for="currency">Currency</label>
+          <select id="currency">
+            <option value="USD">US Dollar (USD)</option>
+            <option value="CAD">Canadian Dollar (CAD)</option>
+            <option value="GBP">British Pound (GBP)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="AUD">Australian Dollar (AUD)</option>
+            <option value="INR">Indian Rupee (INR)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="homeSize">Home Size (square feet)</label>
+          <input id="homeSize" type="number" min="0" value="1500">
+        </div>
+
+        <div>
+          <label for="baseRate">Base Rate per 1,000 sq. ft.</label>
+          <input id="baseRate" type="number" min="0" step="0.01" value="80">
+        </div>
+
+        <div>
+          <label for="service">Cleaning Type</label>
+          <select id="service">
+            <option value="1">Standard Cleaning</option>
+            <option value="1.5">Deep Cleaning</option>
+            <option value="1.3">Move-In / Move-Out</option>
+            <option value="1.2">Office Cleaning</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="labor">Estimated Labor Cost</label>
+          <input id="labor" type="number" min="0" step="0.01" value="30">
+        </div>
+
+        <div>
+          <label for="supplies">Supplies and Other Costs</label>
+          <input id="supplies" type="number" min="0" step="0.01" value="10">
+        </div>
+
+        <div>
+          <label for="margin">Target Profit Margin (%)</label>
+          <input id="margin" type="number" min="0" max="99" step="1" value="30">
+        </div>
+      </div>
+
+      <button class="primary" id="calculateBtn" type="button">
+        Calculate Price
+      </button>
+
+      <button class="secondary" id="resetBtn" type="button">
+        Reset
+      </button>
+
+      <div class="results" aria-live="polite">
+        <div>Suggested Cleaning Price</div>
+        <div class="result-value" id="price">$120.00</div>
+
+        <div class="result-item">
+          <strong>Estimated Base Price:</strong>
+          <span id="basePrice">$120.00</span>
+        </div>
+
+        <div class="result-item">
+          <strong>Estimated Costs:</strong>
+          <span id="totalCosts">$40.00</span>
+        </div>
+
+        <div class="result-item">
+          <strong>Estimated Profit:</strong>
+          <span id="profit">$80.00</span>
+        </div>
+      </div>
+
+      <p id="error" class="notice" role="alert" hidden></p>
+
+      <p class="notice">
+        This calculator provides an estimate, not a guaranteed market price.
+        Check local competitor rates and include all relevant business costs.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>How Does a Cleaning Pricing Calculator Work?</h2>
+
+      <p>
+        A cleaning pricing calculator helps cleaning business owners estimate
+        what to charge for residential or commercial cleaning jobs. The price
+        can depend on home size, cleaning type, labor, supplies, travel, and
+        the profit margin you want to achieve.
+      </p>
+
+      <h3>Suggested price formula</h3>
+
+      <p>
+        <strong>Base Price = Home Size ÷ 1,000 × Base Rate × Service Factor</strong>
+      </p>
+
+      <p>
+        <strong>
+          Suggested Price = Total Estimated Costs ÷ (1 − Profit Margin)
+        </strong>
+      </p>
+
+      <p>
+        The calculator uses the service factor to adjust the base estimate
+        for different cleaning types. Actual costs and prices vary by location.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Cleaning Pricing Tips</h2>
+
+      <ul>
+        <li>Estimate the time required for each cleaning job.</li>
+        <li>Include labor, supplies, travel, and other relevant costs.</li>
+        <li>Deep cleaning may require more time than standard cleaning.</li>
+        <li>Review local prices before setting your final rate.</li>
+        <li>Recalculate prices when your business expenses change.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>How much should I charge for house cleaning?</h3>
+      <p>
+        Your price depends on home size, service type, labor, expenses,
+        local demand, and your business goals. Use the calculator as a starting
+        estimate rather than a fixed market rate.
+      </p>
+
+      <h3>Should deep cleaning cost more?</h3>
+      <p>
+        Deep cleaning often involves more detailed work and time, so businesses
+        may charge more than they charge for standard cleaning.
+      </p>
+
+      <h3>What is a target profit margin?</h3>
+      <p>
+        It is the percentage of the final price you aim to retain as profit
+        after the costs entered into the calculator.
+      </p>
+
+      <h3>Can I use this calculator for office cleaning?</h3>
+      <p>
+        Yes. Select Office Cleaning and adjust the base rate and expenses
+        to suit the job.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Explore More Free Tools</h2>
+
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="cleaning-profit.html">Profit Calculator</a>
+        <a href="cleaning-quote.html">Quote Generator</a>
+        <a href="cleaning-checklist.html">Cleaning Checklist</a>
+        <a href="cleaning-startup-cost.html">Startup Cost Calculator</a>
+        <a href="cleaning-hourly-rate.html">Hourly Rate Calculator</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <p>
+    &copy; <span id="year"></span> CleanBizTools
+  </p>
+
+  <p>
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="disclaimer.html">Disclaimer</a>
+  </p>
+</footer>
+  <script>
+(function () {
+  "use strict";
+
+  const currency = document.getElementById("currency");
+
+  function money(value) {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: currency.value
+    }).format(value);
+  }
+
+  function getNumber(id) {
+    const value = document.getElementById(id).value.trim();
+    const number = Number(value);
+
+    if (value === "" || !Number.isFinite(number) || number < 0) {
+      throw new Error("Please enter valid numbers.");
+    }
+
+    return number;
+  }
+
+  function calculate() {
+    const error = document.getElementById("error");
+    error.hidden = true;
+
+    try {
+      const size = getNumber("homeSize");
+      const rate = getNumber("baseRate");
+      const labor = getNumber("labor");
+      const supplies = getNumber("supplies");
+      const margin = getNumber("margin");
+      const factor = Number(
+        document.getElementById("service").value
+      );
+
+      if (size <= 0) {
+        throw new Error("Home size must be greater than zero.");
+      }
+
+      if (margin >= 100) {
+        throw new Error("Profit margin must be below 100%.");
+      }
+
+      const base = (size / 1000) * rate * factor;
+      const costs = labor + supplies;
+      const suggested = Math.max(
+        base,
+        costs / (1 - margin / 100)
+      );
+      const profit = suggested - costs;
+
+      document.getElementById("basePrice").textContent =
+        money(base);
+
+      document.getElementById("totalCosts").textContent =
+        money(costs);
+
+      document.getElementById("price").textContent =
+        money(suggested);
+
+      document.getElementById("profit").textContent =
+        money(profit);
+
+    } catch (e) {
+      error.textContent = e.message;
+      error.hidden = false;
+    }
+  }
+
+  function reset() {
+    document.getElementById("currency").value = "USD";
+    document.getElementById("homeSize").value = "1500";
+    document.getElementById("baseRate").value = "80";
+    document.getElementById("service").value = "1";
+    document.getElementById("labor").value = "30";
+    document.getElementById("supplies").value = "10";
+    document.getElementById("margin").value = "30";
+    calculate();
+  }
+
+  document.getElementById("calculateBtn")
+    .addEventListener("click", calculate);
+
+  document.getElementById("resetBtn")
+    .addEventListener("click", reset);
+
+  [
+    "currency",
+    "homeSize",
+    "baseRate",
+    "service",
+    "labor",
+    "supplies",
+    "margin"
+  ].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", calculate);
+    document.getElementById(id).addEventListener("change", calculate);
+  });
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  calculate();
+})();
+      </script>
+
+</body>
+</html>
