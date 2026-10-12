@@ -1,724 +1,817 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>CleanBizTools - Free Cleaning Business Calculators</title>  <meta name="description" content="Grow your cleaning business with free cleaning pricing, profit, quote, hourly rate, startup cost calculators and cleaning checklists.">  <meta name="robots" content="index,follow">  <link rel="canonical" href="https://kamalbera198-sudo.github.io/cleanbiztools/">  <meta property="og:title" content="CleanBizTools - Free Cleaning Business Tools">
+  <meta property="og:description" content="Free tools to price cleaning jobs, calculate profit, create quotes and plan your cleaning business.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kamalbera198-sudo.github.io/cleanbiztools/">  <meta name="theme-color" content="#0f766e">  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<title>House Cleaning Pricing Calculator | CleanBizTools</title>
+    html {
+      scroll-behavior: smooth;
+    }
 
-<meta name="description" content="Use our free house cleaning pricing calculator to estimate cleaning costs by square footage, service type, labor, and additional expenses.">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+      line-height: 1.7;
+    }
 
-<meta name="robots" content="index,follow">
+    a {
+      text-decoration: none;
+    }
 
-<meta name="theme-color" content="#5546e8">
+    .topbar {
+      background: #102a43;
+      color: #ffffff;
+      padding: 12px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-<style>
-:root {
-    --primary: #5546e8;
-    --secondary: #0891b2;
-    --dark: #172033;
-    --muted: #64748b;
-    --light: #f5f7ff;
-    --white: #ffffff;
-    --green: #059669;
-}
+    .logo {
+      color: #ffffff;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    .logo span {
+      color: #5eead4;
+    }
 
-html {
-    scroll-behavior: smooth;
-}
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 17px;
+    }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--light);
-    color: var(--dark);
-    line-height: 1.7;
-}
+    nav a {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+    }
 
-.topbar {
-    background: #172033;
-    color: white;
-    text-align: center;
-    padding: 9px;
-    font-size: 13px;
-}
+    nav a:hover {
+      color: #5eead4;
+    }
 
-header {
-    background: linear-gradient(135deg, #5546e8, #7c3aed, #0891b2);
-    color: white;
-    text-align: center;
-    padding: 35px 16px 45px;
-}
+    .hero {
+      padding: 70px 20px;
+      text-align: center;
+      color: #ffffff;
+      background: linear-gradient(135deg, #0f766e, #2563eb);
+    }
 
-.logo {
-    font-size: 29px;
-    font-weight: 900;
-}
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 15px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: bold;
+    }
 
-.logo span {
-    color: #fde68a;
-}
+    .hero h1 {
+      max-width: 850px;
+      margin: 0 auto 18px;
+      font-size: clamp(32px, 6vw, 52px);
+      line-height: 1.2;
+    }
 
-header h1 {
-    font-size: clamp(27px, 5vw, 42px);
-    line-height: 1.25;
-    max-width: 800px;
-    margin: 17px auto 12px;
-}
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 27px;
+      color: #e8f7ff;
+      font-size: 17px;
+    }
 
-header p {
-    max-width: 700px;
-    margin: auto;
-    color: #f0f4ff;
-}
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-nav {
-    background: white;
-    padding: 12px 8px;
-    text-align: center;
-    box-shadow: 0 3px 12px #1720330d;
-}
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
 
-nav a {
-    color: #4338ca;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 5px 10px;
-    display: inline-block;
-}
+    .btn-primary {
+      background: #ffffff;
+      color: #0f766e;
+    }
 
-.container {
-    width: min(1000px, 100%);
-    margin: auto;
-    padding: 22px 15px;
-}
+    .btn-secondary {
+      color: #ffffff;
+      border: 1px solid #ffffff;
+    }
 
-.intro {
-    text-align: center;
-    margin: 20px auto 28px;
-}
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-.intro h2 {
-    color: #4338ca;
-    font-size: 27px;
-    line-height: 1.3;
-    margin-bottom: 10px;
-}
+    .trust-strip {
+      background: #ffffff;
+      padding: 20px 12px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      text-align: center;
+      border-bottom: 1px solid #e5eaf1;
+    }
 
-.intro p {
-    max-width: 720px;
-    color: var(--muted);
-    margin: auto;
-}
+    .trust-strip span {
+      font-size: 14px;
+      font-weight: bold;
+      color: #334155;
+    }
 
-.calculator {
-    background: white;
-    border-radius: 18px;
-    padding: 25px;
-    box-shadow: 0 8px 28px #1720330d;
-    border: 1px solid #e5e7eb;
-}
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 55px 20px;
+    }
 
-.calculator h2 {
-    color: #4338ca;
-    margin-bottom: 7px;
-    font-size: 24px;
-}
+    .section-heading {
+      text-align: center;
+      margin-bottom: 32px;
+    }
 
-.calculator > p {
-    color: var(--muted);
-    margin-bottom: 18px;
-}
+    .section-heading .eyebrow {
+      color: #0f766e;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+    }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 18px;
-}
+    .section-heading h2 {
+      font-size: clamp(26px, 4vw, 36px);
+      line-height: 1.3;
+      margin: 8px 0 12px;
+      color: #102a43;
+    }
 
-label {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 13px 0 5px;
-}
+    .section-heading p {
+      max-width: 680px;
+      margin: auto;
+      color: #64748b;
+    }
 
-input,
-select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 9px;
-    background: white;
-    color: #172033;
-    font-size: 16px;
-}
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
 
-input:focus,
-select:focus {
-    outline: 2px solid #a5b4fc;
-    border-color: #5546e8;
-}
+    .tool-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 5px 18px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-button {
-    cursor: pointer;
-    font-family: inherit;
-}
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(15, 23, 42, 0.09);
+    }
 
-.calculate-btn {
-    width: 100%;
-    margin-top: 22px;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    background: linear-gradient(100deg, #5546e8, #7c3aed);
-    font-size: 16px;
-    font-weight: bold;
-}
+    .tool-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      margin-bottom: 18px;
+    }
 
-.reset-btn {
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    background: white;
-    color: #334155;
-    font-weight: bold;
-    font-size: 15px;
-}
+    .icon-teal {
+      background: #ccfbf1;
+    }
 
-.result {
-    display: none;
-    margin-top: 22px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #ecfdf5;
-    border: 1px solid #a7f3d0;
-    color: #065f46;
-    overflow-wrap: anywhere;
-}
+    .icon-blue {
+      background: #dbeafe;
+    }
 
-.result h3 {
-    font-size: 23px;
-    margin-bottom: 8px;
-}
+    .icon-purple {
+      background: #ede9fe;
+    }
 
-.result p {
-    margin-top: 7px;
-}
+    .icon-orange {
+      background: #ffedd5;
+    }
 
-.notice {
-    margin-top: 14px;
-    font-size: 12px;
-    color: #64748b;
-}
+    .icon-green {
+      background: #dcfce7;
+    }
 
-.content-box {
-    background: white;
-    padding: 24px;
-    margin-top: 25px;
-    border-radius: 15px;
-    border: 1px solid #e5e7eb;
-}
+    .icon-pink {
+      background: #fce7f3;
+    }
 
-.content-box h2 {
-    color: #4338ca;
-    font-size: 25px;
-    margin-bottom: 12px;
-}
+    .tool-card h3 {
+      font-size: 20px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      color: #102a43;
+    }
 
-.content-box h3 {
-    color: #0e7490;
-    margin: 21px 0 7px;
-    font-size: 19px;
-}
+    .tool-card p {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
 
-.content-box p {
-    color: #475569;
-    margin-bottom: 12px;
-}
+    .tool-link {
+      display: inline-block;
+      color: #0f766e;
+      font-weight: 800;
+      font-size: 14px;
+    }
 
-.content-box ul {
-    color: #475569;
-    padding-left: 22px;
-    margin-bottom: 14px;
-}
+    .tool-link:hover {
+      color: #1d4ed8;
+    }
 
-.content-box a {
-    color: #4338ca;
-    font-weight: bold;
-}
+    .benefits {
+      background: #eafaf7;
+      border-top: 1px solid #d1fae5;
+      border-bottom: 1px solid #d1fae5;
+    }
 
-.faq {
-    padding: 15px 0;
-    border-bottom: 1px solid #e5e7eb;
-}
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
 
-.faq:last-child {
-    border-bottom: none;
-}
+    .benefit {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #dbeee9;
+    }
 
-.faq h3 {
-    margin: 0 0 6px;
-    font-size: 17px;
-}
+    .benefit h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+      color: #115e59;
+    }
 
-.faq p {
-    margin: 0;
-}
+    .benefit p {
+      color: #64748b;
+      font-size: 14px;
+    }
 
-footer {
-    background: #172033;
-    color: white;
-    text-align: center;
-    padding: 30px 15px;
-    margin-top: 30px;
-}
+    .how-list {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      gap: 18px;
+    }
 
-footer p {
-    color: #cbd5e1;
-    font-size: 13px;
-    margin-top: 7px;
-}
+    .how-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 17px;
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
 
-footer a {
-    color: #fde68a;
-    text-decoration: none;
-}
+    .step-number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #0f766e;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+    }
 
-@media(max-width: 600px) {
-    .grid {
+    .how-item h3 {
+      margin-bottom: 5px;
+      color: #102a43;
+    }
+
+    .how-item p {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .about-box {
+      background: #102a43;
+      color: #ffffff;
+      padding: 38px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .about-box h2 {
+      font-size: 29px;
+      margin-bottom: 12px;
+    }
+
+    .about-box p {
+      max-width: 760px;
+      margin: 0 auto 22px;
+      color: #dbeafe;
+    }
+
+    .faq-list {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-list details {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 13px;
+    }
+
+    .faq-list summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: #102a43;
+    }
+
+    .faq-list details p {
+      color: #64748b;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #0b1727;
+      color: #cbd5e1;
+      padding: 38px 20px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    .footer-brand {
+      font-size: 23px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand span {
+      color: #5eead4;
+    }
+
+    .footer-column h3 {
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .footer-column p {
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-column a:hover {
+      color: #5eead4;
+    }
+
+    .copyright {
+      max-width: 1150px;
+      margin: 30px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid #263548;
+      text-align: center;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 850px) {
+      .tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .benefits-grid {
         grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand-column {
+        grid-column: 1 / -1;
+      }
     }
 
-    .calculator {
-        padding: 19px;
+    @media (max-width: 560px) {
+      .topbar {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 48px 18px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .container {
+        padding: 42px 16px;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-card {
+        padding: 23px;
+      }
+
+      .trust-strip {
+        gap: 12px 20px;
+      }
+
+      .about-box {
+        padding: 27px 20px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand-column {
+        grid-column: auto;
+      }
     }
-
-    .content-box {
-        padding: 19px;
-    }
-
-    header {
-        padding: 30px 15px 38px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="topbar">
-    Free Cleaning Business Tools
-</div>
-
-<header>
-    <div class="logo">CleanBiz<span>Tools</span></div>
-
-    <h1>Free House Cleaning Pricing Calculator</h1>
-
-    <p>
-        Estimate house cleaning prices using home size, service type,
-        labor expenses, and additional costs. Create a starting price
-        estimate for your cleaning business.
-    </p>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="#calculator">Pricing Calculator</a>
-    <a href="#guide">Pricing Guide</a>
-    <a href="#faq">FAQs</a>
+  </style>  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CleanBizTools",
+    "url": "https://kamalbera198-sudo.github.io/cleanbiztools/",
+    "description": "Free calculators and practical tools for cleaning businesses."
+  }
+  </script></head><body>  <header class="topbar">
+    <a class="logo" href="index.html">CleanBiz<span>Tools</span></a><nav aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="#tools">All Tools</a>
+  <a href="#how-it-works">How It Works</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
-<main class="container">
+  </header>  <main><section class="hero">
+  <div class="badge">FREE TOOLS FOR CLEANING BUSINESSES</div>
 
-    <section class="intro">
-        <h2>How Much Should You Charge for House Cleaning?</h2>
+  <h1>Run Your Cleaning Business Smarter</h1>
 
-        <p>
-            Enter your job details below to estimate a cleaning price.
-            You can adjust the example rate and expenses to suit your
-            business costs and local market.
-        </p>
-    </section>
+  <p>
+    Price cleaning jobs confidently, calculate your profit,
+    prepare customer quotes and plan your business with practical,
+    easy-to-use cleaning business tools.
+  </p>
 
-    <section class="calculator" id="calculator">
+  <div class="hero-buttons">
+    <a class="btn btn-primary" href="#tools">Explore All Tools →</a>
+    <a class="btn btn-secondary" href="cleaning-pricing.html">Calculate Your Price</a>
+  </div>
+</section>
 
-        <h2>🧮 Cleaning Price Calculator</h2>
+<div class="trust-strip">
+  <span>✓ Easy to Use</span>
+  <span>✓ Practical Calculators</span>
+  <span>✓ No Account Required</span>
+  <span>✓ Mobile Friendly</span>
+</div>
 
-        <p>
-            Enter your information. All prices are calculated in US dollars.
-        </p>
+<section class="container" id="tools">
 
-        <div class="grid">
-
-            <div>
-                <label for="size">Home Size (Square Feet)</label>
-                <input id="size" type="number" min="1" step="1"
-                       placeholder="Example: 2000">
-            </div>
-
-            <div>
-                <label for="rate">Price per 1,000 Sq. Ft. ($)</label>
-                <input id="rate" type="number" min="0" step="0.01"
-                       value="50">
-            </div>
-
-            <div>
-                <label for="service">Cleaning Service Type</label>
-                <select id="service">
-                    <option value="1">Standard Cleaning</option>
-                    <option value="1.5">Deep Cleaning</option>
-                    <option value="1.25">Move-In / Move-Out Cleaning</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="cleaners">Number of Cleaners</label>
-                <input id="cleaners" type="number" min="1" step="1"
-                       value="1">
-            </div>
-
-            <div>
-                <label for="hours">Estimated Labor Hours</label>
-                <input id="hours" type="number" min="0" step="0.25"
-                       value="2">
-            </div>
-
-            <div>
-                <label for="wage">Hourly Labor Cost per Cleaner ($)</label>
-                <input id="wage" type="number" min="0" step="0.01"
-                       value="20">
-            </div>
-
-            <div>
-                <label for="supplies">Cleaning Supplies ($)</label>
-                <input id="supplies" type="number" min="0" step="0.01"
-                       value="5">
-            </div>
-
-            <div>
-                <label for="travel">Travel and Other Costs ($)</label>
-                <input id="travel" type="number" min="0" step="0.01"
-                       value="10">
-            </div>
-
-            <div>
-                <label for="margin">Target Profit Margin (%)</label>
-                <input id="margin" type="number" min="0" max="90"
-                       step="1" value="20">
-            </div>
-
-        </div>
-
-        <button class="calculate-btn" type="button"
-                onclick="calculateCleaningPrice()">
-            Calculate My Cleaning Price
-        </button>
-
-        <button class="reset-btn" type="button"
-                onclick="resetCalculator()">
-            Reset Calculator
-        </button>
-
-        <div class="result" id="result" aria-live="polite"></div>
-
-        <p class="notice">
-            This tool provides estimates, not guaranteed market prices
-            or financial advice. Check all entered costs before quoting
-            a customer.
-        </p>
-
-    </section>
-
-    <section class="content-box" id="guide">
-
-        <h2>House Cleaning Pricing Guide</h2>
-
-        <p>
-            Setting cleaning prices requires an understanding of home size,
-            service requirements, labor costs, supplies, travel, and other
-            business expenses. This free house cleaning pricing calculator
-            helps you organize these factors into a starting estimate.
-        </p>
-
-        <h3>1. Consider the Size of the Home</h3>
-
-        <p>
-            A larger property may require more work than a smaller property,
-            but square footage alone does not determine the final price.
-            Home condition, bathrooms, kitchens, pets, clutter, and customer
-            requests can also affect cleaning time.
-        </p>
-
-        <h3>2. Choose the Right Cleaning Service</h3>
-
-        <p>
-            Standard cleaning, deep cleaning, and move-in or move-out
-            cleaning may require different amounts of time and effort.
-            The service factors in this calculator are editable examples
-            in concept, but their preset values are not universal industry
-            rates.
-        </p>
-
-        <h3>3. Include Labor Costs</h3>
-
-        <p>
-            Consider the number of cleaners, expected work hours, and
-            your actual labor expense. If you employ workers, account for
-            applicable payroll costs and other employment expenses when
-            preparing your full business budget.
-        </p>
-
-        <h3>4. Include Supplies and Travel</h3>
-
-        <p>
-            Cleaning products, equipment, fuel, parking, and travel time
-            may affect job profitability. Include relevant costs when
-            preparing a customer estimate.
-        </p>
-
-        <h3>5. Understand Profit Margin</h3>
-
-        <p>
-            Profit margin is the portion of the selling price that remains
-            as profit after the costs included in the calculation.
-            It is different from adding a percentage markup to costs.
-            This calculator uses the target profit margin to estimate a
-            price based on entered costs.
-        </p>
-
-        <h3>Cleaning Pricing Formula</h3>
-
-        <p>
-            This calculator first estimates a base price using square
-            footage and a selected service factor. It then compares that
-            price with the price required to cover entered costs and the
-            target profit margin. The higher of these two estimates is
-            displayed as the suggested starting price.
-        </p>
-
-        <h3>More Free Cleaning Business Tools</h3>
-
-        <p>
-            Visit the <a href="index.html">CleanBizTools homepage</a>
-            to explore our other tools, including the cleaning business
-            profit calculator and cleaning quote generator when those
-            pages are available.
-        </p>
-
-    </section>
-
-    <section class="content-box" id="faq">
-
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="faq">
-            <h3>How much should I charge to clean a house?</h3>
-            <p>
-                The price depends on home size, cleaning type, labor,
-                supplies, travel, and local market conditions. Use the
-                calculator to create a starting estimate.
-            </p>
-        </div>
-
-        <div class="faq">
-            <h3>Is this house cleaning pricing calculator free?</h3>
-            <p>
-                Yes. This calculator is free to use and does not require
-                an account.
-            </p>
-        </div>
-
-        <div class="faq">
-            <h3>Can I calculate deep cleaning prices?</h3>
-            <p>
-                Yes. Select Deep Cleaning. The example factor increases
-                the base square-foot estimate, but you should adjust your
-                price based on the actual work involved.
-            </p>
-        </div>
-
-        <div class="faq">
-            <h3>Does the calculator guarantee a profitable price?</h3>
-            <p>
-                No. Results depend on the information you enter. Missing
-                expenses, taxes, overhead, and inaccurate time estimates
-                can change your actual profit.
-            </p>
-        </div>
-
-        <div class="faq">
-            <h3>Can I use this calculator on my phone?</h3>
-            <p>
-                Yes. The page is designed to adapt to mobile phones,
-                tablets, and desktop screens.
-            </p>
-        </div>
-
-        <div class="faq">
-            <h3>Does this calculator use real-time local market rates?</h3>
-            <p>
-                No. It uses the example rate you enter. Research local
-                competitors and costs before making a customer quote.
-            </p>
-        </div>
-
-    </section>
-
-</main>
-
-<footer>
-    <div class="logo">CleanBiz<span>Tools</span></div>
-
-    <p>Free tools for smarter cleaning business decisions.</p>
-
-    <p><a href="index.html">Home</a></p>
-
-    <p>© <span id="year"></span> CleanBizTools</p>
-
+  <div class="section-heading">
+    <div class="eyebrow">Your Business Toolkit</div>
+    <h2>Explore All Cleaning Business Tools</h2>
     <p>
-        Estimates are informational only and are not financial or tax advice.
+      Choose a tool below to help with cleaning prices, profits,
+      customer quotes, business planning and daily operations.
     </p>
-</footer>
+  </div>
 
-<script>
-"use strict";
+  <div class="tools-grid">
 
-function getNumber(id) {
-    const value = document.getElementById(id).value.trim();
+    <article class="tool-card">
+      <div class="tool-icon icon-teal">💰</div>
+      <h3>Cleaning Pricing Calculator</h3>
+      <p>
+        Estimate what to charge for house cleaning and other
+        cleaning jobs based on your service details and costs.
+      </p>
+      <a class="tool-link" href="cleaning-pricing.html">Open Pricing Calculator →</a>
+    </article>
 
-    if (value === "") {
-        return NaN;
-    }
+    <article class="tool-card">
+      <div class="tool-icon icon-blue">📈</div>
+      <h3>Cleaning Profit Calculator</h3>
+      <p>
+        Estimate revenue, operating expenses and potential profit
+        to understand how your cleaning business is performing.
+      </p>
+      <a class="tool-link" href="cleaning-profit.html">Calculate Profit →</a>
+    </article>
 
-    return Number(value);
-}
+    <article class="tool-card">
+      <div class="tool-icon icon-purple">📝</div>
+      <h3>Cleaning Quote Generator</h3>
+      <p>
+        Prepare a clear cleaning service estimate with customer
+        details, job information and your proposed price.
+      </p>
+      <a class="tool-link" href="cleaning-quote.html">Create a Quote →</a>
+    </article>
 
-function isValidNonNegative(value) {
-    return Number.isFinite(value) && value >= 0;
-}
+    <article class="tool-card">
+      <div class="tool-icon icon-green">✅</div>
+      <h3>Cleaning Checklist</h3>
+      <p>
+        Organize common cleaning tasks and use a checklist to
+        help keep your cleaning jobs consistent.
+      </p>
+      <a class="tool-link" href="cleaning-checklist.html">Open Checklist →</a>
+    </article>
 
-function money(value) {
-    return value.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD"
-    });
-}
+    <article class="tool-card">
+      <div class="tool-icon icon-orange">🚀</div>
+      <h3>Cleaning Startup Cost Calculator</h3>
+      <p>
+        Estimate the initial costs of supplies, equipment,
+        transportation and other business setup expenses.
+      </p>
+      <a class="tool-link" href="cleaning-startup-cost.html">Plan Startup Costs →</a>
+    </article>
 
-function showMessage(message) {
-    const result = document.getElementById("result");
-    result.innerHTML = "";
-    result.style.display = "block";
+    <article class="tool-card">
+      <div class="tool-icon icon-pink">⏱️</div>
+      <h3>Cleaning Hourly Rate Calculator</h3>
+      <p>
+        Estimate an hourly service rate using your costs,
+        working hours and desired business margin.
+      </p>
+      <a class="tool-link" href="cleaning-hourly-rate.html">Calculate Hourly Rate →</a>
+    </article>
 
-    const paragraph = document.createElement("p");
-    paragraph.textContent = message;
-    result.appendChild(paragraph);
-}
+  </div>
+</section>
 
-function calculateCleaningPrice() {
-    const size = getNumber("size");
-    const rate = getNumber("rate");
-    const cleaners = getNumber("cleaners");
-    const hours = getNumber("hours");
-    const wage = getNumber("wage");
-    const supplies = getNumber("supplies");
-    const travel = getNumber("travel");
-    const margin = getNumber("margin");
-    const factor = Number(document.getElementById("service").value);
+<section class="benefits">
+  <div class="container">
 
-    const costs = [rate, cleaners, hours, wage, supplies, travel];
+    <div class="section-heading">
+      <div class="eyebrow">Why CleanBizTools?</div>
+      <h2>Simple Tools for Everyday Business Decisions</h2>
+      <p>
+        Spend less time working through calculations and more
+        time organizing your cleaning business.
+      </p>
+    </div>
 
-    if (!Number.isFinite(size) || size <= 0 ||
-        !costs.every(isValidNonNegative) ||
-        cleaners < 1 ||
-        !Number.isInteger(cleaners) ||
-        !Number.isFinite(margin) ||
-        margin < 0 || margin > 90) {
+    <div class="benefits-grid">
 
-        showMessage(
-            "Please enter valid values. Home size must be above zero, " +
-            "cleaners must be a whole number of at least 1, and profit " +
-            "margin must be between 0% and 90%."
-        );
-        return;
-    }
+      <div class="benefit">
+        <h3>🎯 Make Informed Estimates</h3>
+        <p>
+          Use calculators to estimate prices and expenses.
+          Review your actual costs before deciding what to charge.
+        </p>
+      </div>
 
-    const basePrice = (size / 1000) * rate * factor;
+      <div class="benefit">
+        <h3>📊 Understand Your Numbers</h3>
+        <p>
+          Organize revenue, costs and estimated profit to make
+          more informed business decisions.
+        </p>
+      </div>
 
-    const laborCost = cleaners * hours * wage;
-    const totalCost = laborCost + supplies + travel;
+      <div class="benefit">
+        <h3>📱 Work on Your Phone</h3>
+        <p>
+          Access the website from a mobile phone, tablet or
+          computer without installing a separate application.
+        </p>
+      </div>
 
-    const marginPrice = margin < 100
-        ? totalCost / (1 - margin / 100)
-        : Infinity;
+    </div>
+  </div>
+</section>
 
-    const suggestedPrice = Math.max(basePrice, marginPrice);
-    const estimatedProfit = suggestedPrice - totalCost;
+<section class="container" id="how-it-works">
 
-    const actualMargin = suggestedPrice > 0
-        ? (estimatedProfit / suggestedPrice) * 100
-        : 0;
+  <div class="section-heading">
+    <div class="eyebrow">Getting Started</div>
+    <h2>How to Use CleanBizTools</h2>
+    <p>Start with a tool that matches the task you need to complete.</p>
+  </div>
 
-    const result = document.getElementById("result");
-    result.innerHTML = "";
-    result.style.display = "block";
+  <div class="how-list">
 
-    const heading = document.createElement("h3");
-    heading.textContent = "Suggested Starting Price: " +
-        money(suggestedPrice);
-    result.appendChild(heading);
+    <div class="how-item">
+      <div class="step-number">1</div>
+      <div>
+        <h3>Choose a Tool</h3>
+        <p>
+          Select the pricing, profit, quote, checklist,
+          startup cost or hourly rate tool above.
+        </p>
+      </div>
+    </div>
 
-    const rows = [
-        "Square-foot base estimate: " + money(basePrice),
-        "Estimated labor cost: " + money(laborCost),
-        "Supplies and travel: " + money(supplies + travel),
-        "Total entered costs: " + money(totalCost),
-        "Estimated amount remaining: " + money(estimatedProfit),
-        "Estimated margin: " + actualMargin.toFixed(1) + "%"
-    ];
+    <div class="how-item">
+      <div class="step-number">2</div>
+      <div>
+        <h3>Enter Your Information</h3>
+        <p>
+          Fill in the fields available in the selected calculator.
+          Use realistic figures for your own business situation.
+        </p>
+      </div>
+    </div>
 
-    rows.forEach(function (row) {
-        const paragraph = document.createElement("p");
-        paragraph.textContent = row;
-        result.appendChild(paragraph);
-    });
+    <div class="how-item">
+      <div class="step-number">3</div>
+      <div>
+        <h3>Review Your Results</h3>
+        <p>
+          Check the estimate and consider your actual expenses,
+          local market, service requirements and business goals.
+        </p>
+      </div>
+    </div>
 
-    const note = document.createElement("p");
-    note.textContent =
-        "This is a planning estimate. Verify all costs and local rates " +
-        "before giving a quote to a customer.";
-    result.appendChild(note);
-}
+  </div>
+</section>
 
-function resetCalculator() {
-    document.getElementById("size").value = "";
-    document.getElementById("rate").value = "50";
-    document.getElementById("service").value = "1";
-    document.getElementById("cleaners").value = "1";
-    document.getElementById("hours").value = "2";
-    document.getElementById("wage").value = "20";
-    document.getElementById("supplies").value = "5";
-    document.getElementById("travel").value = "10";
-    document.getElementById("margin").value = "20";
+<section class="container">
+  <div class="about-box">
+    <h2>About CleanBizTools</h2>
+    <p>
+      CleanBizTools is designed to make common cleaning business
+      calculations and planning tasks easier. Our goal is to provide
+      practical online tools that help cleaning business owners
+      organize estimates, expenses and everyday work.
+    </p>
+    <a class="btn btn-primary" href="about.html">Learn More About Us →</a>
+  </div>
+</section>
 
-    const result = document.getElementById("result");
-    result.innerHTML = "";
-    result.style.display = "none";
-}
+<section class="container">
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-</script>
+  <div class="section-heading">
+    <div class="eyebrow">Frequently Asked Questions</div>
+    <h2>Common Questions</h2>
+  </div>
 
-</body>
-</html>
+  <div class="faq-list">
+
+    <details>
+      <summary>What is CleanBizTools?</summary>
+      <p>
+        CleanBizTools is a website offering practical calculators
+        and resources for cleaning businesses, including pricing,
+        profit, quotes, checklists and startup cost estimates.
+      </p>
+    </details>
+
+    <details>
+      <summary>Can I use these tools on my phone?</summary>
+      <p>
+        Yes. The website is designed to adapt to mobile phones,
+        tablets and desktop screens.
+      </p>
+    </details>
+
+    <details>
+      <summary>Are the calculators a replacement for professional advice?</summary>
+      <p>
+        No. Calculator results are estimates based on the information
+        entered. Review your actual expenses and seek qualified
+        professional advice when appropriate.
+      </p>
+    </details>
+
+    <details>
+      <summary>Do I need to create an account?</summary>
+      <p>
+        The website is designed for direct access to its tools.
+        No account is required for the basic tools provided on this site.
+      </p>
+    </details>
+
+    <details>
+      <summary>How can I report a problem or suggest an improvement?</summary>
+      <p>
+        Visit our Contact page to find the available way to send
+        feedback about a tool or the website.
+      </p>
+      <a class="tool-link" href="contact.html">Visit Contact Page →</a>
+    </details>
+
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="footer-inner">  <div class="footer-column footer-brand-column">
+    <div class="footer-brand">CleanBiz<span>Tools</span></div>
+    <p>
+      Practical online calculators and resources for cleaning
+      business pricing, planning and everyday operations.
+    </p>
+  </div>
+
+  <div class="footer-column">
+    <h3>Our Tools</h3>
+    <a href="cleaning-pricing.html">Pricing Calculator</a>
+    <a href="cleaning-profit.html">Profit Calculator</a>
+    <a href="cleaning-quote.html">Quote Generator</a>
+    <a href="cleaning-checklist.html">Cleaning Checklist</a>
+    <a href="cleaning-startup-cost.html">Startup Cost Calculator</a>
+    <a href="cleaning-hourly-rate.html">Hourly Rate Calculator</a>
+  </div>
+
+  <div class="footer-column">
+    <h3>Company & Policies</h3>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+
+</div>
+
+<div class="copyright">
+  <p>
+    &copy; <span id="currentYear"></span> CleanBizTools.
+    All rights reserved.
+  </p>
+  <p>Tools and estimates are provided for general informational purposes.</p>
+</div>
+
+  </footer>  <script>
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script></body>
+          </html>
