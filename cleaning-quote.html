@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Cleaning Quote Calculator | CleanBizTools</title>
+
+<meta name="description" content="Create a cleaning service quote online for residential and commercial cleaning. Estimate cleaning costs, extra services, discounts, and total prices for free.">
+
+<meta name="robots" content="index,follow">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #0f766e, #2563eb);
+  color: white;
+  padding: 28px 15px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+header p {
+  margin-bottom: 0;
+}
+
+nav {
+  background: #ffffff;
+  padding: 13px 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px #00000010;
+}
+
+nav a {
+  display: inline-block;
+  margin: 5px 8px;
+  color: #0f766e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 0 14px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px #0000000d;
+}
+
+h2 {
+  color: #0f766e;
+  margin-top: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  background: white;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+button {
+  border: none;
+  padding: 13px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 8px 5px 0 0;
+}
+
+.calculate {
+  background: #0f766e;
+  color: white;
+}
+
+.reset {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.print {
+  background: #2563eb;
+  color: white;
+}
+
+.result {
+  background: #ecfdf5;
+  border: 2px solid #10b981;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 20px;
+}
+
+.total {
+  font-size: 32px;
+  font-weight: bold;
+  color: #047857;
+  overflow-wrap: anywhere;
+}
+
+.result p {
+  overflow-wrap: anywhere;
+}
+
+.small {
+  color: #64748b;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  background: #0f172a;
+  color: white;
+  padding: 25px 12px;
+}
+
+footer a {
+  color: #99f6e4;
+  margin: 5px;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+
+@media print {
+  nav,
+  .no-print,
+  footer,
+  header p {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cleaning Quote Calculator</h1>
+  <p>Create a cleaning service estimate in seconds — CleanBizTools</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="cleaning-pricing.html">Pricing Calculator</a>
+  <a href="cleaning-profit.html">Profit Calculator</a>
+  <a href="cleaning-checklist.html">Cleaning Checklist</a>
+</nav>
+
+<main class="container">
+
+<section class="card">
+  <h2>Customer Information</h2>
+
+  <div class="grid">
+    <div>
+      <label for="customer">Customer Name</label>
+      <input id="customer" type="text" placeholder="Enter customer name">
+    </div>
+
+    <div>
+      <label for="phone">Phone or Email</label>
+      <input id="phone" type="text" placeholder="Contact information">
+    </div>
+
+    <div>
+      <label for="address">Property Address</label>
+      <input id="address" type="text" placeholder="Enter property address">
+    </div>
+
+    <div>
+      <label for="currency">Currency</label>
+      <select id="currency">
+        <option value="USD">$ USD</option>
+        <option value="INR">₹ INR</option>
+        <option value="GBP">£ GBP</option>
+        <option value="EUR">€ EUR</option>
+        <option value="CAD">C$ CAD</option>
+        <option value="AUD">A$ AUD</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Cleaning Service Details</h2>
+
+  <div class="grid">
+    <div>
+      <label for="service">Cleaning Type</label>
+      <select id="service">
+        <option value="1">Standard Cleaning</option>
+        <option value="1.5">Deep Cleaning</option>
+        <option value="1.7">Move-In / Move-Out Cleaning</option>
+        <option value="1.3">Office Cleaning</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="size">Property Size (sq ft)</label>
+      <input id="size" type="number" min="0" value="1500">
+    </div>
+
+    <div>
+      <label for="rate">Base Rate per 100 sq ft</label>
+      <input id="rate" type="number" min="0" step="0.01" value="5">
+    </div>
+
+    <div>
+      <label for="bathrooms">Extra Bathrooms</label>
+      <input id="bathrooms" type="number" min="0" step="1" value="0">
+    </div>
+
+    <div>
+      <label for="bathroomPrice">Price per Extra Bathroom</label>
+      <input id="bathroomPrice" type="number" min="0" step="0.01" value="15">
+    </div>
+
+    <div>
+      <label for="extras">Additional Services Cost</label>
+      <input id="extras" type="number" min="0" step="0.01" value="0">
+    </div>
+
+    <div>
+      <label for="discount">Discount (%)</label>
+      <input id="discount" type="number" min="0" max="100" step="0.1" value="0">
+    </div>
+  </div>
+
+  <p class="small">
+    Enter your own rates. The calculator does not determine local market prices.
+  </p>
+
+  <label for="notes">Additional Notes</label>
+  <textarea id="notes" placeholder="List special requests or included services"></textarea>
+
+  <div class="no-print">
+    <button class="calculate" id="calculateBtn" type="button">
+      Calculate Quote
+    </button>
+
+    <button class="reset" id="resetBtn" type="button">
+      Reset
+    </button>
+
+    <button class="print" id="printBtn" type="button">
+      Print / Save PDF
+    </button>
+  </div>
+
+  <div class="result" id="result" aria-live="polite">
+    <h2>Cleaning Quote Result</h2>
+    <p>Customer: <strong id="resultCustomer">Not provided</strong></p>
+    <p>Contact: <strong id="resultPhone">Not provided</strong></p>
+    <p>Address: <strong id="resultAddress">Not provided</strong></p>
+    <p>Service: <strong id="resultService">Standard Cleaning</strong></p>
+    <p>Property Size: <strong id="resultSize">1,500 sq ft</strong></p>
+
+    <hr>
+
+    <p>Base Cleaning Cost: <strong id="baseOutput">$75.00</strong></p>
+    <p>Extra Bathrooms: <strong id="bathOutput">$0.00</strong></p>
+    <p>Additional Services: <strong id="extrasOutput">$0.00</strong></p>
+    <p>Discount: <strong id="discountOutput">$0.00</strong></p>
+
+    <p>Estimated Total</p>
+    <div class="total" id="totalOutput">$75.00</div>
+
+    <p class="small" id="notesOutput"></p>
+    <p class="small">This is an estimate, not a final invoice.</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>How to Create a Cleaning Quote</h2>
+
+  <p>
+    A cleaning quote helps a residential or commercial cleaning business
+    estimate the cost of a job before work begins. Enter the property size,
+    select the cleaning service, add extra services, and apply a discount
+    if needed. The calculator will display an estimated total.
+  </p>
+
+  <h3>What should a cleaning quote include?</h3>
+
+  <ul>
+    <li>Customer contact information and property address.</li>
+    <li>The type of cleaning service requested.</li>
+    <li>Property size and your base rate.</li>
+    <li>Additional services and any extra charges.</li>
+    <li>Discounts, estimated total, and service notes.</li>
+  </ul>
+
+  <h3>Who can use this calculator?</h3>
+
+  <p>
+    Independent cleaners, residential cleaning businesses, office cleaners,
+    and cleaning service professionals can use this free tool to prepare
+    preliminary estimates. Review the final quote before sending it to a customer.
+  </p>
+
+  <h3>Related Cleaning Business Tools</h3>
+
+  <ul>
+    <li><a href="cleaning-pricing.html">Cleaning Pricing Calculator</a></li>
+    <li><a href="cleaning-profit.html">Cleaning Business Profit Calculator</a></li>
+    <li><a href="cleaning-checklist.html">Cleaning Checklist</a></li>
+    <li><a href="cleaning-startup-cost.html">Cleaning Business Startup Cost Calculator</a></li>
+    <li><a href="cleaning-hourly-rate.html">Cleaning Hourly Rate Calculator</a></li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is this cleaning quote calculator free?</h3>
+  <p>Yes. You can use this calculator to prepare a basic cleaning estimate for free.</p>
+
+  <h3>Can I use it for deep cleaning?</h3>
+  <p>Yes. Select Deep Cleaning from the service menu. You can also change the rate to match your pricing.</p>
+
+  <h3>Can I change the currency?</h3>
+  <p>Yes. Select USD, INR, GBP, EUR, CAD, or AUD. Currency selection changes the displayed symbol, not the exchange rate or the entered prices.</p>
+
+  <h3>Can I save the quote as a PDF?</h3>
+  <p>Choose Print / Save PDF. If your browser supports printing, select Save as PDF in the print dialog.</p>
+
+  <h3>Is the calculated price guaranteed?</h3>
+  <p>No. It is an estimate based on the values you enter. Confirm the scope of work and final price with your customer.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>CleanBizTools — Simple Tools for Cleaning Businesses</p>
+  <p>
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="disclaimer.html">Disclaimer</a>
+  </p>
+  <p>© <span id="year"></span> CleanBizTools</p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const $ = function (id) {
+    return document.getElementById(id);
+  };
+
+  function getNumber(id) {
+    const value = Number($(id).value);
+    return Number.isFinite(value) ? value : 0;
+  }
+
+  function money(amount) {
+    const currency = $("currency").value;
+
+    const symbols = {
+      USD: "$",
+      INR: "₹",
+      GBP: "£",
+      EUR: "€",
+      CAD: "C$",
+      AUD: "A$"
+    };
+
+    return (symbols[currency] || "$") +
+      amount.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+  }
+
+  function calculateQuote() {
+    const size = Math.max(0, getNumber("size"));
+    const rate = Math.max(0, getNumber("rate"));
+    const serviceMultiplier = Math.max(0, getNumber("service"));
+    const bathrooms = Math.max(0, Math.floor(getNumber("bathrooms")));
+    const bathroomPrice = Math.max(0, getNumber("bathroomPrice"));
+    const extras = Math.max(0, getNumber("extras"));
+
+    const discountPercent = Math.min(
+      100,
+      Math.max(0, getNumber("discount"))
+    );
+
+    const base = (size / 100) * rate * serviceMultiplier;
+    const bathroomCost = bathrooms * bathroomPrice;
+    const subtotal = base + bathroomCost + extras;
+    const discountAmount = subtotal * discountPercent / 100;
+    const total = Math.max(0, subtotal - discountAmount);
+
+    const serviceSelect = $("service");
+    const serviceName =
+      serviceSelect.options[serviceSelect.selectedIndex].text;
+
+    $("resultCustomer").textContent =
+      $("customer").value.trim() || "Not provided";
+
+    $("resultPhone").textContent =
+      $("phone").value.trim() || "Not provided";
+
+    $("resultAddress").textContent =
+      $("address").value.trim() || "Not provided";
+
+    $("resultService").textContent = serviceName;
+
+    $("resultSize").textContent =
+      size.toLocaleString("en-US") + " sq ft";
+
+    $("baseOutput").textContent = money(base);
+    $("bathOutput").textContent = money(bathroomCost);
+    $("extrasOutput").textContent = money(extras);
+    $("discountOutput").textContent = money(discountAmount);
+    $("totalOutput").textContent = money(total);
+
+    $("notesOutput").textContent =
+      $("notes").value.trim()
+        ? "Notes: " + $("notes").value.trim()
+        : "";
+
+    $("year").textContent = new Date().getFullYear();
+  }
+
+  function resetQuote() {
+    $("customer").value = "";
+    $("phone").value = "";
+    $("address").value = "";
+    $("currency").value = "USD";
+    $("service").value = "1";
+    $("size").value = "1500";
+    $("rate").value = "5";
+    $("bathrooms").value = "0";
+    $("bathroomPrice").value = "15";
+    $("extras").value = "0";
+    $("discount").value = "0";
+    $("notes").value = "";
+
+    calculateQuote();
+  }
+
+  $("calculateBtn").addEventListener("click", calculateQuote);
+  $("resetBtn").addEventListener("click", resetQuote);
+
+  $("printBtn").addEventListener("click", function () {
+    calculateQuote();
+    window.print();
+  });
+
+  $("year").textContent = new Date().getFullYear();
+
+  calculateQuote();
+})();
+</script>
+
+</body>
+</html>

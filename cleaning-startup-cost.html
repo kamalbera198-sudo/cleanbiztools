@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cleaning Business Startup Cost Calculator | CleanBizTools</title>
+
+<meta name="description" content="Estimate the startup costs of a cleaning business with this free calculator. Calculate equipment, supplies, insurance, marketing, transportation and other startup expenses.">
+
+<meta name="keywords" content="cleaning business startup cost calculator, cleaning business startup costs, start a cleaning business, cleaning company startup expenses, cleaning equipment cost, janitorial business startup cost, house cleaning business cost">
+
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0f766e">
+<link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/cleaning-startup-cost.html">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1e293b;
+  background: #f1f5f9;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #0f766e, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 35px 16px;
+}
+
+header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(27px, 5vw, 40px);
+}
+
+header p {
+  margin: 0;
+  font-size: 16px;
+}
+
+nav {
+  background: #ffffff;
+  padding: 13px 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+nav a {
+  display: inline-block;
+  margin: 5px 8px;
+  color: #0f766e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 950px;
+  margin: 25px auto;
+  padding: 0 15px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px #0f172a0b;
+}
+
+h2 {
+  color: #0f766e;
+  margin-top: 0;
+}
+
+h3 {
+  color: #334155;
+}
+
+.intro {
+  font-size: 17px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 16px;
+  background: #fff;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid #99f6e4;
+  border-color: #0f766e;
+}
+
+.note {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+button {
+  border: none;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary {
+  background: #0f766e;
+  color: white;
+}
+
+.secondary {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.primary:hover {
+  background: #115e59;
+}
+
+.results {
+  display: none;
+}
+
+.total-box {
+  background: linear-gradient(135deg, #0f766e, #2563eb);
+  color: white;
+  border-radius: 13px;
+  padding: 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+
+.total-box .amount {
+  font-size: clamp(30px, 6vw, 42px);
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.result-row span:last-child {
+  font-weight: bold;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.tip {
+  background: #ecfeff;
+  border-left: 4px solid #0f766e;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.tool-links a {
+  display: block;
+  padding: 11px 0;
+  color: #0f766e;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tool-links a:hover {
+  text-decoration: underline;
+}
+
+details {
+  padding: 13px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #334155;
+}
+
+footer {
+  background: #0f172a;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 35px;
+}
+
+footer a {
+  color: #99f6e4;
+  margin: 0 7px;
+  text-decoration: none;
+}
+
+@media(max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .result-row {
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cleaning Business Startup Cost Calculator</h1>
+  <p>Estimate your startup budget. Plan smarter. Start prepared.</p>
+</header>
+
+<nav aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="cleaning-pricing.html">Pricing Calculator</a>
+  <a href="cleaning-profit.html">Profit Calculator</a>
+  <a href="cleaning-hourly-rate.html">Hourly Rate</a>
+  <a href="cleaning-checklist.html">Checklist</a>
+  <a href="about.html">About</a>
+</nav>
+
+<main class="container">
+
+<section class="card">
+  <h2>Estimate Your Cleaning Business Startup Costs</h2>
+
+  <p class="intro">
+    Planning to start a residential cleaning business, commercial cleaning
+    company, or janitorial service? Use this free startup cost calculator
+    to estimate your initial expenses before opening your business.
+  </p>
+
+  <p>
+    Enter your estimated costs for cleaning equipment, supplies, insurance,
+    registration, marketing, transportation, and other expenses. The
+    calculator adds them together to show your estimated startup budget.
+  </p>
+
+  <p class="note">
+    All amounts use the currency you select. Estimates are for planning only;
+    actual costs vary by country, location, business size, and local requirements.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Startup Cost Calculator</h2>
+
+  <form id="startupForm">
+    <div class="grid">
+
+      <div class="field">
+        <label for="currency">Currency</label>
+        <select id="currency">
+          <option value="USD">USD ($)</option>
+          <option value="INR">INR (₹)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="CAD">CAD (CA$)</option>
+          <option value="AUD">AUD (A$)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="businessType">Business Type</label>
+        <select id="businessType">
+          <option value="Residential Cleaning">Residential Cleaning</option>
+          <option value="Commercial Cleaning">Commercial Cleaning</option>
+          <option value="Janitorial Service">Janitorial Service</option>
+          <option value="Specialty Cleaning">Specialty Cleaning</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="equipment">Cleaning Equipment</label>
+        <input id="equipment" type="number" min="0" step="0.01" value="800" required>
+      </div>
+
+      <div class="field">
+        <label for="supplies">Initial Cleaning Supplies</label>
+        <input id="supplies" type="number" min="0" step="0.01" value="250" required>
+      </div>
+
+      <div class="field">
+        <label for="registration">Registration and Licenses</label>
+        <input id="registration" type="number" min="0" step="0.01" value="150" required>
+      </div>
+
+      <div class="field">
+        <label for="insurance">Initial Insurance Cost</label>
+        <input id="insurance" type="number" min="0" step="0.01" value="300" required>
+      </div>
+
+      <div class="field">
+        <label for="marketing">Website and Marketing</label>
+        <input id="marketing" type="number" min="0" step="0.01" value="250" required>
+      </div>
+
+      <div class="field">
+        <label for="transport">Transportation Setup</label>
+        <input id="transport" type="number" min="0" step="0.01" value="500" required>
+      </div>
+
+      <div class="field">
+        <label for="software">Software and Administration</label>
+        <input id="software" type="number" min="0" step="0.01" value="100" required>
+      </div>
+
+      <div class="field">
+        <label for="uniforms">Uniforms and Safety Gear</label>
+        <input id="uniforms" type="number" min="0" step="0.01" value="100" required>
+      </div>
+
+      <div class="field">
+        <label for="other">Other One-Time Expenses</label>
+        <input id="other" type="number" min="0" step="0.01" value="100" required>
+      </div>
+
+      <div class="field">
+        <label for="reserve">Emergency Reserve</label>
+        <input id="reserve" type="number" min="0" step="0.01" value="300" required>
+      </div>
+
+    </div>
+
+    <div class="buttons">
+      <button class="primary" type="submit">Calculate Startup Cost</button>
+      <button class="secondary" type="reset">Reset</button>
+    </div>
+  </form>
+</section>
+
+<section class="card results" id="results" aria-live="polite">
+  <h2>Your Startup Cost Estimate</h2>
+
+  <p id="businessSummary"></p>
+
+  <div class="total-box">
+    <div>Estimated Total Startup Budget</div>
+    <div class="amount" id="totalCost">—</div>
+  </div>
+
+  <div id="breakdown"></div>
+
+  <div class="tip" id="budgetTip"></div>
+
+  <div class="buttons">
+    <button class="primary" type="button" id="printBtn">Print Results</button>
+  </div>
+</section>
+
+<section class="card">
+  <h2>What Does It Cost to Start a Cleaning Business?</h2>
+
+  <p>
+    The cost of starting a cleaning business depends on the services you offer,
+    the equipment you need, your location, and whether you already have
+    transportation. A small home-cleaning service may begin with basic supplies,
+    while a larger commercial operation may require additional equipment,
+    insurance, staffing, and administrative resources.
+  </p>
+
+  <h3>1. Cleaning equipment</h3>
+  <p>
+    Your equipment budget may include a vacuum cleaner, mop, bucket, brushes,
+    microfiber cloths, and other tools suitable for your services. Compare
+    options and purchase what you actually need for your first clients.
+  </p>
+
+  <h3>2. Cleaning supplies</h3>
+  <p>
+    Budget for appropriate cleaning products, gloves, cloths, bags, and
+    replenishment supplies. Follow product labels and local safety guidance.
+  </p>
+
+  <h3>3. Registration and insurance</h3>
+  <p>
+    Business registration, permits, and insurance requirements differ by
+    location. Check the rules that apply to your business before operating.
+    Insurance costs in this calculator are estimates, not quotes.
+  </p>
+
+  <h3>4. Marketing and website</h3>
+  <p>
+    Your marketing budget might cover a basic website, business cards,
+    local advertising, and a business listing. Start with the channels
+    that make sense for your target customers.
+  </p>
+
+  <h3>5. Transportation and emergency reserve</h3>
+  <p>
+    Consider how you will travel between jobs and transport equipment.
+    An emergency reserve can help you prepare for unexpected initial expenses.
+  </p>
+</section>
+
+<section class="card">
+  <h2>How to Use This Calculator</h2>
+  <ol>
+    <li>Select your preferred currency.</li>
+    <li>Choose the type of cleaning business you plan to start.</li>
+    <li>Enter your estimated one-time costs in each category.</li>
+    <li>Include an emergency reserve if appropriate.</li>
+    <li>Select Calculate Startup Cost to view your estimate and breakdown.</li>
+    <li>Use Print Results if you want a paper or PDF copy through your browser.</li>
+  </ol>
+  <p class="note">
+    The calculator adds the amounts you enter. It does not verify local prices
+    or convert amounts between currencies.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>How much money do I need to start a cleaning business?</summary>
+    <p>
+      There is no single startup cost for every cleaning business. Your total
+      depends on equipment, supplies, registration, insurance, transportation,
+      marketing, and local requirements. Enter your own estimates to create a
+      budget suited to your plans.
+    </p>
+  </details>
+
+  <details>
+    <summary>Can I start a cleaning business from home?</summary>
+    <p>
+      Some cleaning businesses can be managed from home, but you may still
+      need suitable equipment storage, transportation, insurance, and any
+      registrations required in your area.
+    </p>
+  </details>
+
+  <details>
+    <summary>What equipment do I need first?</summary>
+    <p>
+      Common basics include a mop, bucket, cloths, brushes, gloves, and
+      appropriate cleaning products. Equipment needs vary depending on
+      whether you clean homes, offices, or specialized facilities.
+    </p>
+  </details>
+
+  <details>
+    <summary>Does this calculator include monthly expenses?</summary>
+    <p>
+      This calculator focuses on estimated initial and one-time startup
+      expenses. Regular monthly costs, such as rent, wages, fuel, and recurring
+      insurance payments, should be budgeted separately.
+    </p>
+  </details>
+
+  <details>
+    <summary>Can I use this calculator outside the United States?</summary>
+    <p>
+      Yes. Select USD, INR, GBP, EUR, CAD, or AUD and enter amounts in that
+      currency. The calculator does not perform currency conversion.
+    </p>
+  </details>
+
+  <details>
+    <summary>Are the results guaranteed to be accurate?</summary>
+    <p>
+      No. Results are estimates based entirely on the values you enter.
+      Confirm actual prices, insurance, taxes, licenses, and other requirements
+      with relevant providers and authorities.
+    </p>
+  </details>
+</section>
+
+<section class="card tool-links">
+  <h2>Explore More Free Cleaning Business Tools</h2>
+  <a href="index.html">CleanBizTools Home — Explore All Tools</a>
+  <a href="cleaning-pricing.html">Cleaning Pricing Calculator</a>
+  <a href="cleaning-profit.html">Cleaning Business Profit Calculator</a>
+  <a href="cleaning-hourly-rate.html">Cleaning Hourly Rate Calculator</a>
+  <a href="cleaning-checklist.html">Cleaning Checklist</a>
+  <a href="cleaning-quote.html">Cleaning Quote Calculator</a>
+  <a href="about.html">About CleanBizTools</a>
+  <a href="contact.html">Contact</a>
+</section>
+
+<section class="card">
+  <h2>Important Disclaimer</h2>
+  <p>
+    CleanBizTools provides general planning estimates for informational
+    purposes only. This calculator is not financial, legal, tax, or insurance
+    advice. Check local requirements and actual costs before making business
+    decisions.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> CleanBizTools. All rights reserved.</p>
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="disclaimer.html">Disclaimer</a>
+  </p>
+  <p>Free tools to help you plan your cleaning business.</p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const form = document.getElementById("startupForm");
+  const results = document.getElementById("results");
+  const currencySelect = document.getElementById("currency");
+
+  const fields = [
+    ["Cleaning Equipment", "equipment"],
+    ["Initial Cleaning Supplies", "supplies"],
+    ["Registration and Licenses", "registration"],
+    ["Initial Insurance Cost", "insurance"],
+    ["Website and Marketing", "marketing"],
+    ["Transportation Setup", "transport"],
+    ["Software and Administration", "software"],
+    ["Uniforms and Safety Gear", "uniforms"],
+    ["Other One-Time Expenses", "other"],
+    ["Emergency Reserve", "reserve"]
+  ];
+
+  function getNumber(id) {
+    const input = document.getElementById(id);
+    const value = Number(input.value);
+
+    if (input.value.trim() === "" || !Number.isFinite(value) || value < 0) {
+      throw new Error("Please enter a valid non-negative amount for " +
+        input.previousElementSibling.textContent + ".");
+    }
+
+    return value;
+  }
+
+  function money(value) {
+    const currency = currencySelect.value;
+
+    try {
+      return new Intl.NumberFormat("en", {
+        style: "currency",
+        currency: currency,
+        maximumFractionDigits: 2
+      }).format(value);
+    } catch (error) {
+      return currency + " " + value.toFixed(2);
+    }
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    try {
+      const breakdown = document.getElementById("breakdown");
+      let total = 0;
+      let rows = "";
+
+      fields.forEach(function (field) {
+        const amount = getNumber(field[1]);
+        total += amount;
+
+        rows +=
+          '<div class="result-row">' +
+            '<span>' + field[0] + '</span>' +
+            '<span>' + money(amount) + '</span>' +
+          '</div>';
+      });
+
+      document.getElementById("businessSummary").textContent =
+        "Business type: " +
+        document.getElementById("businessType").value;
+
+      document.getElementById("totalCost").textContent = money(total);
+      breakdown.innerHTML = rows;
+
+      document.getElementById("budgetTip").textContent =
+        total === 0
+          ? "Your estimated startup cost is zero based on the values entered. Check that you have included all expected expenses."
+          : "Planning tip: compare these estimates with real local prices and keep your budget updated as costs change.";
+
+      results.style.display = "block";
+      results.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    } catch (error) {
+      alert(error.message);
+    }
+  });
+
+  form.addEventListener("reset", function () {
+    results.style.display = "none";
+  });
+
+  document.getElementById("printBtn").addEventListener("click", function () {
+    window.print();
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+
+<style>
+@media print {
+  nav,
+  header,
+  footer,
+  #startupForm,
+  .buttons,
+  .tool-links {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+
+  .results {
+    display: block !important;
+  }
+}
+</style>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cleaning Hourly Rate Calculator | CleanBizTools</title>
+
+<meta name="description" content="Free Cleaning Hourly Rate Calculator. Estimate your cleaning business hourly rate based on expenses, labor, desired profit, and billable hours.">
+
+<meta name="robots" content="index,follow">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #0f766e, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 29px;
+}
+
+nav {
+  background: white;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  margin: 5px 8px;
+  color: #0f766e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 0 14px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px #0000000d;
+}
+
+h2 {
+  color: #0f766e;
+  margin-top: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  background: white;
+}
+
+button {
+  border: none;
+  padding: 13px 18px;
+  margin: 10px 5px 0 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calculate {
+  background: #0f766e;
+  color: white;
+}
+
+.reset {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 20px;
+  background: #ecfdf5;
+  border: 2px solid #10b981;
+  border-radius: 12px;
+}
+
+.total {
+  font-size: 30px;
+  color: #047857;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.small {
+  color: #64748b;
+  font-size: 14px;
+}
+
+a {
+  color: #0f766e;
+}
+
+footer {
+  background: #0f172a;
+  color: white;
+  padding: 25px 12px;
+  text-align: center;
+}
+
+footer a {
+  color: #99f6e4;
+  text-decoration: none;
+  margin: 4px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cleaning Hourly Rate Calculator</h1>
+  <p>Calculate your cleaning service hourly rate with CleanBizTools</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="cleaning-pricing.html">Pricing</a>
+  <a href="cleaning-profit.html">Profit</a>
+  <a href="cleaning-quote.html">Cleaning Quote</a>
+  <a href="cleaning-startup-cost.html">Startup Costs</a>
+</nav>
+
+<main class="container">
+
+<section class="card">
+  <h2>Calculate Your Cleaning Hourly Rate</h2>
+
+  <p>
+    Enter your estimated labor costs, business expenses, billable hours,
+    and desired profit margin to calculate an indicative hourly rate.
+  </p>
+
+  <div class="grid">
+
+    <div>
+      <label for="currency">Currency</label>
+      <select id="currency">
+        <option value="USD">$ USD</option>
+        <option value="INR">₹ INR</option>
+        <option value="GBP">£ GBP</option>
+        <option value="EUR">€ EUR</option>
+        <option value="CAD">C$ CAD</option>
+        <option value="AUD">A$ AUD</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="labor">Labor Cost per Hour</label>
+      <input id="labor" type="number" min="0" step="0.01" value="15">
+    </div>
+
+    <div>
+      <label for="supplies">Supplies Cost per Hour</label>
+      <input id="supplies" type="number" min="0" step="0.01" value="3">
+    </div>
+
+    <div>
+      <label for="overhead">Other Business Expenses per Hour</label>
+      <input id="overhead" type="number" min="0" step="0.01" value="5">
+    </div>
+
+    <div>
+      <label for="hours">Billable Hours per Week</label>
+      <input id="hours" type="number" min="0" step="0.5" value="25">
+    </div>
+
+    <div>
+      <label for="weeks">Working Weeks per Year</label>
+      <input id="weeks" type="number" min="0" max="52" step="1" value="48">
+    </div>
+
+    <div>
+      <label for="monthly">Additional Monthly Business Expenses</label>
+      <input id="monthly" type="number" min="0" step="0.01" value="200">
+    </div>
+
+    <div>
+      <label for="profit">Desired Profit Margin (%)</label>
+      <input id="profit" type="number" min="0" max="99" step="1" value="20">
+    </div>
+
+  </div>
+
+  <button class="calculate" id="calculateBtn" type="button">
+    Calculate Hourly Rate
+  </button>
+
+  <button class="reset" id="resetBtn" type="button">
+    Reset
+  </button>
+
+  <div class="result" aria-live="polite">
+    <h2>Your Estimated Rate</h2>
+
+    <p>Suggested Customer Hourly Rate</p>
+    <div class="total" id="rateOutput">$28.00</div>
+
+    <hr>
+
+    <p>Labor Cost per Hour: <strong id="laborOutput">$15.00</strong></p>
+    <p>Supplies Cost per Hour: <strong id="suppliesOutput">$3.00</strong></p>
+    <p>Other Expenses per Hour: <strong id="overheadOutput">$5.00</strong></p>
+    <p>Monthly Expenses Converted to Hourly Cost: <strong id="monthlyOutput">$0.17</strong></p>
+    <p>Total Estimated Cost per Hour: <strong id="costOutput">$23.17</strong></p>
+    <p>Estimated Annual Billable Hours: <strong id="annualOutput">1,200</strong></p>
+    <p>Estimated Annual Revenue at Suggested Rate: <strong id="revenueOutput">$33,600.00</strong></p>
+
+    <p class="small" id="message"></p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>How to Calculate a Cleaning Hourly Rate</h2>
+
+  <p>
+    A cleaning hourly rate calculator helps cleaning professionals estimate
+    how much to charge for each billable hour. A sustainable rate should
+    account for labor, cleaning supplies, transportation, insurance,
+    equipment, administration, and the profit the business aims to earn.
+  </p>
+
+  <h3>Hourly Rate Formula</h3>
+
+  <p>
+    <strong>Estimated cost per hour</strong> =
+    labor cost + supplies cost + other hourly expenses +
+    allocated monthly expenses.
+  </p>
+
+  <p>
+    <strong>Suggested hourly rate</strong> =
+    estimated cost per hour ÷ (1 − desired profit margin).
+  </p>
+
+  <p>
+    For example, if the total cost is 20 currency units per hour and
+    the desired profit margin is 20%, the suggested rate is
+    20 ÷ 0.80 = 25 currency units per hour.
+  </p>
+
+  <h3>What Expenses Should You Include?</h3>
+
+  <ul>
+    <li>Employee wages or your own labor cost.</li>
+    <li>Cleaning products and consumable supplies.</li>
+    <li>Travel, vehicle, and transportation expenses.</li>
+    <li>Insurance, licences, and business registration.</li>
+    <li>Equipment replacement and maintenance.</li>
+    <li>Scheduling, administration, and marketing expenses.</li>
+  </ul>
+
+  <h3>Hourly Rate vs. Profit</h3>
+
+  <p>
+    Revenue is the money received from customers. Profit is the amount
+    remaining after business costs. A higher hourly rate does not
+    automatically guarantee more profit: compare your prices with your
+    costs, service quality, local market, and customer requirements.
+  </p>
+
+  <h3>Related Cleaning Business Tools</h3>
+
+  <ul>
+    <li><a href="cleaning-pricing.html">Cleaning Pricing Calculator</a></li>
+    <li><a href="cleaning-profit.html">Cleaning Business Profit Calculator</a></li>
+    <li><a href="cleaning-quote.html">Cleaning Quote Calculator</a></li>
+    <li><a href="cleaning-startup-cost.html">Cleaning Startup Cost Calculator</a></li>
+    <li><a href="cleaning-checklist.html">Cleaning Checklist</a></li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>How much should I charge per hour for cleaning?</h3>
+  <p>
+    The appropriate rate depends on your location, labor costs,
+    service type, overhead, competition, and target profit margin.
+    Use your actual costs to estimate a suitable rate.
+  </p>
+
+  <h3>What is a billable hour?</h3>
+  <p>
+    A billable hour is time you can charge to a customer. Time spent
+    on administration, marketing, travel, or other unpaid work may
+    not count as billable time.
+  </p>
+
+  <h3>What is profit margin?</h3>
+  <p>
+    Profit margin is the percentage of revenue remaining as profit
+    after the costs included in your calculation.
+  </p>
+
+  <h3>Can I change the currency?</h3>
+  <p>
+    Yes. Choose USD, INR, GBP, EUR, CAD, or AUD. The selector changes
+    the displayed symbol only; it does not convert exchange rates.
+  </p>
+
+  <h3>Does this calculator guarantee my profit?</h3>
+  <p>
+    No. This is an estimate based on your inputs. Actual results depend
+    on customer demand, billable hours, expenses, taxes, and other factors.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>CleanBizTools — Simple Tools for Cleaning Businesses</p>
+
+  <p>
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="disclaimer.html">Disclaimer</a>
+  </p>
+
+  <p>© <span id="year"></span> CleanBizTools</p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const ids = [
+    "labor",
+    "supplies",
+    "overhead",
+    "hours",
+    "weeks",
+    "monthly",
+    "profit"
+  ];
+
+  const symbols = {
+    USD: "$",
+    INR: "₹",
+    GBP: "£",
+    EUR: "€",
+    CAD: "C$",
+    AUD: "A$"
+  };
+
+  function getValue(id) {
+    const value = Number(document.getElementById(id).value);
+    return Number.isFinite(value) ? Math.max(0, value) : 0;
+  }
+
+  function money(value) {
+    const symbol = symbols[document.getElementById("currency").value] || "$";
+
+    return symbol + value.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function calculate() {
+    const labor = getValue("labor");
+    const supplies = getValue("supplies");
+    const overhead = getValue("overhead");
+    const hours = getValue("hours");
+    const weeks = Math.min(52, getValue("weeks"));
+    const monthly = getValue("monthly");
+    const profit = Math.min(99, getValue("profit"));
+
+    const annualHours = hours * weeks;
+    const monthlyHourly = annualHours > 0
+      ? (monthly * 12) / annualHours
+      : 0;
+
+    const costPerHour = labor + supplies + overhead + monthlyHourly;
+    const suggestedRate = costPerHour / (1 - profit / 100);
+    const annualRevenue = suggestedRate * annualHours;
+
+    document.getElementById("laborOutput").textContent = money(labor);
+    document.getElementById("suppliesOutput").textContent = money(supplies);
+    document.getElementById("overheadOutput").textContent = money(overhead);
+    document.getElementById("monthlyOutput").textContent = money(monthlyHourly);
+    document.getElementById("costOutput").textContent = money(costPerHour);
+    document.getElementById("rateOutput").textContent = money(suggestedRate);
+    document.getElementById("annualOutput").textContent =
+      annualHours.toLocaleString("en-US");
+
+    document.getElementById("revenueOutput").textContent =
+      money(annualRevenue);
+
+    document.getElementById("message").textContent =
+      annualHours === 0
+        ? "Enter billable hours and working weeks to estimate annual revenue. The hourly cost excludes monthly expenses when annual billable hours are zero."
+        : "Estimate only. Taxes, unpaid time, changing demand, and other costs may affect actual results.";
+  }
+
+  function resetForm() {
+    const defaults = {
+      labor: 15,
+      supplies: 3,
+      overhead: 5,
+      hours: 25,
+      weeks: 48,
+      monthly: 200,
+      profit: 20
+    };
+
+    document.getElementById("currency").value = "USD";
+
+    ids.forEach(function (id) {
+      document.getElementById(id).value = defaults[id];
+    });
+
+    calculate();
+  }
+
+  document.getElementById("calculateBtn")
+    .addEventListener("click", calculate);
+
+  document.getElementById("resetBtn")
+    .addEventListener("click", resetForm);
+
+  document.getElementById("currency")
+    .addEventListener("change", calculate);
+
+  ids.forEach(function (id) {
+    document.getElementById(id)
+      .addEventListener("input", calculate);
+  });
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  calculate();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About CleanBizTools | Free Cleaning Business Tools</title>
+
+  <meta name="description" content="Learn about CleanBizTools, a resource offering free cleaning business calculators, pricing tools, quote generators, profit estimators and cleaning checklists.">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://kamalbera198-sudo.github.io/cleanbiztools/about.html">
+
+  <meta property="og:title" content="About CleanBizTools">
+  <meta property="og:description" content="Discover free online tools designed to help cleaning businesses plan prices, estimate costs, manage checklists and understand profitability.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kamalbera198-sudo.github.io/cleanbiztools/about.html">
+
+  <meta name="theme-color" content="#0f766e">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --accent: #14b8a6;
+      --background: #f0fdfa;
+      --text: #1f2937;
+      --muted: #64748b;
+      --white: #ffffff;
+      --border: #dbe7e5;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      background: #064e3b;
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 13px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f766e, #14b8a6);
+      color: white;
+      padding: 22px 16px 42px;
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero {
+      max-width: 850px;
+      margin: 42px auto 0;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.17);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 17px;
+      color: #ecfdf5;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: -18px auto 45px;
+      padding: 0 16px;
+      position: relative;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 28px rgba(15, 118, 110, 0.06);
+    }
+
+    h2 {
+      color: #134e4a;
+      font-size: 25px;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      color: #115e59;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      background: #f8fffe;
+    }
+
+    .icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .tool-link {
+      display: block;
+      padding: 15px 17px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #f8fffe;
+      font-weight: 700;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .tool-link:hover {
+      background: #ccfbf1;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .tool-link span {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .notice {
+      background: #ecfdf5;
+      border-left: 4px solid var(--primary);
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #134e4a, #0f766e);
+      color: white;
+      border-radius: 18px;
+      padding: 32px 22px;
+      margin-bottom: 22px;
+    }
+
+    .cta h2 {
+      color: white;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 20px;
+      color: #ecfdf5;
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #115e59;
+      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: 9px;
+    }
+
+    .button:hover {
+      background: #ccfbf1;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #102a2a;
+      color: #d1fae5;
+      padding: 30px 16px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 14px 0;
+    }
+
+    .footer-links a {
+      color: white;
+      font-size: 14px;
+    }
+
+    footer small {
+      color: #a7c7bd;
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .hero {
+        margin-top: 30px;
+      }
+
+      .intro-grid,
+      .feature-grid,
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 21px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Free online tools for cleaning business planning
+  </div>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="index.html">CleanBizTools</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="cleaning-pricing.html">Pricing</a>
+        <a href="cleaning-profit.html">Profit</a>
+        <a href="cleaning-quote.html">Quote</a>
+        <a href="cleaning-checklist.html">Checklists</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <span class="badge">About Our Website</span>
+
+      <h1>Helping Cleaning Businesses Plan Smarter</h1>
+
+      <p>
+        CleanBizTools provides practical online calculators and planning
+        resources to help cleaning business owners estimate costs, plan
+        prices, prepare quotes and organize everyday cleaning work.
+      </p>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="card">
+      <h2>Who We Are</h2>
+
+      <p>
+        CleanBizTools is an online resource focused on useful tools for
+        residential cleaning businesses, commercial cleaning services,
+        independent cleaners and people exploring the cleaning industry.
+      </p>
+
+      <p>
+        Running a cleaning business involves more than cleaning. Owners may
+        need to estimate labor costs, account for supplies and transportation,
+        prepare customer quotes, plan startup expenses and track profitability.
+        Our goal is to make these planning tasks easier to understand.
+      </p>
+
+      <p>
+        We aim to provide straightforward tools that can be accessed online
+        without complicated software or unnecessary steps.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Our Mission</h2>
+
+      <p>
+        Our mission is to make cleaning business planning more accessible by
+        providing easy-to-use online tools and helpful educational information.
+      </p>
+
+      <p>
+        Whether you are an independent cleaner, starting a small cleaning
+        service or managing a commercial cleaning team, we want to help you
+        approach everyday business decisions with greater clarity.
+      </p>
+
+      <div class="notice">
+        <strong>Our approach:</strong>
+        We focus on simplicity, practical calculations and useful resources
+        that people can explore at their own pace.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What You Can Find on CleanBizTools</h2>
+
+      <p>
+        Our tools are designed around common cleaning business planning tasks.
+        Available features may vary as the website develops.
+      </p>
+
+      <div class="feature-grid">
+
+        <article class="feature">
+          <div class="icon" aria-hidden="true">🧮</div>
+          <h3>Pricing Calculators</h3>
+          <p>
+            Estimate cleaning service prices by considering factors such as
+            time, labor, supplies and operating expenses.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="icon" aria-hidden="true">📊</div>
+          <h3>Profit Planning</h3>
+          <p>
+            Explore estimated revenue, expenses and potential profit to
+            understand the numbers behind a cleaning service.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="icon" aria-hidden="true">📝</div>
+          <h3>Quote Preparation</h3>
+          <p>
+            Organize job details and prepare cleaning service estimates
+            using a simple online quote tool.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="icon" aria-hidden="true">🧹</div>
+          <h3>Cleaning Checklists</h3>
+          <p>
+            Organize residential and commercial cleaning tasks with
+            checklists that help keep work structured.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="icon" aria-hidden="true">🚀</div>
+          <h3>Startup Cost Planning</h3>
+          <p>
+            List possible equipment, supply, transportation and other
+            expenses when planning a cleaning business.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="icon" aria-hidden="true">⏱️</div>
+          <h3>Hourly Rate Planning</h3>
+          <p>
+            Explore estimated hourly rates based on your costs, working
+            time and business goals.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Explore Our Free Cleaning Business Tools</h2>
+
+      <p>
+        Start with the tool that best matches your current needs.
+      </p>
+
+      <div class="link-grid">
+
+        <a class="tool-link" href="cleaning-pricing.html">
+          Cleaning Pricing Calculator
+          <span>Estimate prices for cleaning jobs.</span>
+        </a>
+
+        <a class="tool-link" href="cleaning-profit.html">
+          Cleaning Business Profit Calculator
+          <span>Calculate estimated income and expenses.</span>
+        </a>
+
+        <a class="tool-link" href="cleaning-quote.html">
+          Cleaning Quote Generator
+          <span>Organize job details and create an estimate.</span>
+        </a>
+
+        <a class="tool-link" href="cleaning-checklist.html">
+          Cleaning Checklists
+          <span>Keep cleaning tasks organized.</span>
+        </a>
+
+        <a class="tool-link" href="cleaning-startup-cost.html">
+          Cleaning Business Startup Cost Calculator
+          <span>Estimate the cost of getting started.</span>
+        </a>
+
+        <a class="tool-link" href="cleaning-hourly-rate.html">
+          Cleaning Hourly Rate Calculator
+          <span>Explore your estimated hourly rate.</span>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Who Can Use Our Website?</h2>
+
+      <p>CleanBizTools may be useful for:</p>
+
+      <ul style="padding-left:22px; margin-top:10px;">
+        <li>People planning to start a cleaning business.</li>
+        <li>Independent house cleaners and solo operators.</li>
+        <li>Residential cleaning service providers.</li>
+        <li>Commercial and office cleaning businesses.</li>
+        <li>Small cleaning teams planning prices and expenses.</li>
+        <li>People researching cleaning business costs and operations.</li>
+      </ul>
+
+      <p style="margin-top:16px;">
+        The tools are intended for general planning and can be adapted to
+        different business situations. Actual costs and prices vary by location,
+        service type, labor costs and customer requirements.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Our Commitment to Visitors</h2>
+
+      <p>
+        We aim to make the website simple to navigate, provide clear
+        explanations and improve our tools over time. We also aim to make
+        important website information easy to find.
+      </p>
+
+      <p>
+        If you find a problem with a tool or have a suggestion for a future
+        feature, you can visit our contact page.
+      </p>
+
+      <p>
+        Please remember that calculator results depend on the information
+        entered by the visitor. Always review your own costs and circumstances
+        before making business or financial decisions.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Important Disclaimer</h2>
+
+      <p>
+        CleanBizTools provides general informational resources and estimates.
+        Our calculators are not a substitute for professional accounting,
+        tax, legal or financial advice. Results are estimates and may not
+        reflect your actual business expenses, income or obligations.
+      </p>
+
+      <p>
+        Visitors are responsible for checking calculations and making their
+        own business decisions.
+      </p>
+
+      <p>
+        Read our <a href="disclaimer.html">Disclaimer</a> for additional
+        information.
+      </p>
+    </section>
+
+    <section class="cta">
+      <h2>Ready to Explore CleanBizTools?</h2>
+
+      <p>
+        Browse our online calculators and planning resources to organize
+        your next cleaning business task.
+      </p>
+
+      <a class="button" href="index.html">Explore Our Tools</a>
+    </section>
+
+    <section class="card">
+      <h2>Contact CleanBizTools</h2>
+
+      <p>
+        Have a question, suggestion or feedback about our website?
+        Please visit our contact page.
+      </p>
+
+      <p>
+        <a href="contact.html"><strong>Go to the Contact Page →</strong></a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <a class="logo" href="index.html">CleanBizTools</a>
+
+    <p style="margin-top:8px;">
+      Practical tools for cleaning business planning.
+    </p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+
+    <small>
+      © <span id="currentYear">2026</span> CleanBizTools. All rights reserved.
+    </small>
+  </footer>
+
+  <script>
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

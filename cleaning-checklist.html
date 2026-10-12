@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Cleaning Checklist | Residential & Commercial | CleanBizTools</title>
+
+<meta name="description" content="Use this free cleaning checklist for home cleaning, office cleaning, and professional cleaning businesses. Track tasks, monitor progress, and print your checklist.">
+
+<meta name="keywords" content="cleaning checklist, house cleaning checklist, professional cleaning checklist, office cleaning checklist, residential cleaning checklist, commercial cleaning checklist, cleaning business tools, printable cleaning checklist">
+
+<meta name="robots" content="index,follow">
+
+<meta name="theme-color" content="#0f766e">
+
+<!-- Replace this canonical URL with your actual GitHub Pages URL -->
+<link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/cleaning-checklist.html">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.65;
+}
+
+header {
+  background: linear-gradient(135deg, #0f766e, #2563eb);
+  color: white;
+  padding: 38px 16px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: clamp(27px, 5vw, 40px);
+  margin: 0 0 10px;
+}
+
+header p {
+  margin: 0;
+}
+
+nav {
+  background: white;
+  padding: 13px 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+nav a {
+  display: inline-block;
+  margin: 5px 8px;
+  color: #0f766e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover,
+footer a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 950px;
+  padding: 0 15px;
+  margin: 25px auto;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: 0 5px 20px #0f172a0b;
+}
+
+h2 {
+  color: #0f766e;
+  margin-top: 0;
+}
+
+h3 {
+  color: #334155;
+}
+
+.intro {
+  font-size: 17px;
+}
+
+.selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.selector button {
+  flex: 1;
+  min-width: 130px;
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.selector button.active {
+  background: #0f766e;
+  color: white;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 17px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task-section {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 17px 0;
+}
+
+.task-section h3 {
+  margin-top: 0;
+}
+
+.task {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 11px 4px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+}
+
+.task:last-child {
+  border-bottom: none;
+}
+
+.task input {
+  width: 19px;
+  height: 19px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: #0f766e;
+}
+
+.task input:checked + span {
+  text-decoration: line-through;
+  color: #64748b;
+}
+
+.progress-wrap {
+  margin: 20px 0;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 13px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0f766e, #22c55e);
+  transition: width 0.25s;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.primary {
+  background: #0f766e;
+  color: white;
+}
+
+.secondary {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.primary:hover {
+  background: #115e59;
+}
+
+.note {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.tip {
+  background: #ecfeff;
+  border-left: 4px solid #0f766e;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.tool-links a {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #0f766e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+details {
+  padding: 14px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+footer {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 25px 15px;
+  text-align: center;
+  margin-top: 35px;
+}
+
+footer a {
+  color: #99f6e4;
+  margin: 0 6px;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 17px;
+  }
+}
+
+@media print {
+  nav,
+  header,
+  footer,
+  .selector,
+  .buttons,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    padding: 12px;
+  }
+
+  .task-section {
+    break-inside: avoid;
+  }
+
+  .task input {
+    appearance: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Free Cleaning Checklist</h1>
+  <p>Organize cleaning tasks. Track progress. Work smarter.</p>
+</header>
+
+<nav aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="cleaning-pricing.html">Pricing</a>
+  <a href="cleaning-profit.html">Profit Calculator</a>
+  <a href="cleaning-startup-cost.html">Startup Cost</a>
+  <a href="cleaning-hourly-rate.html">Hourly Rate</a>
+  <a href="about.html">About</a>
+</nav>
+
+<main class="container">
+
+<section class="card">
+  <h2>Your Cleaning Task Checklist</h2>
+
+  <p class="intro">
+    Use this free cleaning checklist to organize home cleaning, office cleaning,
+    or professional cleaning jobs. Select a checklist, tick tasks as you finish
+    them, and monitor your progress.
+  </p>
+
+  <p>
+    A consistent checklist can help cleaning businesses organize their work,
+    reduce forgotten tasks, and maintain a repeatable process. Adjust the
+    checklist to match the property, client instructions, and services agreed upon.
+  </p>
+
+  <div class="tip">
+    <strong>How to use:</strong> Choose Residential or Commercial, tick completed
+    tasks, and use Print Checklist when you want a paper copy.
+  </div>
+</section>
+
+<section class="card" id="checklistApp">
+
+  <h2>Choose Your Checklist</h2>
+
+  <div class="selector no-print">
+    <button type="button" class="active" data-type="residential">
+      Residential Cleaning
+    </button>
+
+    <button type="button" data-type="commercial">
+      Commercial Cleaning
+    </button>
+  </div>
+
+  <div class="progress-wrap" aria-live="polite">
+    <div class="progress-info">
+      <span>Cleaning Progress</span>
+      <span id="progressText">0 of 0 tasks completed</span>
+    </div>
+
+    <div
+      class="progress-track"
+      role="progressbar"
+      aria-label="Cleaning task completion"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+      id="progressTrack"
+    >
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <div id="taskContainer"></div>
+
+  <div class="buttons no-print">
+    <button type="button" class="primary" id="printBtn">
+      Print Checklist
+    </button>
+
+    <button type="button" class="secondary" id="resetBtn">
+      Reset Checklist
+    </button>
+  </div>
+
+  <p class="note">
+    Progress is kept in this page while it remains open. Reloading the page
+    resets the checklist.
+  </p>
+
+</section>
+
+<section class="card">
+  <h2>Residential Cleaning Checklist</h2>
+
+  <p>
+    A residential cleaning checklist helps organize common household tasks.
+    The right tasks depend on the property size, requested service, and client
+    preferences.
+  </p>
+
+  <ul>
+    <li>Dust accessible surfaces and furniture.</li>
+    <li>Clean kitchen counters and exterior appliance surfaces.</li>
+    <li>Clean sinks, toilets, mirrors, and bathroom surfaces.</li>
+    <li>Vacuum carpets and rugs where appropriate.</li>
+    <li>Sweep and mop suitable hard floors.</li>
+    <li>Empty agreed-upon waste bins.</li>
+    <li>Check rooms against the client's instructions.</li>
+  </ul>
+
+  <p class="note">
+    Follow product labels, avoid mixing cleaning chemicals, and use suitable
+    protective equipment when required.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Commercial Cleaning Checklist</h2>
+
+  <p>
+    Commercial cleaning tasks may include offices, reception areas, meeting
+    rooms, staff kitchens, and restrooms. Follow the building's access,
+    security, hygiene, and safety procedures.
+  </p>
+
+  <ul>
+    <li>Clean and organize agreed reception and office areas.</li>
+    <li>Wipe suitable desks and shared touchpoints.</li>
+    <li>Clean meeting room tables and accessible surfaces.</li>
+    <li>Clean restrooms according to the service agreement.</li>
+    <li>Clean kitchen and break-room surfaces.</li>
+    <li>Empty designated waste and recycling bins.</li>
+    <li>Vacuum or mop floors according to surface requirements.</li>
+    <li>Check that the agreed tasks are complete before leaving.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Why Use a Cleaning Checklist?</h2>
+
+  <h3>1. Organize daily work</h3>
+  <p>
+    A checklist divides a cleaning job into manageable tasks and helps workers
+    follow a consistent sequence.
+  </p>
+
+  <h3>2. Track completed tasks</h3>
+  <p>
+    Marking completed items makes it easier to review the job before leaving.
+  </p>
+
+  <h3>3. Improve communication</h3>
+  <p>
+    A shared checklist can help cleaning teams understand the scope of work
+    and the client's agreed requirements.
+  </p>
+
+  <h3>4. Support business planning</h3>
+  <p>
+    Combine task checklists with pricing and profit estimates to plan services
+    and understand your business costs.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>What is a cleaning checklist?</summary>
+    <p>
+      A cleaning checklist is a list of tasks used to organize a cleaning job
+      and track which tasks have been completed.
+    </p>
+  </details>
+
+  <details>
+    <summary>Can I print this cleaning checklist?</summary>
+    <p>
+      Yes. Choose a checklist and select Print Checklist. Your browser's print
+      window should open, where you can select a printer or a PDF option if
+      your device supports it.
+    </p>
+  </details>
+
+  <details>
+    <summary>Can I use this checklist for a cleaning business?</summary>
+    <p>
+      Yes. It can help organize residential and commercial cleaning tasks.
+      Customize the tasks to match your services, customer instructions,
+      and workplace safety requirements.
+    </p>
+  </details>
+
+  <details>
+    <summary>Does this checklist save my progress automatically?</summary>
+    <p>
+      No. In this version, your checked tasks remain available while the page
+      stays open. Reloading the page resets the checklist.
+    </p>
+  </details>
+
+  <details>
+    <summary>Is this cleaning checklist free?</summary>
+    <p>
+      Yes. This page is designed as a free browser-based checklist. No account
+      is required to use the checklist features included here.
+    </p>
+  </details>
+</section>
+
+<section class="card tool-links">
+  <h2>Explore More Free Cleaning Business Tools</h2>
+
+  <a href="index.html">CleanBizTools Homepage</a>
+  <a href="cleaning-pricing.html">Cleaning Pricing Calculator</a>
+  <a href="cleaning-profit.html">Cleaning Business Profit Calculator</a>
+  <a href="cleaning-quote.html">Cleaning Quote Calculator</a>
+  <a href="cleaning-startup-cost.html">Cleaning Business Startup Cost Calculator</a>
+  <a href="cleaning-hourly-rate.html">Cleaning Hourly Rate Calculator</a>
+  <a href="about.html">About CleanBizTools</a>
+  <a href="contact.html">Contact</a>
+</section>
+
+<section class="card">
+  <h2>Disclaimer</h2>
+
+  <p>
+    This checklist is provided for general organizational purposes. It does
+    not replace property-specific instructions, professional training,
+    workplace safety procedures, or cleaning product labels.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> CleanBizTools. All rights reserved.</p>
+
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms</a> |
+    <a href="disclaimer.html">Disclaimer</a>
+  </p>
+
+  <p>Free tools to help you organize your cleaning business.</p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const taskData = {
+    residential: [
+      {
+        title: "Living Room and Common Areas",
+        tasks: [
+          "Remove visible dust from accessible surfaces",
+          "Dust furniture and shelves",
+          "Wipe suitable tables and surfaces",
+          "Clean mirrors and accessible glass",
+          "Vacuum carpets and rugs",
+          "Sweep or mop hard floors",
+          "Empty agreed-upon waste bins"
+        ]
+      },
+      {
+        title: "Kitchen",
+        tasks: [
+          "Clean and wipe counters",
+          "Clean the sink and faucet",
+          "Wipe appliance exteriors",
+          "Clean the stovetop if included",
+          "Wipe cabinet exteriors where agreed",
+          "Remove visible crumbs from suitable surfaces",
+          "Sweep or mop the floor"
+        ]
+      },
+      {
+        title: "Bathroom",
+        tasks: [
+          "Clean the sink and faucet",
+          "Clean the mirror",
+          "Clean the toilet",
+          "Clean shower or bathtub surfaces",
+          "Wipe accessible counters",
+          "Empty the waste bin",
+          "Mop the floor"
+        ]
+      },
+      {
+        title: "Bedrooms",
+        tasks: [
+          "Make beds if requested",
+          "Dust accessible furniture",
+          "Wipe suitable surfaces",
+          "Empty agreed-upon waste bins",
+          "Vacuum carpets or clean hard floors",
+          "Check that the room is tidy"
+        ]
+      },
+      {
+        title: "Final Inspection",
+        tasks: [
+          "Check each room against the service agreement",
+          "Return moved items to their proper places",
+          "Check that cleaning supplies are collected",
+          "Confirm agreed tasks are complete"
+        ]
+      }
+    ],
+
+    commercial: [
+      {
+        title: "Reception and Office Areas",
+        tasks: [
+          "Dust accessible furniture and surfaces",
+          "Wipe agreed shared touchpoints",
+          "Clean reception counters",
+          "Wipe suitable desks where authorized",
+          "Empty designated waste bins",
+          "Vacuum or mop floors as appropriate"
+        ]
+      },
+      {
+        title: "Meeting Rooms",
+        tasks: [
+          "Wipe meeting tables",
+          "Clean accessible shared surfaces",
+          "Straighten chairs",
+          "Empty designated waste bins",
+          "Clean floors as required"
+        ]
+      },
+      {
+        title: "Kitchen and Break Room",
+        tasks: [
+          "Clean counters and tables",
+          "Clean the sink and faucet",
+          "Wipe appliance exteriors",
+          "Empty designated waste bins",
+          "Clean the floor"
+        ]
+      },
+      {
+        title: "Restrooms",
+        tasks: [
+          "Clean toilets and urinals as applicable",
+          "Clean sinks and faucets",
+          "Clean mirrors",
+          "Wipe suitable touchpoints",
+          "Check soap and paper supplies if included",
+          "Empty designated waste bins",
+          "Clean floors using appropriate procedures"
+        ]
+      },
+      {
+        title: "Final Inspection",
+        tasks: [
+          "Check all agreed areas",
+          "Collect equipment and cleaning supplies",
+          "Follow site security and access procedures",
+          "Confirm the agreed tasks are complete"
+        ]
+      }
+    ]
+  };
+
+  const container = document.getElementById("taskContainer");
+  const progressText = document.getElementById("progressText");
+  const progressBar = document.getElementById("progressBar");
+  const progressTrack = document.getElementById("progressTrack");
+  const selectorButtons = document.querySelectorAll("[data-type]");
+
+  let currentType = "residential";
+
+  function updateProgress() {
+    const boxes = container.querySelectorAll('input[type="checkbox"]');
+    const checked = container.querySelectorAll(
+      'input[type="checkbox"]:checked'
+    ).length;
+
+    const percent = boxes.length
+      ? Math.round((checked / boxes.length) * 100)
+      : 0;
+
+    progressText.textContent =
+      checked + " of " + boxes.length + " tasks completed (" +
+      percent + "%)";
+
+    progressBar.style.width = percent + "%";
+    progressTrack.setAttribute("aria-valuenow", String(percent));
+  }
+
+  function renderChecklist(type) {
+    currentType = type;
+    container.innerHTML = "";
+
+    selectorButtons.forEach(function (button) {
+      const selected = button.dataset.type === type;
+
+      button.classList.toggle("active", selected);
+      button.setAttribute("aria-pressed", String(selected));
+    });
+
+    taskData[type].forEach(function (section, sectionIndex) {
+      const sectionElement = document.createElement("section");
+      sectionElement.className = "task-section";
+
+      const heading = document.createElement("h3");
+      heading.textContent = section.title;
+      sectionElement.appendChild(heading);
+
+      section.tasks.forEach(function (task, taskIndex) {
+        const label = document.createElement("label");
+        label.className = "task";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = type + "-" + sectionIndex + "-" + taskIndex;
+        checkbox.addEventListener("change", updateProgress);
+
+        const text = document.createElement("span");
+        text.textContent = task;
+
+        label.appendChild(checkbox);
+        label.appendChild(text);
+
+        sectionElement.appendChild(label);
+      });
+
+      container.appendChild(sectionElement);
+    });
+
+    updateProgress();
+  }
+
+  selectorButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      renderChecklist(button.dataset.type);
+    });
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function () {
+    const confirmed = window.confirm(
+      "Reset all tasks in this checklist?"
+    );
+
+    if (confirmed) {
+      renderChecklist(currentType);
+    }
+  });
+
+  document.getElementById("printBtn").addEventListener("click", function () {
+    window.print();
+  });
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  renderChecklist("residential");
+})();
+</script>
+
+</body>
+</html>
