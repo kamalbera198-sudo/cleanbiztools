@@ -4,10 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Free Cleaning Pricing Calculator | CleanBizTools</title>
-<meta name="description" content="Use this free cleaning pricing calculator to estimate house cleaning prices based on home size, service type, labor, expenses, and profit margin.">
+<title>Cleaning Price Calculator | CleanBizTools</title>
+
+<meta name="description" content="Use our free cleaning price calculator to estimate house cleaning costs for standard cleaning, deep cleaning, move-out cleaning and office cleaning.">
+
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#075985">
+
+<link rel="canonical" href="https://kamalbera198-sudo.github.io/cleanbiztools/cleaning-pricing.html">
 
 <style>
 * {
@@ -34,6 +38,10 @@ header h1 {
   font-size: clamp(27px, 5vw, 38px);
 }
 
+header p {
+  margin: 0;
+}
+
 .container {
   max-width: 900px;
   margin: 25px auto;
@@ -45,12 +53,16 @@ header h1 {
   padding: 22px;
   margin-bottom: 20px;
   border-radius: 16px;
-  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.07);
+  box-shadow: 0 5px 20px rgba(15, 23, 42, .07);
 }
 
 h2 {
   color: #075985;
   margin-top: 0;
+}
+
+h3 {
+  color: #0f766e;
 }
 
 label {
@@ -59,13 +71,20 @@ label {
   font-weight: bold;
 }
 
-input, select {
+input,
+select {
   width: 100%;
   padding: 12px;
   border: 1px solid #cbd5e1;
   border-radius: 9px;
   font-size: 16px;
   background: white;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #38bdf8;
+  border-color: #0284c7;
 }
 
 .grid {
@@ -87,6 +106,10 @@ button {
 .primary {
   background: #0284c7;
   color: white;
+}
+
+.primary:hover {
+  background: #0369a1;
 }
 
 .secondary {
@@ -112,6 +135,11 @@ button {
   margin: 10px 0;
 }
 
+.result-item span {
+  margin-left: 6px;
+  font-weight: bold;
+}
+
 .notice {
   padding: 12px;
   background: #fff7ed;
@@ -135,10 +163,29 @@ button {
   font-weight: bold;
 }
 
+.links a:hover {
+  background: #bae6fd;
+}
+
+nav a {
+  color: #075985;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 footer {
   text-align: center;
   padding: 24px 12px;
   color: #475569;
+}
+
+footer a {
+  color: #075985;
 }
 
 @media (max-width: 600px) {
@@ -149,10 +196,17 @@ footer {
   .card {
     padding: 17px;
   }
+
+  .result-value {
+    font-size: 26px;
+  }
 }
 
 @media print {
-  header, button, footer {
+  header,
+  button,
+  footer,
+  nav {
     display: none;
   }
 
@@ -170,201 +224,317 @@ footer {
 <body>
 
 <header>
-  <h1>Cleaning Pricing Calculator</h1>
-  <p>Estimate cleaning prices and plan your business profit.</p>
+  <h1>Cleaning Price Calculator</h1>
+  <p>Estimate cleaning prices and plan your cleaning business profit.</p>
 </header>
 
 <div class="container">
 
-  <nav class="card">
-    <a href="index.html">Home</a> |
-    <a href="cleaning-profit.html">Profit Calculator</a> |
-    <a href="cleaning-quote.html">Quote Generator</a> |
+<nav class="card" aria-label="Main navigation">
+  <a href="index.html">Home</a> |
+  <a href="cleaning-profit.html">Profit Calculator</a> |
+  <a href="cleaning-quote.html">Quote Generator</a> |
+  <a href="cleaning-checklist.html">Cleaning Checklist</a>
+</nav>
+
+<main>
+
+<section class="card">
+  <h2>Calculate Your Cleaning Price</h2>
+
+  <p>
+    Use this free cleaning price calculator to estimate a cleaning job's
+    price based on property size, cleaning type, labor costs, supplies
+    and your target profit margin.
+  </p>
+
+  <div class="grid">
+
+    <div>
+      <label for="currency">Currency</label>
+      <select id="currency">
+        <option value="USD">US Dollar (USD)</option>
+        <option value="CAD">Canadian Dollar (CAD)</option>
+        <option value="GBP">British Pound (GBP)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="AUD">Australian Dollar (AUD)</option>
+        <option value="INR">Indian Rupee (INR)</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="homeSize">Home Size (square feet)</label>
+      <input id="homeSize" type="number" min="0" step="1" value="1500">
+    </div>
+
+    <div>
+      <label for="baseRate">Base Rate per 1,000 sq. ft.</label>
+      <input id="baseRate" type="number" min="0" step="0.01" value="80">
+    </div>
+
+    <div>
+      <label for="service">Cleaning Type</label>
+      <select id="service">
+        <option value="1">Standard Cleaning</option>
+        <option value="1.5">Deep Cleaning</option>
+        <option value="1.3">Move-In / Move-Out Cleaning</option>
+        <option value="1.2">Office Cleaning</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="labor">Estimated Labor Cost</label>
+      <input id="labor" type="number" min="0" step="0.01" value="30">
+    </div>
+
+    <div>
+      <label for="supplies">Supplies and Other Costs</label>
+      <input id="supplies" type="number" min="0" step="0.01" value="10">
+    </div>
+
+    <div>
+      <label for="margin">Target Profit Margin (%)</label>
+      <input id="margin" type="number" min="0" max="99" step="1" value="30">
+    </div>
+
+  </div>
+
+  <button class="primary" id="calculateBtn" type="button">
+    Calculate Price
+  </button>
+
+  <button class="secondary" id="resetBtn" type="button">
+    Reset
+  </button>
+
+  <div class="results" aria-live="polite">
+    <div><strong>Suggested Cleaning Price</strong></div>
+    <div class="result-value" id="price">$120.00</div>
+
+    <div class="result-item">
+      <strong>Estimated Base Price:</strong>
+      <span id="basePrice">$120.00</span>
+    </div>
+
+    <div class="result-item">
+      <strong>Estimated Costs:</strong>
+      <span id="totalCosts">$40.00</span>
+    </div>
+
+    <div class="result-item">
+      <strong>Estimated Profit:</strong>
+      <span id="profit">$80.00</span>
+    </div>
+  </div>
+
+  <p id="error" class="notice" role="alert" hidden></p>
+
+  <p class="notice">
+    This calculator provides an estimate, not a guaranteed market price.
+    Check local competitor rates and include all relevant business costs
+    before deciding what to charge.
+  </p>
+</section>
+
+<section class="card">
+  <h2>House Cleaning Cost Calculator</h2>
+
+  <p>
+    A house cleaning cost calculator helps homeowners and cleaning
+    businesses estimate the price of residential cleaning. The estimate
+    can depend on property size, cleaning requirements, labor costs,
+    cleaning supplies and local market rates.
+  </p>
+
+  <p>
+    Select Standard Cleaning in the calculator above and enter the
+    estimated property size, base rate and job expenses to calculate
+    a suggested house cleaning price.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Deep Cleaning Cost Calculator</h2>
+
+  <p>
+    A deep cleaning cost calculator can help estimate the cost of
+    detailed cleaning tasks. Deep cleaning may require additional
+    time and effort compared with regular maintenance cleaning.
+  </p>
+
+  <p>
+    Choose Deep Cleaning and adjust the labor cost, supplies and base
+    rate to match the job. The final price should reflect the property's
+    condition and the work requested by the customer.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Move-Out Cleaning Cost Calculator</h2>
+
+  <p>
+    Use this cleaning price calculator to estimate move-out or
+    move-in cleaning costs. The price may depend on property size,
+    condition, labor time and the cleaning tasks required before
+    a tenant moves in or out.
+  </p>
+
+  <p>
+    Select Move-In / Move-Out Cleaning and enter your estimated costs.
+    Check the property's requirements before providing a final quote.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Office Cleaning Cost Calculator</h2>
+
+  <p>
+    Cleaning businesses can use this calculator to estimate office
+    cleaning prices. Commercial cleaning costs may depend on office
+    size, the number of rooms, cleaning frequency, labor time and
+    the services requested.
+  </p>
+
+  <p>
+    Select Office Cleaning and adjust the base rate and expenses.
+    For recurring contracts, calculate the expected cost for each visit
+    and consider the full scope of work before setting a price.
+  </p>
+</section>
+
+<section class="card">
+  <h2>How Does a Cleaning Pricing Calculator Work?</h2>
+
+  <p>
+    A cleaning pricing calculator helps cleaning business owners
+    estimate what to charge for residential or commercial cleaning jobs.
+    The price can depend on property size, service type, labor, supplies,
+    travel and the profit margin you want to achieve.
+  </p>
+
+  <h3>Step 1: Calculate the Base Price</h3>
+
+  <p>
+    <strong>
+      Base Price = Property Size ÷ 1,000 × Base Rate × Service Factor
+    </strong>
+  </p>
+
+  <h3>Step 2: Calculate Estimated Costs</h3>
+
+  <p>
+    <strong>
+      Estimated Costs = Labor Cost + Supplies and Other Costs
+    </strong>
+  </p>
+
+  <h3>Step 3: Estimate the Suggested Price</h3>
+
+  <p>
+    <strong>
+      Cost-Based Price = Estimated Costs ÷ (1 − Profit Margin)
+    </strong>
+  </p>
+
+  <p>
+    This calculator compares the base estimate with the price needed
+    to cover the entered costs and target profit margin, then displays
+    the higher amount as the suggested price.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Cleaning Pricing Tips for Small Businesses</h2>
+
+  <ul>
+    <li>Estimate how much time each cleaning job will take.</li>
+    <li>Include labor, supplies, travel and other relevant expenses.</li>
+    <li>Deep cleaning may require more time than standard cleaning.</li>
+    <li>Review local competitor rates before setting your final price.</li>
+    <li>Consider the property's condition and the customer's requirements.</li>
+    <li>Recalculate prices when your business expenses change.</li>
+    <li>Review your actual costs and profit after completing each job.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>How much should I charge for house cleaning?</h3>
+  <p>
+    Your price depends on property size, cleaning type, labor,
+    expenses, local demand and your business goals. Use this calculator
+    as a starting estimate rather than a fixed market price.
+  </p>
+
+  <h3>How do I calculate a cleaning price?</h3>
+  <p>
+    Estimate the base price using the property size, base rate and
+    cleaning type. Add labor and supply costs, then check whether
+    the suggested price supports your target profit margin.
+  </p>
+
+  <h3>Should deep cleaning cost more than standard cleaning?</h3>
+  <p>
+    Deep cleaning often involves more detailed work and may take
+    longer than standard cleaning. Adjust the service type and costs
+    to reflect the actual work required.
+  </p>
+
+  <h3>How do I estimate move-out cleaning costs?</h3>
+  <p>
+    Consider the property's size and condition, the time required,
+    supplies and the cleaning tasks requested. The final price may
+    vary by location and job requirements.
+  </p>
+
+  <h3>Can I use this calculator for office cleaning?</h3>
+  <p>
+    Yes. Select Office Cleaning and adjust the base rate and expenses
+    to suit the job. Consider the office size, cleaning frequency
+    and requested services.
+  </p>
+
+  <h3>What is a target profit margin?</h3>
+  <p>
+    A target profit margin is the percentage of the final selling
+    price you aim to retain as profit after accounting for the costs
+    included in your calculation.
+  </p>
+
+  <h3>Can I use this calculator outside the United States?</h3>
+  <p>
+    Yes. You can select USD, CAD, GBP, EUR, AUD or INR. Remember that
+    changing the currency symbol does not automatically convert
+    exchange rates. Enter prices and costs appropriate for your
+    chosen currency and local market.
+  </p>
+
+</section>
+
+<section class="card">
+  <h2>Explore More Free Cleaning Business Tools</h2>
+
+  <p>
+    Use these tools to plan cleaning jobs, estimate expenses
+    and organize your cleaning business.
+  </p>
+
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="cleaning-profit.html">Profit Calculator</a>
+    <a href="cleaning-quote.html">Quote Generator</a>
     <a href="cleaning-checklist.html">Cleaning Checklist</a>
-  </nav>
+    <a href="cleaning-startup-cost.html">Startup Cost Calculator</a>
+    <a href="cleaning-hourly-rate.html">Hourly Rate Calculator</a>
+  </div>
+</section>
 
-  <main>
-    <section class="card">
-      <h2>Calculate Your Cleaning Price</h2>
-
-      <p>
-        Enter your estimated job details to calculate a suggested cleaning
-        price. Adjust the values to match your local market and business costs.
-      </p>
-
-      <div class="grid">
-        <div>
-          <label for="currency">Currency</label>
-          <select id="currency">
-            <option value="USD">US Dollar (USD)</option>
-            <option value="CAD">Canadian Dollar (CAD)</option>
-            <option value="GBP">British Pound (GBP)</option>
-            <option value="EUR">Euro (EUR)</option>
-            <option value="AUD">Australian Dollar (AUD)</option>
-            <option value="INR">Indian Rupee (INR)</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="homeSize">Home Size (square feet)</label>
-          <input id="homeSize" type="number" min="0" value="1500">
-        </div>
-
-        <div>
-          <label for="baseRate">Base Rate per 1,000 sq. ft.</label>
-          <input id="baseRate" type="number" min="0" step="0.01" value="80">
-        </div>
-
-        <div>
-          <label for="service">Cleaning Type</label>
-          <select id="service">
-            <option value="1">Standard Cleaning</option>
-            <option value="1.5">Deep Cleaning</option>
-            <option value="1.3">Move-In / Move-Out</option>
-            <option value="1.2">Office Cleaning</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="labor">Estimated Labor Cost</label>
-          <input id="labor" type="number" min="0" step="0.01" value="30">
-        </div>
-
-        <div>
-          <label for="supplies">Supplies and Other Costs</label>
-          <input id="supplies" type="number" min="0" step="0.01" value="10">
-        </div>
-
-        <div>
-          <label for="margin">Target Profit Margin (%)</label>
-          <input id="margin" type="number" min="0" max="99" step="1" value="30">
-        </div>
-      </div>
-
-      <button class="primary" id="calculateBtn" type="button">
-        Calculate Price
-      </button>
-
-      <button class="secondary" id="resetBtn" type="button">
-        Reset
-      </button>
-
-      <div class="results" aria-live="polite">
-        <div>Suggested Cleaning Price</div>
-        <div class="result-value" id="price">$120.00</div>
-
-        <div class="result-item">
-          <strong>Estimated Base Price:</strong>
-          <span id="basePrice">$120.00</span>
-        </div>
-
-        <div class="result-item">
-          <strong>Estimated Costs:</strong>
-          <span id="totalCosts">$40.00</span>
-        </div>
-
-        <div class="result-item">
-          <strong>Estimated Profit:</strong>
-          <span id="profit">$80.00</span>
-        </div>
-      </div>
-
-      <p id="error" class="notice" role="alert" hidden></p>
-
-      <p class="notice">
-        This calculator provides an estimate, not a guaranteed market price.
-        Check local competitor rates and include all relevant business costs.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>How Does a Cleaning Pricing Calculator Work?</h2>
-
-      <p>
-        A cleaning pricing calculator helps cleaning business owners estimate
-        what to charge for residential or commercial cleaning jobs. The price
-        can depend on home size, cleaning type, labor, supplies, travel, and
-        the profit margin you want to achieve.
-      </p>
-
-      <h3>Suggested price formula</h3>
-
-      <p>
-        <strong>Base Price = Home Size ÷ 1,000 × Base Rate × Service Factor</strong>
-      </p>
-
-      <p>
-        <strong>
-          Suggested Price = Total Estimated Costs ÷ (1 − Profit Margin)
-        </strong>
-      </p>
-
-      <p>
-        The calculator uses the service factor to adjust the base estimate
-        for different cleaning types. Actual costs and prices vary by location.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Cleaning Pricing Tips</h2>
-
-      <ul>
-        <li>Estimate the time required for each cleaning job.</li>
-        <li>Include labor, supplies, travel, and other relevant costs.</li>
-        <li>Deep cleaning may require more time than standard cleaning.</li>
-        <li>Review local prices before setting your final rate.</li>
-        <li>Recalculate prices when your business expenses change.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>How much should I charge for house cleaning?</h3>
-      <p>
-        Your price depends on home size, service type, labor, expenses,
-        local demand, and your business goals. Use the calculator as a starting
-        estimate rather than a fixed market rate.
-      </p>
-
-      <h3>Should deep cleaning cost more?</h3>
-      <p>
-        Deep cleaning often involves more detailed work and time, so businesses
-        may charge more than they charge for standard cleaning.
-      </p>
-
-      <h3>What is a target profit margin?</h3>
-      <p>
-        It is the percentage of the final price you aim to retain as profit
-        after the costs entered into the calculator.
-      </p>
-
-      <h3>Can I use this calculator for office cleaning?</h3>
-      <p>
-        Yes. Select Office Cleaning and adjust the base rate and expenses
-        to suit the job.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Explore More Free Tools</h2>
-
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="cleaning-profit.html">Profit Calculator</a>
-        <a href="cleaning-quote.html">Quote Generator</a>
-        <a href="cleaning-checklist.html">Cleaning Checklist</a>
-        <a href="cleaning-startup-cost.html">Startup Cost Calculator</a>
-        <a href="cleaning-hourly-rate.html">Hourly Rate Calculator</a>
-      </div>
-    </section>
-  </main>
+</main>
 </div>
 
 <footer>
-  <p>
-    &copy; <span id="year"></span> CleanBizTools
-  </p>
+  <p>&copy; <span id="year"></span> CleanBizTools</p>
 
   <p>
     <a href="about.html">About</a> |
@@ -374,7 +544,8 @@ footer {
     <a href="disclaimer.html">Disclaimer</a>
   </p>
 </footer>
-  <script>
+
+<script>
 (function () {
   "use strict";
 
@@ -391,8 +562,12 @@ footer {
     const value = document.getElementById(id).value.trim();
     const number = Number(value);
 
-    if (value === "" || !Number.isFinite(number) || number < 0) {
-      throw new Error("Please enter valid numbers.");
+    if (
+      value === "" ||
+      !Number.isFinite(number) ||
+      number < 0
+    ) {
+      throw new Error("Please enter valid non-negative numbers.");
     }
 
     return number;
@@ -408,12 +583,13 @@ footer {
       const labor = getNumber("labor");
       const supplies = getNumber("supplies");
       const margin = getNumber("margin");
+
       const factor = Number(
         document.getElementById("service").value
       );
 
       if (size <= 0) {
-        throw new Error("Home size must be greater than zero.");
+        throw new Error("Property size must be greater than zero.");
       }
 
       if (margin >= 100) {
@@ -422,23 +598,14 @@ footer {
 
       const base = (size / 1000) * rate * factor;
       const costs = labor + supplies;
-      const suggested = Math.max(
-        base,
-        costs / (1 - margin / 100)
-      );
+      const costBasedPrice = costs / (1 - margin / 100);
+      const suggested = Math.max(base, costBasedPrice);
       const profit = suggested - costs;
 
-      document.getElementById("basePrice").textContent =
-        money(base);
-
-      document.getElementById("totalCosts").textContent =
-        money(costs);
-
-      document.getElementById("price").textContent =
-        money(suggested);
-
-      document.getElementById("profit").textContent =
-        money(profit);
+      document.getElementById("basePrice").textContent = money(base);
+      document.getElementById("totalCosts").textContent = money(costs);
+      document.getElementById("price").textContent = money(suggested);
+      document.getElementById("profit").textContent = money(profit);
 
     } catch (e) {
       error.textContent = e.message;
@@ -454,13 +621,16 @@ footer {
     document.getElementById("labor").value = "30";
     document.getElementById("supplies").value = "10";
     document.getElementById("margin").value = "30";
+
     calculate();
   }
 
-  document.getElementById("calculateBtn")
+  document
+    .getElementById("calculateBtn")
     .addEventListener("click", calculate);
 
-  document.getElementById("resetBtn")
+  document
+    .getElementById("resetBtn")
     .addEventListener("click", reset);
 
   [
@@ -481,7 +651,7 @@ footer {
 
   calculate();
 })();
-      </script>
+</script>
 
 </body>
-</html>
+        </html>
