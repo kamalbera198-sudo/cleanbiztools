@@ -4,219 +4,607 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cleaning Price Calculator | CleanBizTools</title>
+<title>Window Cleaning Price Calculator | Free Cost Estimator</title>
 
-<meta name="description" content="Use our free cleaning price calculator to estimate house cleaning costs for standard cleaning, deep cleaning, move-out cleaning and office cleaning.">
-
+<meta name="description" content="Free window cleaning price calculator. Estimate residential and commercial job prices, labor costs, add-ons and profit margin in seconds.">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#075985">
+<meta name="theme-color" content="#5b21b6">
 
-<link rel="canonical" href="https://kamalbera198-sudo.github.io/cleanbiztools/cleaning-pricing.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+<link rel="canonical" href="https://kamalbera198-sudo.github.io/cleanbiztools/window-cleaning-price-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Window Cleaning Price Calculator | CleanBizTools">
+<meta property="og:description" content="Calculate window cleaning prices, labor costs, add-ons and estimated profit with this free online calculator.">
+<meta property="og:url" content="https://kamalbera198-sudo.github.io/cleanbiztools/window-cleaning-price-calculator.html">
+<meta property="og:site_name" content="CleanBizTools">
+<meta property="og:image" content="https://kamalbera198-sudo.github.io/cleanbiztools/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Window Cleaning Price Calculator">
+<meta name="twitter:description" content="Estimate window cleaning prices and profit with our free calculator.">
+<meta name="twitter:image" content="https://kamalbera198-sudo.github.io/cleanbiztools/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Window Cleaning Price Calculator",
+  "url": "https://kamalbera198-sudo.github.io/cleanbiztools/window-cleaning-price-calculator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free window cleaning pricing calculator for residential and commercial cleaning businesses. Estimate job prices, add-ons, expenses and profit margins."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://kamalbera198-sudo.github.io/cleanbiztools/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Window Cleaning Price Calculator",
+      "item": "https://kamalbera198-sudo.github.io/cleanbiztools/window-cleaning-price-calculator.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much should I charge to clean windows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your price depends on the number and size of windows, service type, building height, labor, supplies, travel and local market rates. Use this calculator to estimate a price and compare it with your local market."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate window cleaning prices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply your standard window rate by the number of windows, adjust for window sizes, service type, building height and dirt level, add any extras, and compare the result with your cost-based price."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I charge per window or per hour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Per-window pricing is useful for predictable residential jobs. Hourly pricing can be useful for unusual jobs. Compare your quote with your hourly earnings target before accepting a job."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does interior and exterior cleaning cost more?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Interior and exterior cleaning usually requires more work than exterior-only cleaning. This calculator uses an adjustable service factor to estimate the difference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate window cleaning profit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subtract labor and other job costs from the estimated selling price. Remember to include applicable overhead expenses when reviewing your actual business profit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this window cleaning calculator internationally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Select USD, CAD, GBP, EUR, AUD or INR. Currency selection changes the displayed symbol, not exchange rates. Enter all amounts in your selected currency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this calculator estimate commercial window cleaning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Enter the window counts, service type, building height, rate and costs. For commercial contracts, also consider access requirements, equipment, recurring visits and safety planning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What affects window cleaning prices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Window size, window count, cleaning method, building height, accessibility, dirt level, screens, tracks, labor, travel, equipment and local competition can all affect pricing."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
-* {
-  box-sizing: border-box;
+:root{
+  --purple:#6d28d9;
+  --purple-dark:#4c1d95;
+  --blue:#2563eb;
+  --cyan:#0891b2;
+  --green:#059669;
+  --orange:#ea580c;
+  --pink:#db2777;
+  --red:#dc2626;
+  --bg:#f5f3ff;
+  --text:#1f2937;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --white:#ffffff;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f1f5f9;
-  color: #172033;
-  line-height: 1.7;
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:linear-gradient(180deg,#f5f3ff 0%,#eff6ff 45%,#ecfeff 100%);
+  line-height:1.7;
 }
 
-header {
-  background: linear-gradient(135deg, #075985, #0f766e);
-  color: white;
-  text-align: center;
-  padding: 35px 15px;
+a{color:#5b21b6}
+a:hover{color:#2563eb}
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  padding:0;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
 }
 
-header h1 {
-  margin: 0 0 10px;
-  font-size: clamp(27px, 5vw, 38px);
+.wrap{
+  max-width:1000px;
+  margin:auto;
+  padding:0 18px;
 }
 
-header p {
-  margin: 0;
+header{
+  color:#fff;
+  background:linear-gradient(120deg,#4c1d95 0%,#6d28d9 42%,#2563eb 100%);
+  padding:32px 0 27px;
+  box-shadow:0 5px 20px #4c1d9522;
 }
 
-.container {
-  max-width: 900px;
-  margin: 25px auto;
-  padding: 0 14px;
+.brand{
+  display:inline-block;
+  font-weight:900;
+  font-size:1.05rem;
+  background:#ffffff20;
+  border:1px solid #ffffff40;
+  padding:5px 13px;
+  border-radius:30px;
+  margin-bottom:12px;
 }
 
-.card {
-  background: white;
-  padding: 22px;
-  margin-bottom: 20px;
-  border-radius: 16px;
-  box-shadow: 0 5px 20px rgba(15, 23, 42, .07);
+header h1{
+  font-size:clamp(1.8rem,5vw,2.7rem);
+  line-height:1.2;
+  margin:0 0 12px;
+  letter-spacing:-.7px;
 }
 
-h2 {
-  color: #075985;
-  margin-top: 0;
+header p{
+  margin:0;
+  max-width:700px;
+  color:#f3e8ff;
 }
 
-h3 {
-  color: #0f766e;
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:22px;
 }
 
-label {
-  display: block;
-  margin: 14px 0 6px;
-  font-weight: bold;
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:.9rem;
+  font-weight:700;
+  background:#ffffff19;
+  border:1px solid #ffffff38;
+  border-radius:25px;
+  padding:7px 12px;
 }
 
-input,
-select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 9px;
-  font-size: 16px;
-  background: white;
+nav a:hover,
+nav a[aria-current="page"]{
+  background:#fff;
+  color:#4c1d95;
 }
 
-input:focus,
-select:focus {
-  outline: 2px solid #38bdf8;
-  border-color: #0284c7;
+main{padding:25px 0 45px}
+
+.crumbs{
+  font-size:.9rem;
+  margin:0 0 20px;
+  color:var(--muted);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+.crumbs a{font-weight:700}
+
+section{margin-bottom:30px}
+
+h2{
+  color:#4c1d95;
+  font-size:clamp(1.35rem,3vw,1.8rem);
+  line-height:1.35;
+  margin:0 0 12px;
 }
 
-button {
-  padding: 13px 18px;
-  border: 0;
-  border-radius: 9px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 12px 8px 0 0;
+h3{
+  color:#5b21b6;
+  margin:22px 0 8px;
+  font-size:1.15rem;
 }
 
-.primary {
-  background: #0284c7;
-  color: white;
+p{margin:0 0 14px}
+
+.calc-card{
+  background:var(--white);
+  border:1px solid #ddd6fe;
+  border-radius:20px;
+  padding:clamp(17px,4vw,30px);
+  box-shadow:0 12px 35px #4c1d9510;
 }
 
-.primary:hover {
-  background: #0369a1;
+.card-heading{
+  padding-bottom:18px;
+  margin-bottom:22px;
+  border-bottom:1px solid var(--line);
 }
 
-.secondary {
-  background: #e2e8f0;
-  color: #172033;
+.card-heading h3{margin:0 0 6px;font-size:1.3rem}
+
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:.78rem;
+  font-weight:800;
+  color:#047857;
+  background:#d1fae5;
+  margin-bottom:8px;
 }
 
-.results {
-  margin-top: 20px;
-  padding: 20px;
-  background: #d1fae5;
-  border-radius: 12px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:17px;
 }
 
-.result-value {
-  font-size: 30px;
-  font-weight: bold;
-  color: #047857;
-  overflow-wrap: anywhere;
+.group-title{
+  grid-column:1 / -1;
+  margin:8px 0 -4px;
+  padding-top:14px;
+  border-top:1px dashed #ddd6fe;
+  color:#4c1d95;
+  font-weight:800;
+  font-size:1rem;
 }
 
-.result-item {
-  margin: 10px 0;
+.field{min-width:0}
+
+label{
+  display:block;
+  font-size:.92rem;
+  font-weight:750;
+  margin-bottom:6px;
+  color:#374151;
 }
 
-.result-item span {
-  margin-left: 6px;
-  font-weight: bold;
+.check{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:6px;
 }
 
-.notice {
-  padding: 12px;
-  background: #fff7ed;
-  border-left: 4px solid #f97316;
-  border-radius: 7px;
+.check input{
+  width:20px;
+  height:20px;
+  flex:0 0 auto;
+  accent-color:#6d28d9;
+  padding:0;
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.check label{margin:0}
+
+input,select{
+  width:100%;
+  min-width:0;
+  padding:12px;
+  font:inherit;
+  font-size:16px;
+  color:#1f2937;
+  background:#fff;
+  border:1.5px solid #cbd5e1;
+  border-radius:10px;
+  outline:none;
 }
 
-.links a {
-  display: inline-block;
-  padding: 9px 12px;
-  background: #e0f2fe;
-  color: #075985;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+input:focus,select:focus{
+  border-color:#7c3aed;
+  box-shadow:0 0 0 3px #7c3aed20;
 }
 
-.links a:hover {
-  background: #bae6fd;
+input[aria-invalid="true"]{
+  border-color:#dc2626;
+  box-shadow:0 0 0 3px #dc262620;
 }
 
-nav a {
-  color: #075985;
-  font-weight: bold;
-  text-decoration: none;
-  margin-right: 5px;
+.field small{
+  display:block;
+  color:var(--muted);
+  font-size:.8rem;
+  margin-top:4px;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.btns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
 }
 
-footer {
-  text-align: center;
-  padding: 24px 12px;
-  color: #475569;
+button{
+  border:0;
+  border-radius:11px;
+  padding:12px 22px;
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+  transition:transform .15s,opacity .15s;
 }
 
-footer a {
-  color: #075985;
+button:hover{transform:translateY(-2px)}
+button:focus-visible{outline:3px solid #0891b2;outline-offset:3px}
+
+.primary{
+  color:#fff;
+  background:linear-gradient(100deg,#6d28d9,#2563eb);
+  box-shadow:0 5px 14px #6d28d933;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 17px;
-  }
-
-  .result-value {
-    font-size: 26px;
-  }
+.secondary{
+  color:#4c1d95;
+  background:#ede9fe;
+  border:1px solid #c4b5fd;
 }
 
-@media print {
-  header,
-  button,
-  footer,
-  nav {
-    display: none;
-  }
+.result{
+  margin-top:25px;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #c4b5fd;
+  border-radius:17px;
+}
 
-  body {
-    background: white;
-  }
+.result-top{
+  color:#fff;
+  padding:23px;
+  background:linear-gradient(120deg,#065f46,#047857,#0f766e);
+}
 
-  .card {
-    box-shadow: none;
-  }
+.result-top .label{
+  font-weight:700;
+  font-size:.95rem;
+  color:#ecfdf5;
+}
+
+.big{
+  font-size:clamp(2.1rem,7vw,3.2rem);
+  font-weight:900;
+  line-height:1.25;
+  margin:7px 0;
+  overflow-wrap:anywhere;
+}
+
+.result-top p{
+  margin:0;
+  color:#f0fdf4;
+  font-size:.87rem;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  padding:18px;
+}
+
+.stat{
+  border-radius:12px;
+  padding:14px;
+  background:#f5f3ff;
+  border:1px solid #ddd6fe;
+  min-width:0;
+}
+
+.stat:nth-child(2){background:#eff6ff;border-color:#bfdbfe}
+.stat:nth-child(3){background:#fff7ed;border-color:#fed7aa}
+.stat:nth-child(4){background:#ecfdf5;border-color:#a7f3d0}
+.stat:nth-child(5){background:#fdf2f8;border-color:#fbcfe8}
+.stat:nth-child(6){background:#ecfeff;border-color:#a5f3fc}
+
+.stat-label{
+  display:block;
+  color:#64748b;
+  font-size:.82rem;
+  font-weight:750;
+}
+
+.stat-value{
+  display:block;
+  font-size:clamp(1rem,3vw,1.35rem);
+  font-weight:900;
+  margin-top:4px;
+  overflow-wrap:anywhere;
+}
+
+#rPer{color:#6d28d9}
+#rBase{color:#2563eb}
+#rCost{color:#c2410c}
+#rProfit{color:#047857}
+#rMargin{color:#be185d}
+#rMin{color:#0e7490}
+
+.result-message{
+  padding:0 18px 18px;
+  font-size:.9rem;
+  color:#475569;
+}
+
+.note{
+  font-size:.88rem;
+  color:var(--muted);
+  margin-top:13px;
+}
+
+.info-box{
+  padding:17px;
+  border-radius:12px;
+  background:linear-gradient(120deg,#ede9fe,#eff6ff);
+  border-left:5px solid #7c3aed;
+  margin:14px 0;
+}
+
+.formula{
+  background:#f5f3ff;
+  color:#4c1d95;
+  border:1px solid #ddd6fe;
+  border-radius:10px;
+  padding:14px;
+  margin:12px 0;
+  font-weight:800;
+  overflow-wrap:anywhere;
+}
+
+.table-wrap{overflow-x:auto;margin:14px 0}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  min-width:400px;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+th,td{
+  text-align:left;
+  padding:12px;
+  border:1px solid #e2e8f0;
+}
+
+th{
+  background:#ede9fe;
+  color:#4c1d95;
+}
+
+tbody tr:nth-child(even){background:#f8fafc}
+
+ul{padding-left:23px}
+li{margin-bottom:8px}
+
+details{
+  background:#fff;
+  border:1px solid #ddd6fe;
+  border-radius:11px;
+  padding:14px 16px;
+  margin-bottom:10px;
+}
+
+summary{
+  cursor:pointer;
+  color:#4c1d95;
+  font-weight:800;
+}
+
+details p{margin:10px 0 0}
+
+.tools{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:12px;
+}
+
+.tool-link{
+  display:block;
+  padding:15px;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid #ddd6fe;
+  color:#5b21b6;
+  text-decoration:none;
+  font-weight:800;
+  box-shadow:0 4px 15px #4c1d9508;
+}
+
+.tool-link:hover{
+  background:#ede9fe;
+  border-color:#8b5cf6;
+}
+
+footer{
+  text-align:center;
+  padding:25px 15px;
+  color:#e2e8f0;
+  background:#1e1b4b;
+  font-size:.9rem;
+}
+
+footer a{
+  color:#c4b5fd;
+  margin:0 6px;
+}
+
+footer a:hover{color:#fff}
+
+@media(max-width:600px){
+  .wrap{padding:0 13px}
+  header{padding:25px 0}
+  nav{gap:7px}
+  nav a{font-size:.82rem;padding:7px 10px}
+  .grid{grid-template-columns:1fr;gap:13px}
+  .calc-card{padding:16px;border-radius:15px}
+  .stats{padding:12px;gap:9px}
+  .stat{padding:11px}
+  .result-top{padding:19px}
+  .btns button{width:100%}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  button{transition:none}
 }
 </style>
 </head>
@@ -224,318 +612,455 @@ footer a {
 <body>
 
 <header>
-  <h1>Cleaning Price Calculator</h1>
-  <p>Estimate cleaning prices and plan your cleaning business profit.</p>
+  <div class="wrap">
+    <div class="brand">✨ CleanBizTools</div>
+    <h1>Window Cleaning Price Calculator</h1>
+    <p>Calculate window cleaning prices, estimate job costs and understand your potential profit with this free online tool.</p>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">🏠 Home</a>
+      <a href="cleaning-pricing.html">Cleaning Prices</a>
+      <a href="window-cleaning-price-calculator.html" aria-current="page">Window Cleaning</a>
+      <a href="cleaning-profit.html">Profit Calculator</a>
+      <a href="cleaning-quote.html">Quote Generator</a>
+      <a href="cleaning-hourly-rate.html">Hourly Rate</a>
+      <a href="cleaning-startup-cost.html">Startup Costs</a>
+      <a href="cleaning-checklist.html">Checklist</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-<nav class="card" aria-label="Main navigation">
-  <a href="index.html">Home</a> |
-  <a href="cleaning-profit.html">Profit Calculator</a> |
-  <a href="cleaning-quote.html">Quote Generator</a> |
-  <a href="cleaning-checklist.html">Cleaning Checklist</a>
-</nav>
+<div class="crumbs">
+  <a href="index.html">Home</a> › Window Cleaning Price Calculator
+</div>
 
-<main>
-
-<section class="card">
-  <h2>Calculate Your Cleaning Price</h2>
+<section>
+  <h2>🧮 Calculate Your Window Cleaning Price</h2>
 
   <p>
-    Use this free cleaning price calculator to estimate a cleaning job's
-    price based on property size, cleaning type, labor costs, supplies
-    and your target profit margin.
+    Looking for a free window cleaning price calculator? Use this tool to estimate residential window cleaning costs, commercial window cleaning prices and window washing estimates. Enter your window count, cleaning method, building height, add-ons, labor expenses and target profit margin to calculate a suggested job price.
   </p>
 
-  <div class="grid">
+  <p>
+    Whether you run a small window cleaning business, work independently or manage commercial cleaning contracts, this calculator provides a useful starting estimate. You can choose your preferred currency and customize the numbers for your own market.
+  </p>
 
-    <div>
-      <label for="currency">Currency</label>
-      <select id="currency">
-        <option value="USD">US Dollar (USD)</option>
-        <option value="CAD">Canadian Dollar (CAD)</option>
-        <option value="GBP">British Pound (GBP)</option>
-        <option value="EUR">Euro (EUR)</option>
-        <option value="AUD">Australian Dollar (AUD)</option>
-        <option value="INR">Indian Rupee (INR)</option>
-      </select>
+  <div class="calc-card">
+
+    <div class="card-heading">
+      <span class="badge">✓ Free Calculator</span>
+      <h3>Window Cleaning Price Estimator</h3>
+      <p>Enter your job details below. Results update automatically.</p>
     </div>
 
-    <div>
-      <label for="homeSize">Home Size (square feet)</label>
-      <input id="homeSize" type="number" min="0" step="1" value="1500">
+    <div class="grid">
+
+      <div class="field">
+        <label for="currency">💱 Currency</label>
+        <select id="currency">
+          <option value="$">US Dollar (USD)</option>
+          <option value="C$">Canadian Dollar (CAD)</option>
+          <option value="£">British Pound (GBP)</option>
+          <option value="€">Euro (EUR)</option>
+          <option value="A$">Australian Dollar (AUD)</option>
+          <option value="₹">Indian Rupee (INR)</option>
+        </select>
+        <small>Currency selection does not convert exchange rates.</small>
+      </div>
+
+      <div class="field">
+        <label for="std">Standard Windows</label>
+        <input type="number" id="std" min="0" max="1000000" step="1" value="20" inputmode="numeric">
+      </div>
+
+      <div class="field">
+        <label for="large">Large Windows / Sliding Doors</label>
+        <input type="number" id="large" min="0" max="1000000" step="1" value="2" inputmode="numeric">
+        <small>Each large window counts as 2 standard windows.</small>
+      </div>
+
+      <div class="field">
+        <label for="small">Small / Specialty Windows</label>
+        <input type="number" id="small" min="0" max="1000000" step="1" value="0" inputmode="numeric">
+        <small>Each small window counts as 0.75 standard windows.</small>
+      </div>
+
+      <div class="field">
+        <label for="service">🧽 Cleaning Service</label>
+        <select id="service">
+          <option value="1">Exterior Only</option>
+          <option value="1.8" selected>Interior + Exterior</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="height">🏢 Building Height</label>
+        <select id="height">
+          <option value="1">Ground Floor</option>
+          <option value="1.25" selected>2 Stories</option>
+          <option value="1.5">3+ Stories</option>
+        </select>
+        <small>Use appropriate professional equipment and safety procedures.</small>
+      </div>
+
+      <div class="field">
+        <label for="dirt">🧼 Dirt Level</label>
+        <select id="dirt">
+          <option value="1" selected>Normal</option>
+          <option value="1.15">Heavy (extra dirt, hard-water marks)</option>
+          <option value="1.3">Very heavy (paint, stickers, first-time clean)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="rate">Rate Per Standard Window</label>
+        <input type="number" id="rate" min="0" max="1000000000" step="0.5" value="5" inputmode="decimal">
+        <small>Enter your exterior-only rate in the selected currency.</small>
+      </div>
+
+      <div class="group-title">➕ Optional Add-Ons (charged per window)</div>
+
+      <div class="field">
+        <div class="check">
+          <input type="checkbox" id="tracksOn">
+          <label for="tracksOn">Window tracks and sills</label>
+        </div>
+        <input type="number" id="tracksRate" min="0" max="1000000000" step="0.5" value="1" inputmode="decimal" aria-label="Extra charge per window for tracks and sills">
+        <small>Extra charge per window.</small>
+      </div>
+
+      <div class="field">
+        <div class="check">
+          <input type="checkbox" id="screensOn">
+          <label for="screensOn">Screen cleaning</label>
+        </div>
+        <input type="number" id="screensRate" min="0" max="1000000000" step="0.5" value="1" inputmode="decimal" aria-label="Extra charge per window for screen cleaning">
+        <small>Extra charge per window.</small>
+      </div>
+
+      <div class="group-title">💼 Your Costs and Target</div>
+
+      <div class="field">
+        <label for="labor">Estimated Labor Cost</label>
+        <input type="number" id="labor" min="0" max="1000000000" step="1" value="90" inputmode="decimal">
+      </div>
+
+      <div class="field">
+        <label for="supplies">Supplies and Other Job Costs</label>
+        <input type="number" id="supplies" min="0" max="1000000000" step="1" value="10" inputmode="decimal">
+      </div>
+
+      <div class="field">
+        <label for="margin">Target Profit Margin (%)</label>
+        <input type="number" id="margin" min="0" max="95" step="1" value="30" inputmode="decimal">
+        <small>Enter a margin between 0% and 95%.</small>
+      </div>
+
     </div>
 
-    <div>
-      <label for="baseRate">Base Rate per 1,000 sq. ft.</label>
-      <input id="baseRate" type="number" min="0" step="0.01" value="80">
+    <div class="btns">
+      <button type="button" class="primary" id="calcBtn">🧮 Update Price</button>
+      <button type="button" class="secondary" id="resetBtn">↻ Reset Calculator</button>
     </div>
 
-    <div>
-      <label for="service">Cleaning Type</label>
-      <select id="service">
-        <option value="1">Standard Cleaning</option>
-        <option value="1.5">Deep Cleaning</option>
-        <option value="1.3">Move-In / Move-Out Cleaning</option>
-        <option value="1.2">Office Cleaning</option>
-      </select>
+    <div class="result">
+
+      <div class="result-top">
+        <div class="label">💰 Suggested Window Cleaning Price</div>
+        <div class="big" id="rPrice">$270.00</div>
+        <p id="rSummary">Your estimated price for this cleaning job.</p>
+      </div>
+
+      <div class="stats">
+
+        <div class="stat">
+          <span class="stat-label">Price Per Window</span>
+          <span class="stat-value" id="rPer">$12.27</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-label">Work-Based Price</span>
+          <span class="stat-value" id="rBase">$270.00</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-label">Estimated Job Costs</span>
+          <span class="stat-value" id="rCost">$100.00</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-label">Estimated Profit</span>
+          <span class="stat-value" id="rProfit">$170.00</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-label">Actual Profit Margin</span>
+          <span class="stat-value" id="rMargin">63.0%</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-label">Minimum Price for Your Target Margin</span>
+          <span class="stat-value" id="rMin">$142.86</span>
+        </div>
+
+      </div>
+
+      <p class="result-message" id="rMsg">
+        Your price earns a 63.0% margin, above your 30% target.
+      </p>
+
     </div>
 
-    <div>
-      <label for="labor">Estimated Labor Cost</label>
-      <input id="labor" type="number" min="0" step="0.01" value="30">
-    </div>
+    <p class="sr-only" id="srStatus" role="status" aria-live="polite"></p>
 
-    <div>
-      <label for="supplies">Supplies and Other Costs</label>
-      <input id="supplies" type="number" min="0" step="0.01" value="10">
-    </div>
-
-    <div>
-      <label for="margin">Target Profit Margin (%)</label>
-      <input id="margin" type="number" min="0" max="99" step="1" value="30">
-    </div>
+    <p class="note">
+      This tool provides an estimate, not a guaranteed market price. Include all relevant overhead expenses and check local pricing before preparing a customer quote.
+    </p>
 
   </div>
-
-  <button class="primary" id="calculateBtn" type="button">
-    Calculate Price
-  </button>
-
-  <button class="secondary" id="resetBtn" type="button">
-    Reset
-  </button>
-
-  <div class="results" aria-live="polite">
-    <div><strong>Suggested Cleaning Price</strong></div>
-    <div class="result-value" id="price">$120.00</div>
-
-    <div class="result-item">
-      <strong>Estimated Base Price:</strong>
-      <span id="basePrice">$120.00</span>
-    </div>
-
-    <div class="result-item">
-      <strong>Estimated Costs:</strong>
-      <span id="totalCosts">$40.00</span>
-    </div>
-
-    <div class="result-item">
-      <strong>Estimated Profit:</strong>
-      <span id="profit">$80.00</span>
-    </div>
-  </div>
-
-  <p id="error" class="notice" role="alert" hidden></p>
-
-  <p class="notice">
-    This calculator provides an estimate, not a guaranteed market price.
-    Check local competitor rates and include all relevant business costs
-    before deciding what to charge.
-  </p>
 </section>
 
-<section class="card">
-  <h2>House Cleaning Cost Calculator</h2>
+<section>
+  <h2>📘 How to Calculate Window Cleaning Prices</h2>
 
   <p>
-    A house cleaning cost calculator helps homeowners and cleaning
-    businesses estimate the price of residential cleaning. The estimate
-    can depend on property size, cleaning requirements, labor costs,
-    cleaning supplies and local market rates.
-  </p>
-
-  <p>
-    Select Standard Cleaning in the calculator above and enter the
-    estimated property size, base rate and job expenses to calculate
-    a suggested house cleaning price.
-  </p>
-</section>
-
-<section class="card">
-  <h2>Deep Cleaning Cost Calculator</h2>
-
-  <p>
-    A deep cleaning cost calculator can help estimate the cost of
-    detailed cleaning tasks. Deep cleaning may require additional
-    time and effort compared with regular maintenance cleaning.
-  </p>
-
-  <p>
-    Choose Deep Cleaning and adjust the labor cost, supplies and base
-    rate to match the job. The final price should reflect the property's
-    condition and the work requested by the customer.
-  </p>
-</section>
-
-<section class="card">
-  <h2>Move-Out Cleaning Cost Calculator</h2>
-
-  <p>
-    Use this cleaning price calculator to estimate move-out or
-    move-in cleaning costs. The price may depend on property size,
-    condition, labor time and the cleaning tasks required before
-    a tenant moves in or out.
-  </p>
-
-  <p>
-    Select Move-In / Move-Out Cleaning and enter your estimated costs.
-    Check the property's requirements before providing a final quote.
-  </p>
-</section>
-
-<section class="card">
-  <h2>Office Cleaning Cost Calculator</h2>
-
-  <p>
-    Cleaning businesses can use this calculator to estimate office
-    cleaning prices. Commercial cleaning costs may depend on office
-    size, the number of rooms, cleaning frequency, labor time and
-    the services requested.
-  </p>
-
-  <p>
-    Select Office Cleaning and adjust the base rate and expenses.
-    For recurring contracts, calculate the expected cost for each visit
-    and consider the full scope of work before setting a price.
-  </p>
-</section>
-
-<section class="card">
-  <h2>How Does a Cleaning Pricing Calculator Work?</h2>
-
-  <p>
-    A cleaning pricing calculator helps cleaning business owners
-    estimate what to charge for residential or commercial cleaning jobs.
-    The price can depend on property size, service type, labor, supplies,
-    travel and the profit margin you want to achieve.
+    A window cleaning cost calculator helps you estimate a fair price based on the number of windows, window size, service type, building height, dirt level, add-ons and job costs.
   </p>
 
   <h3>Step 1: Calculate the Base Price</h3>
 
+  <div class="formula">
+    Base Price = (Standard Windows × Rate) + (Large Windows × Rate × 2) + (Small Windows × Rate × 0.75)
+  </div>
+
+  <h3>Step 2: Adjust for Service, Height and Dirt, Then Add Extras</h3>
+
+  <div class="formula">
+    Work-Based Price = (Base Price × Service Factor × Height Factor × Dirt Factor) + Add-Ons
+  </div>
+
+  <h3>Step 3: Calculate the Cost-Based Price</h3>
+
+  <div class="formula">
+    Cost-Based Price = Total Job Costs ÷ (1 − Target Margin)
+  </div>
+
   <p>
-    <strong>
-      Base Price = Property Size ÷ 1,000 × Base Rate × Service Factor
-    </strong>
+    For example, a 30% target margin means dividing the total job costs by 0.70. This is different from simply adding 30% to costs.
   </p>
 
-  <h3>Step 2: Calculate Estimated Costs</h3>
+  <div class="info-box">
+    <strong>💡 Pricing tip:</strong>
+    The calculator compares your work-based price with your cost-based price and selects the higher value. If your work-based price is already high, your actual margin will be above your target and changing the target will not change the price. The "Actual Profit Margin" and "Minimum Price" boxes show you where you stand. Your real profit may differ if you have additional expenses that are not included.
+  </div>
+
+  <h3>Pricing Factors Used</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Factor</th><th>Multiplier</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Standard window</td><td>1.00×</td></tr>
+        <tr><td>Large window / sliding door</td><td>2.00×</td></tr>
+        <tr><td>Small / specialty window</td><td>0.75×</td></tr>
+        <tr><td>Exterior only</td><td>1.00×</td></tr>
+        <tr><td>Interior + exterior</td><td>1.80×</td></tr>
+        <tr><td>Ground floor</td><td>1.00×</td></tr>
+        <tr><td>Two stories</td><td>1.25×</td></tr>
+        <tr><td>Three or more stories</td><td>1.50×</td></tr>
+        <tr><td>Normal dirt</td><td>1.00×</td></tr>
+        <tr><td>Heavy dirt</td><td>1.15×</td></tr>
+        <tr><td>Very heavy dirt</td><td>1.30×</td></tr>
+      </tbody>
+    </table>
+  </div>
 
   <p>
-    <strong>
-      Estimated Costs = Labor Cost + Supplies and Other Costs
-    </strong>
-  </p>
-
-  <h3>Step 3: Estimate the Suggested Price</h3>
-
-  <p>
-    <strong>
-      Cost-Based Price = Estimated Costs ÷ (1 − Profit Margin)
-    </strong>
-  </p>
-
-  <p>
-    This calculator compares the base estimate with the price needed
-    to cover the entered costs and target profit margin, then displays
-    the higher amount as the suggested price.
+    These multipliers are configurable pricing assumptions, not universal industry standards. Adjust your rate to reflect your local market and the work required. Add-ons such as tracks, sills and screens are charged per window and added after the multipliers.
   </p>
 </section>
 
-<section class="card">
-  <h2>Cleaning Pricing Tips for Small Businesses</h2>
+<section>
+  <h2>📝 Window Cleaning Price Example</h2>
+
+  <p>
+    Suppose you have a two-story home with 20 standard windows and 2 large windows. The customer wants interior and exterior cleaning. Your exterior rate is 5 currency units per standard window, labor costs 90 and supplies cost 10. Dirt level is normal and no add-ons are selected.
+  </p>
 
   <ul>
-    <li>Estimate how much time each cleaning job will take.</li>
-    <li>Include labor, supplies, travel and other relevant expenses.</li>
-    <li>Deep cleaning may require more time than standard cleaning.</li>
-    <li>Review local competitor rates before setting your final price.</li>
-    <li>Consider the property's condition and the customer's requirements.</li>
-    <li>Recalculate prices when your business expenses change.</li>
-    <li>Review your actual costs and profit after completing each job.</li>
+    <li><strong>Standard windows:</strong> 20 × 5 = 100</li>
+    <li><strong>Large windows:</strong> 2 × 5 × 2 = 20</li>
+    <li><strong>Base price:</strong> 100 + 20 = 120</li>
+    <li><strong>Work-based price:</strong> 120 × 1.8 × 1.25 = 270</li>
+    <li><strong>Total job costs:</strong> 90 + 10 = 100</li>
+    <li><strong>Cost-based price at a 30% margin:</strong> 100 ÷ 0.70 = 142.86</li>
+    <li><strong>Suggested price:</strong> 270 currency units</li>
+    <li><strong>Estimated profit before other expenses:</strong> 270 − 100 = 170</li>
+    <li><strong>Actual margin:</strong> 170 ÷ 270 = 63.0%</li>
+  </ul>
+
+  <p>
+    This is a mathematical example rather than a recommended price for every market. Use your own rates and costs for a more relevant estimate.
+  </p>
+</section>
+
+<section>
+  <h2>📊 Window Cleaning Price Chart</h2>
+
+  <p>
+    This chart shows the work-based price for standard windows only, using a rate of 5 per window, normal dirt level and no add-ons. It is calculated with the same formula as the calculator above. Change the rate in the calculator to see prices for your own market.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Windows</th>
+          <th>Exterior, ground floor</th>
+          <th>Exterior, 2 stories</th>
+          <th>Interior + exterior, ground floor</th>
+          <th>Interior + exterior, 2 stories</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>10</td><td>50.00</td><td>62.50</td><td>90.00</td><td>112.50</td></tr>
+        <tr><td>20</td><td>100.00</td><td>125.00</td><td>180.00</td><td>225.00</td></tr>
+        <tr><td>30</td><td>150.00</td><td>187.50</td><td>270.00</td><td>337.50</td></tr>
+        <tr><td>40</td><td>200.00</td><td>250.00</td><td>360.00</td><td>450.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    These figures are examples based on the calculator's assumptions, not market prices. Your final price may be higher if your job costs require a higher price to reach your target margin.
+  </p>
+</section>
+
+<section>
+  <h2>🏠 Residential vs Commercial Window Cleaning</h2>
+
+  <h3>Residential Window Cleaning</h3>
+  <p>
+    Residential window cleaning usually involves houses, apartments and other homes. Pricing depends on window count, size, accessibility, interior or exterior service and additional work such as screens or tracks.
+  </p>
+
+  <h3>Commercial Window Cleaning</h3>
+  <p>
+    Commercial window cleaning may involve offices, shops, restaurants and larger buildings. Consider scheduling, access, equipment, travel, contract frequency and applicable safety requirements before setting your price.
+  </p>
+
+  <p>
+    For recurring contracts, calculate the price for one visit first. Then multiply it by the number of visits, accounting for any agreed discounts and changes in the scope of work.
+  </p>
+</section>
+
+<section>
+  <h2>🔎 What Affects Window Cleaning Prices?</h2>
+
+  <ul>
+    <li>Number of windows and their dimensions.</li>
+    <li>Whether interior, exterior or both sides are cleaned.</li>
+    <li>Building height and accessibility.</li>
+    <li>Heavy dirt, paint residue, stickers or hard-water marks.</li>
+    <li>Whether screens, frames and window tracks are included.</li>
+    <li>Labor, travel time, supplies and equipment expenses.</li>
+    <li>Insurance, overheads and other business costs.</li>
+    <li>Local competition and customer expectations.</li>
+    <li>Minimum job charges and recurring service arrangements.</li>
   </ul>
 </section>
 
-<section class="card">
-  <h2>Frequently Asked Questions</h2>
+<section>
+  <h2>💼 Window Cleaning Pricing Tips for Small Businesses</h2>
 
-  <h3>How much should I charge for house cleaning?</h3>
+  <ul>
+    <li>Set a minimum job charge to cover travel and setup time.</li>
+    <li>Track the time spent on each job and compare earnings with your hourly target.</li>
+    <li>Include appropriate charges for difficult access and additional work.</li>
+    <li>Clearly describe the services included in every customer quote.</li>
+    <li>Account for insurance, equipment, transportation and other overhead expenses.</li>
+    <li>Review actual profit after each job and adjust your rates when costs change.</li>
+    <li>For high-rise jobs, assess access and safety requirements before accepting the work.</li>
+  </ul>
+
   <p>
-    Your price depends on property size, cleaning type, labor,
-    expenses, local demand and your business goals. Use this calculator
-    as a starting estimate rather than a fixed market price.
+    Need help with other parts of your cleaning business? Explore our
+    <a href="cleaning-pricing.html">Cleaning Price Calculator</a>,
+    <a href="cleaning-profit.html">Cleaning Profit Calculator</a> and
+    <a href="cleaning-hourly-rate.html">Hourly Rate Calculator</a>.
   </p>
-
-  <h3>How do I calculate a cleaning price?</h3>
-  <p>
-    Estimate the base price using the property size, base rate and
-    cleaning type. Add labor and supply costs, then check whether
-    the suggested price supports your target profit margin.
-  </p>
-
-  <h3>Should deep cleaning cost more than standard cleaning?</h3>
-  <p>
-    Deep cleaning often involves more detailed work and may take
-    longer than standard cleaning. Adjust the service type and costs
-    to reflect the actual work required.
-  </p>
-
-  <h3>How do I estimate move-out cleaning costs?</h3>
-  <p>
-    Consider the property's size and condition, the time required,
-    supplies and the cleaning tasks requested. The final price may
-    vary by location and job requirements.
-  </p>
-
-  <h3>Can I use this calculator for office cleaning?</h3>
-  <p>
-    Yes. Select Office Cleaning and adjust the base rate and expenses
-    to suit the job. Consider the office size, cleaning frequency
-    and requested services.
-  </p>
-
-  <h3>What is a target profit margin?</h3>
-  <p>
-    A target profit margin is the percentage of the final selling
-    price you aim to retain as profit after accounting for the costs
-    included in your calculation.
-  </p>
-
-  <h3>Can I use this calculator outside the United States?</h3>
-  <p>
-    Yes. You can select USD, CAD, GBP, EUR, AUD or INR. Remember that
-    changing the currency symbol does not automatically convert
-    exchange rates. Enter prices and costs appropriate for your
-    chosen currency and local market.
-  </p>
-
 </section>
 
-<section class="card">
-  <h2>Explore More Free Cleaning Business Tools</h2>
+<section>
+  <h2>❓ Frequently Asked Questions</h2>
+
+  <details>
+    <summary>How much should I charge to clean windows?</summary>
+    <p>Your price depends on the number and size of windows, service type, building height, labor, supplies, travel and local market rates. Use this calculator to estimate a price and compare it with your local market.</p>
+  </details>
+
+  <details>
+    <summary>How do I calculate window cleaning prices?</summary>
+    <p>Multiply your standard window rate by the number of windows, adjust for window sizes, service type, building height and dirt level, add any extras, and compare the result with your cost-based price.</p>
+  </details>
+
+  <details>
+    <summary>Should I charge per window or per hour?</summary>
+    <p>Per-window pricing is useful for predictable residential jobs. Hourly pricing can be useful for unusual jobs. Compare your quote with your hourly earnings target before accepting a job.</p>
+  </details>
+
+  <details>
+    <summary>Does interior and exterior cleaning cost more?</summary>
+    <p>Interior and exterior cleaning usually requires more work than exterior-only cleaning. This calculator uses an adjustable service factor to estimate the difference.</p>
+  </details>
+
+  <details>
+    <summary>How do I calculate window cleaning profit?</summary>
+    <p>Subtract labor and other job costs from the estimated selling price. Remember to include applicable overhead expenses when reviewing your actual business profit.</p>
+  </details>
+
+  <details>
+    <summary>Can I use this window cleaning calculator internationally?</summary>
+    <p>Yes. Select USD, CAD, GBP, EUR, AUD or INR. Currency selection changes the displayed symbol, not exchange rates. Enter all amounts in your selected currency.</p>
+  </details>
+
+  <details>
+    <summary>Can this calculator estimate commercial window cleaning?</summary>
+    <p>Yes. Enter the window counts, service type, building height, rate and costs. For commercial contracts, also consider access requirements, equipment, recurring visits and safety planning.</p>
+  </details>
+
+  <details>
+    <summary>What affects window cleaning prices?</summary>
+    <p>Window size, window count, cleaning method, building height, accessibility, dirt level, screens, tracks, labor, travel, equipment and local competition can all affect pricing.</p>
+  </details>
+</section>
+
+<section>
+  <h2>🧰 Explore More Free Cleaning Business Tools</h2>
 
   <p>
-    Use these tools to plan cleaning jobs, estimate expenses
-    and organize your cleaning business.
+    Use these free tools to estimate prices, manage expenses and plan your cleaning business.
   </p>
 
-  <div class="links">
-    <a href="index.html">Home</a>
-    <a href="cleaning-profit.html">Profit Calculator</a>
-    <a href="cleaning-quote.html">Quote Generator</a>
-    <a href="cleaning-checklist.html">Cleaning Checklist</a>
-    <a href="cleaning-startup-cost.html">Startup Cost Calculator</a>
-    <a href="cleaning-hourly-rate.html">Hourly Rate Calculator</a>
+  <div class="tools">
+    <a class="tool-link" href="cleaning-pricing.html">🧹 Cleaning Price Calculator</a>
+    <a class="tool-link" href="cleaning-profit.html">💰 Cleaning Profit Calculator</a>
+    <a class="tool-link" href="cleaning-quote.html">📄 Cleaning Quote Generator</a>
+    <a class="tool-link" href="cleaning-hourly-rate.html">⏱️ Hourly Rate Calculator</a>
+    <a class="tool-link" href="cleaning-startup-cost.html">🚀 Cleaning Startup Cost Calculator</a>
+    <a class="tool-link" href="cleaning-checklist.html">✅ Cleaning Checklist</a>
+    <a class="tool-link" href="index.html">🏠 All Cleaning Business Tools</a>
   </div>
 </section>
 
 </main>
-</div>
 
 <footer>
-  <p>&copy; <span id="year"></span> CleanBizTools</p>
-
+  <p>© <span id="year"></span> CleanBizTools. Free tools for cleaning businesses.</p>
   <p>
     <a href="about.html">About</a> |
     <a href="contact.html">Contact</a> |
@@ -543,115 +1068,246 @@ footer a {
     <a href="terms.html">Terms</a> |
     <a href="disclaimer.html">Disclaimer</a>
   </p>
+  <p>Estimate carefully. Price confidently. Build a better cleaning business.</p>
 </footer>
 
 <script>
-(function () {
+(function(){
   "use strict";
 
-  const currency = document.getElementById("currency");
+  var $ = function(id){
+    return document.getElementById(id);
+  };
 
-  function money(value) {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: currency.value
-    }).format(value);
-  }
+  var defaults = {
+    std:20,
+    large:2,
+    small:0,
+    service:"1.8",
+    height:"1.25",
+    dirt:"1",
+    rate:5,
+    tracksRate:1,
+    screensRate:1,
+    labor:90,
+    supplies:10,
+    margin:30,
+    currency:"$"
+  };
 
-  function getNumber(id) {
-    const value = document.getElementById(id).value.trim();
-    const number = Number(value);
+  var ids = [
+    "std","large","small","rate","tracksRate","screensRate","labor","supplies","margin"
+  ];
 
-    if (
-      value === "" ||
-      !Number.isFinite(number) ||
-      number < 0
-    ) {
-      throw new Error("Please enter valid non-negative numbers.");
+  /* Returns null when empty, NaN when invalid, otherwise the number */
+  function parseField(id){
+    var input = $(id);
+    var raw = input.value.trim();
+
+    if(raw === ""){
+      return null;
     }
 
-    return number;
+    var value = Number(raw);
+
+    if(!Number.isFinite(value) || value < 0){
+      return NaN;
+    }
+
+    if(value > Number(input.max)){
+      return NaN;
+    }
+
+    return value;
   }
 
-  function calculate() {
-    const error = document.getElementById("error");
-    error.hidden = true;
+  function money(value,symbol){
+    if(!Number.isFinite(value)){
+      value = 0;
+    }
 
-    try {
-      const size = getNumber("homeSize");
-      const rate = getNumber("baseRate");
-      const labor = getNumber("labor");
-      const supplies = getNumber("supplies");
-      const margin = getNumber("margin");
+    return symbol + value.toLocaleString("en-US",{
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    });
+  }
 
-      const factor = Number(
-        document.getElementById("service").value
-      );
+  function clearInvalid(){
+    ids.forEach(function(id){
+      $(id).removeAttribute("aria-invalid");
+    });
+  }
 
-      if (size <= 0) {
-        throw new Error("Property size must be greater than zero.");
-      }
+  function markInvalid(list){
+    list.forEach(function(id){
+      $(id).setAttribute("aria-invalid","true");
+    });
+  }
 
-      if (margin >= 100) {
-        throw new Error("Profit margin must be below 100%.");
-      }
+  function showError(message,list){
+    $("rPrice").textContent = "Check inputs";
+    $("rSummary").textContent = "Please correct the highlighted input values.";
+    $("rPer").textContent = "—";
+    $("rBase").textContent = "—";
+    $("rCost").textContent = "—";
+    $("rProfit").textContent = "—";
+    $("rMargin").textContent = "—";
+    $("rMin").textContent = "—";
+    $("rMsg").textContent = message;
 
-      const base = (size / 1000) * rate * factor;
-      const costs = labor + supplies;
-      const costBasedPrice = costs / (1 - margin / 100);
-      const suggested = Math.max(base, costBasedPrice);
-      const profit = suggested - costs;
-
-      document.getElementById("basePrice").textContent = money(base);
-      document.getElementById("totalCosts").textContent = money(costs);
-      document.getElementById("price").textContent = money(suggested);
-      document.getElementById("profit").textContent = money(profit);
-
-    } catch (e) {
-      error.textContent = e.message;
-      error.hidden = false;
+    if(list && list.length){
+      markInvalid(list);
     }
   }
 
-  function reset() {
-    document.getElementById("currency").value = "USD";
-    document.getElementById("homeSize").value = "1500";
-    document.getElementById("baseRate").value = "80";
-    document.getElementById("service").value = "1";
-    document.getElementById("labor").value = "30";
-    document.getElementById("supplies").value = "10";
-    document.getElementById("margin").value = "30";
+  function calculate(strict){
+    clearInvalid();
 
-    calculate();
+    var values = {};
+    var empty = [];
+    var bad = [];
+
+    ids.forEach(function(id){
+      var v = parseField(id);
+
+      if(v === null){
+        empty.push(id);
+      }else if(Number.isNaN(v)){
+        bad.push(id);
+      }else{
+        values[id] = v;
+      }
+    });
+
+    if(bad.length){
+      showError("Please enter valid non-negative numbers. The profit margin must be between 0 and 95.",bad);
+      if(strict){ $("srStatus").textContent = "Some inputs are invalid. Please correct them."; }
+      return;
+    }
+
+    if(empty.length){
+      if(strict){
+        showError("Please fill in all fields to calculate your price.",empty);
+        $("srStatus").textContent = "Some fields are empty. Please fill them in.";
+      }else{
+        $("rMsg").textContent = "Fill in all fields to see your updated price.";
+      }
+      return;
+    }
+
+    var std = values.std;
+    var large = values.large;
+    var small = values.small;
+    var rate = values.rate;
+    var labor = values.labor;
+    var supplies = values.supplies;
+    var margin = values.margin / 100;
+
+    var service = Number($("service").value);
+    var height = Number($("height").value);
+    var dirt = Number($("dirt").value);
+    var symbol = $("currency").value;
+
+    var windows = std + large + small;
+
+    if(!Number.isFinite(windows) || windows > 3000000){
+      showError("The total window count is too large. Please check your window counts.",["std","large","small"]);
+      return;
+    }
+
+    var addonPerWindow =
+      ($("tracksOn").checked ? values.tracksRate : 0) +
+      ($("screensOn").checked ? values.screensRate : 0);
+
+    var base = (std * rate) +
+               (large * rate * 2) +
+               (small * rate * 0.75);
+
+    var workBased = (base * service * height * dirt) + (windows * addonPerWindow);
+    var costs = labor + supplies;
+    var costBased = costs / (1 - margin);
+    var price = Math.max(workBased,costBased);
+    var profit = price - costs;
+    var perWindow = windows > 0 ? price / windows : 0;
+    var actualMargin = price > 0 ? (profit / price) * 100 : 0;
+
+    if(![base,workBased,costs,costBased,price,profit,perWindow,actualMargin].every(Number.isFinite)){
+      showError("These values are too large to calculate safely. Please use smaller amounts.");
+      return;
+    }
+
+    $("rPrice").textContent = money(price,symbol);
+    $("rPer").textContent = money(perWindow,symbol);
+    $("rBase").textContent = money(workBased,symbol);
+    $("rCost").textContent = money(costs,symbol);
+    $("rProfit").textContent = money(profit,symbol);
+    $("rMargin").textContent = actualMargin.toFixed(1) + "%";
+    $("rMin").textContent = money(costBased,symbol);
+
+    $("rSummary").textContent =
+      "Estimated price for " + windows.toLocaleString("en-US") +
+      " total windows.";
+
+    var targetText = (margin * 100).toFixed(0) + "% target";
+
+    if(workBased >= costBased){
+      $("rMsg").textContent =
+        "Your price earns a " + actualMargin.toFixed(1) +
+        "% margin, above your " + targetText +
+        ". The target margin only raises the price when your costs are high. Estimated profit before additional overheads: " +
+        money(profit,symbol) + ".";
+    }else{
+      $("rMsg").textContent =
+        "Your work-based price was below your " + targetText +
+        ", so the price was raised to " + money(costBased,symbol) +
+        " to protect your margin. Estimated profit before additional overheads: " +
+        money(profit,symbol) + ".";
+    }
+
+    if(strict){
+      $("srStatus").textContent =
+        "Suggested price " + money(price,symbol) + ". Estimated profit " +
+        money(profit,symbol) + ", a margin of " + actualMargin.toFixed(1) + " percent.";
+    }
   }
 
-  document
-    .getElementById("calculateBtn")
-    .addEventListener("click", calculate);
+  function reset(){
+    $("std").value = defaults.std;
+    $("large").value = defaults.large;
+    $("small").value = defaults.small;
+    $("service").value = defaults.service;
+    $("height").value = defaults.height;
+    $("dirt").value = defaults.dirt;
+    $("rate").value = defaults.rate;
+    $("tracksRate").value = defaults.tracksRate;
+    $("screensRate").value = defaults.screensRate;
+    $("tracksOn").checked = false;
+    $("screensOn").checked = false;
+    $("labor").value = defaults.labor;
+    $("supplies").value = defaults.supplies;
+    $("margin").value = defaults.margin;
+    $("currency").value = defaults.currency;
 
-  document
-    .getElementById("resetBtn")
-    .addEventListener("click", reset);
+    calculate(false);
+    $("srStatus").textContent = "Calculator reset to default values.";
+  }
 
-  [
-    "currency",
-    "homeSize",
-    "baseRate",
-    "service",
-    "labor",
-    "supplies",
-    "margin"
-  ].forEach(function (id) {
-    document.getElementById(id).addEventListener("input", calculate);
-    document.getElementById(id).addEventListener("change", calculate);
+  $("calcBtn").addEventListener("click",function(){ calculate(true); });
+  $("resetBtn").addEventListener("click",reset);
+
+  ["currency","service","height","dirt","tracksOn","screensOn"].forEach(function(id){
+    $(id).addEventListener("change",function(){ calculate(false); });
   });
 
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
+  ids.forEach(function(id){
+    $(id).addEventListener("input",function(){ calculate(false); });
+  });
 
-  calculate();
+  $("year").textContent = new Date().getFullYear();
+
+  calculate(false);
 })();
 </script>
 
 </body>
-        </html>
+</html>
