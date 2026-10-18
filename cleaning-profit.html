@@ -5,9 +5,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Free Cleaning Business Profit Calculator | CleanBizTools</title>
-<meta name="description" content="Calculate cleaning business revenue, expenses, net profit, and profit margin with this free cleaning business profit calculator.">
+<meta name="description" content="Free cleaning business profit calculator. Enter revenue and expenses to see net profit, profit margin and expense ratio for a cleaning job or a month.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#075985">
+<link rel="canonical" href="https://kamalbera198-sudo.github.io/cleanbiztools/cleaning-profit.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Cleaning Business Profit Calculator | CleanBizTools">
+<meta property="og:description" content="Calculate cleaning business net profit, profit margin and expense ratio with this free calculator.">
+<meta property="og:url" content="https://kamalbera198-sudo.github.io/cleanbiztools/cleaning-profit.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cleaning Business Profit Calculator",
+  "url": "https://kamalbera198-sudo.github.io/cleanbiztools/cleaning-profit.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "description": "Free calculator that estimates net profit, profit margin and expense ratio for a cleaning business or a single cleaning job.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a cleaning business profit calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It estimates net profit by subtracting the expenses you enter from your total revenue. It also shows your profit margin and expense ratio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate cleaning business profit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add up all your expenses, then subtract them from your total revenue. Net profit = total revenue minus total expenses. Use the same time period for both numbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my profit margin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subtract expenses from revenue, divide the result by revenue, and multiply by 100. If revenue is zero, the calculator displays 0%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate profit per cleaning job?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter the revenue for the job and the costs for that job only: labor, supplies, travel and any other direct costs. The net profit and margin shown are for that one job."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good profit margin for a cleaning business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single right number. It depends on your location, services, pricing and whether you use employees. A useful approach is to compare the margin of each job and each month, then focus on the jobs and periods that fall below your own average."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between profit margin and markup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Margin is profit divided by revenue. Markup is profit divided by cost. For example, if a job costs $125 and you charge $250, your profit is $125. That is a 50% margin but a 100% markup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which expenses should I include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Include labor, supplies, travel, equipment, insurance, marketing, software and any other business costs that apply. If you do the cleaning yourself, include a wage for your own time, otherwise your profit will look higher than it really is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this calculator for one cleaning job?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Enter the revenue and expenses for that job to estimate its profit. You can also use it for a week, a month or a full year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator calculate taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It estimates profit based only on the revenue and expenses entered. Tax treatment depends on your circumstances and location."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 * {
@@ -50,6 +154,23 @@ header p {
   margin-bottom: 20px;
   border-radius: 16px;
   box-shadow: 0 5px 20px rgba(15, 23, 42, 0.07);
+  border-top: 5px solid #0284c7;
+}
+
+.card.green-top { border-top-color: #059669; }
+.card.amber-top { border-top-color: #f59e0b; }
+.card.purple-top { border-top-color: #7c3aed; }
+.card.pink-top { border-top-color: #db2777; }
+
+nav.card {
+  border-top: 0;
+  padding: 14px 18px;
+}
+
+nav a {
+  color: #075985;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 h2 {
@@ -57,10 +178,22 @@ h2 {
   margin-top: 0;
 }
 
+h3 {
+  color: #0f766e;
+  margin-bottom: 4px;
+}
+
 label {
   display: block;
   margin: 14px 0 6px;
   font-weight: bold;
+}
+
+.hint {
+  display: block;
+  font-weight: normal;
+  font-size: 13px;
+  color: #64748b;
 }
 
 input, select {
@@ -93,20 +226,9 @@ button {
   margin: 12px 8px 0 0;
 }
 
-.primary {
-  background: #0284c7;
-  color: white;
-}
-
-.secondary {
-  background: #e2e8f0;
-  color: #172033;
-}
-
-.green {
-  background: #059669;
-  color: white;
-}
+.primary { background: #0284c7; color: white; }
+.secondary { background: #e2e8f0; color: #172033; }
+.green { background: #059669; color: white; }
 
 .results {
   display: grid;
@@ -122,17 +244,9 @@ button {
   overflow-wrap: anywhere;
 }
 
-.result-box:nth-child(2) {
-  background: #d1fae5;
-}
-
-.result-box:nth-child(3) {
-  background: #fef3c7;
-}
-
-.result-box:nth-child(4) {
-  background: #ede9fe;
-}
+.result-box:nth-child(2) { background: #d1fae5; }
+.result-box:nth-child(3) { background: #fef3c7; }
+.result-box:nth-child(4) { background: #ede9fe; }
 
 .result-label {
   font-size: 14px;
@@ -152,6 +266,87 @@ button {
   border-radius: 7px;
 }
 
+.example-note {
+  font-size: 14px;
+  color: #475569;
+  background: #f0f9ff;
+  border-left: 4px solid #0284c7;
+  padding: 10px 12px;
+  border-radius: 7px;
+}
+
+.kw {
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 5px;
+}
+
+.kw-blue { background: #e0f2fe; color: #075985; }
+.kw-green { background: #d1fae5; color: #047857; }
+.kw-amber { background: #fef3c7; color: #92400e; }
+.kw-purple { background: #ede9fe; color: #5b21b6; }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+}
+
+.chip {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.chip:nth-child(4n+1) { background: #e0f2fe; color: #075985; }
+.chip:nth-child(4n+2) { background: #d1fae5; color: #047857; }
+.chip:nth-child(4n+3) { background: #fef3c7; color: #92400e; }
+.chip:nth-child(4n+4) { background: #ede9fe; color: #5b21b6; }
+
+.formula {
+  background: #f8fafc;
+  border-left: 4px solid #0f766e;
+  padding: 10px 14px;
+  border-radius: 7px;
+  margin: 6px 0 14px;
+  font-weight: bold;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+th, td {
+  border: 1px solid #e2e8f0;
+  padding: 9px;
+  text-align: right;
+}
+
+th {
+  background: #075985;
+  color: white;
+}
+
+td:first-child, th:first-child {
+  text-align: left;
+}
+
+tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+.pos { color: #047857; font-weight: bold; }
+
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -166,6 +361,13 @@ button {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+}
+
+.links a:nth-child(3n+2) { background: #d1fae5; color: #047857; }
+.links a:nth-child(3n+3) { background: #fef3c7; color: #92400e; }
+
+main a {
+  color: #0369a1;
 }
 
 footer {
@@ -189,7 +391,7 @@ footer a {
 }
 
 @media print {
-  header, nav, button, footer {
+  header, nav, button, footer, .no-print {
     display: none !important;
   }
 
@@ -214,10 +416,12 @@ footer a {
 <div class="container">
 
   <nav class="card">
-    <a href="index.html">Home</a> |
+    <a href="./">Home</a> |
     <a href="cleaning-pricing.html">Pricing Calculator</a> |
     <a href="cleaning-quote.html">Quote Generator</a> |
-    <a href="cleaning-checklist.html">Cleaning Checklist</a>
+    <a href="cleaning-checklist.html">Cleaning Checklist</a> |
+    <a href="cleaning-hourly-rate.html">Hourly Rate Calculator</a> |
+    <a href="cleaning-startup-cost.html">Startup Cost Calculator</a>
   </nav>
 
   <main>
@@ -226,10 +430,17 @@ footer a {
       <h2>Calculate Your Cleaning Business Profit</h2>
 
       <p>
-        Enter your revenue and business expenses to estimate your net profit.
-        You can use this free calculator for an individual cleaning job or a
-        business reporting period. Make sure your revenue and expenses cover
-        the same period.
+        Use this free <span class="kw kw-blue">cleaning business profit calculator</span>
+        to find your <span class="kw kw-green">net profit</span>,
+        <span class="kw kw-amber">profit margin</span> and
+        <span class="kw kw-purple">expense ratio</span>. You can use it for an
+        individual cleaning job or for a whole week, month or year. Make sure
+        your revenue and expenses cover the same period.
+      </p>
+
+      <p class="example-note">
+        Example numbers are filled in so you can see how it works. Replace
+        them with your own figures.
       </p>
 
       <div class="grid">
@@ -248,27 +459,50 @@ footer a {
 
         <div>
           <label for="revenue">Total Revenue</label>
-          <input id="revenue" type="number" min="0" step="0.01" value="250">
+          <input id="revenue" type="number" min="0" step="0.01" value="250" inputmode="decimal">
         </div>
 
         <div>
-          <label for="labor">Labor Costs</label>
-          <input id="labor" type="number" min="0" step="0.01" value="80">
+          <label for="labor">
+            Labor Costs
+            <span class="hint">Include your own wage if you do the cleaning</span>
+          </label>
+          <input id="labor" type="number" min="0" step="0.01" value="80" inputmode="decimal">
         </div>
 
         <div>
           <label for="supplies">Cleaning Supplies</label>
-          <input id="supplies" type="number" min="0" step="0.01" value="15">
+          <input id="supplies" type="number" min="0" step="0.01" value="15" inputmode="decimal">
         </div>
 
         <div>
           <label for="travel">Travel and Fuel</label>
-          <input id="travel" type="number" min="0" step="0.01" value="10">
+          <input id="travel" type="number" min="0" step="0.01" value="10" inputmode="decimal">
+        </div>
+
+        <div>
+          <label for="equipment">Equipment and Tools</label>
+          <input id="equipment" type="number" min="0" step="0.01" value="0" inputmode="decimal">
+        </div>
+
+        <div>
+          <label for="insurance">Insurance</label>
+          <input id="insurance" type="number" min="0" step="0.01" value="0" inputmode="decimal">
+        </div>
+
+        <div>
+          <label for="marketing">Marketing</label>
+          <input id="marketing" type="number" min="0" step="0.01" value="0" inputmode="decimal">
+        </div>
+
+        <div>
+          <label for="admin">Software and Admin</label>
+          <input id="admin" type="number" min="0" step="0.01" value="0" inputmode="decimal">
         </div>
 
         <div>
           <label for="other">Other Expenses</label>
-          <input id="other" type="number" min="0" step="0.01" value="20">
+          <input id="other" type="number" min="0" step="0.01" value="20" inputmode="decimal">
         </div>
 
       </div>
@@ -323,7 +557,7 @@ footer a {
       </p>
     </section>
 
-    <section class="card">
+    <section class="card green-top">
       <h2>How to Calculate Cleaning Business Profit</h2>
 
       <p>
@@ -333,22 +567,13 @@ footer a {
       </p>
 
       <h3>Net Profit Formula</h3>
-
-      <p>
-        <strong>Net Profit = Total Revenue − Total Expenses</strong>
-      </p>
+      <div class="formula">Net Profit = Total Revenue − Total Expenses</div>
 
       <h3>Profit Margin Formula</h3>
-
-      <p>
-        <strong>Profit Margin (%) = Net Profit ÷ Total Revenue × 100</strong>
-      </p>
+      <div class="formula">Profit Margin (%) = Net Profit ÷ Total Revenue × 100</div>
 
       <h3>Expense Ratio Formula</h3>
-
-      <p>
-        <strong>Expense Ratio (%) = Total Expenses ÷ Total Revenue × 100</strong>
-      </p>
+      <div class="formula">Expense Ratio (%) = Total Expenses ÷ Total Revenue × 100</div>
 
       <p>
         For example, if your cleaning business earns $250 and spends $125,
@@ -356,7 +581,38 @@ footer a {
       </p>
     </section>
 
-    <section class="card">
+    <section class="card amber-top">
+      <h2>Cleaning Job Profit Examples</h2>
+
+      <p>
+        The same revenue can leave very different profit depending on costs.
+        Here are three sample cleaning jobs:
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Job</th>
+            <th>Revenue</th>
+            <th>Expenses</th>
+            <th>Net Profit</th>
+            <th>Profit Margin</th>
+          </tr>
+          <tr><td>Small apartment clean</td><td>$150</td><td>$90</td><td class="pos">$60</td><td>40%</td></tr>
+          <tr><td>Standard home clean</td><td>$250</td><td>$125</td><td class="pos">$125</td><td>50%</td></tr>
+          <tr><td>Large deep clean</td><td>$400</td><td>$340</td><td class="pos">$60</td><td>15%</td></tr>
+        </table>
+      </div>
+
+      <p>
+        The large deep clean brings in the most revenue but the same profit as
+        the small job, because its costs are much higher. This is why it helps
+        to check the <span class="kw kw-amber">cleaning business profit margin</span>
+        of each job, not only the total you earn.
+      </p>
+    </section>
+
+    <section class="card purple-top">
       <h2>Common Cleaning Business Expenses</h2>
 
       <ul>
@@ -371,11 +627,12 @@ footer a {
 
       <p>
         Include the expenses that apply to your business. Avoid counting the
-        same expense more than once.
+        same expense more than once. If you do the cleaning yourself, include
+        a wage for your own time so your profit figure is realistic.
       </p>
     </section>
 
-    <section class="card">
+    <section class="card pink-top">
       <h2>Tips for Improving Cleaning Business Profit</h2>
 
       <ul>
@@ -390,46 +647,69 @@ footer a {
         A higher revenue figure does not always mean higher profit. Monitor
         expenses as well as sales when evaluating business performance.
       </p>
+
+      <p>
+        If your margin is lower than you want, try the
+        <a href="cleaning-pricing.html">Cleaning Pricing Calculator</a> to
+        review your prices, or the
+        <a href="cleaning-hourly-rate.html">Hourly Rate Calculator</a> to
+        check what you earn per hour. Planning to start a business? See the
+        <a href="cleaning-startup-cost.html">Startup Cost Calculator</a>.
+      </p>
     </section>
 
     <section class="card">
+      <h2>Popular Searches This Calculator Helps With</h2>
+
+      <div class="chips">
+        <span class="chip">cleaning business profit calculator</span>
+        <span class="chip">cleaning business profit margin</span>
+        <span class="chip">cleaning job profit calculator</span>
+        <span class="chip">cleaning company net profit</span>
+        <span class="chip">cleaning business expenses</span>
+        <span class="chip">how to calculate cleaning business profit</span>
+        <span class="chip">profit margin calculator for cleaning</span>
+        <span class="chip">expense ratio calculator</span>
+      </div>
+    </section>
+
+    <section class="card green-top">
       <h2>Frequently Asked Questions</h2>
 
-      <h3>1. What is a cleaning business profit calculator?</h3>
-      <p>
-        It estimates net profit by subtracting the expenses you enter from
-        your total revenue.
-      </p>
+      <h3>What is a cleaning business profit calculator?</h3>
+      <p>It estimates net profit by subtracting the expenses you enter from your total revenue. It also shows your profit margin and expense ratio.</p>
 
-      <h3>2. How do I calculate my profit margin?</h3>
-      <p>
-        Subtract expenses from revenue, divide the result by revenue, and
-        multiply by 100. If revenue is zero, the calculator displays 0%.
-      </p>
+      <h3>How do I calculate cleaning business profit?</h3>
+      <p>Add up all your expenses, then subtract them from your total revenue. Net profit = total revenue minus total expenses. Use the same time period for both numbers.</p>
 
-      <h3>3. Which expenses should I include?</h3>
-      <p>
-        Consider labor, supplies, travel, equipment, insurance, marketing,
-        software, and other relevant business costs.
-      </p>
+      <h3>How do I calculate my profit margin?</h3>
+      <p>Subtract expenses from revenue, divide the result by revenue, and multiply by 100. If revenue is zero, the calculator displays 0%.</p>
 
-      <h3>4. Can I use this calculator for one cleaning job?</h3>
-      <p>
-        Yes. Enter the revenue and expenses for that job to estimate its profit.
-      </p>
+      <h3>How do I calculate profit per cleaning job?</h3>
+      <p>Enter the revenue for the job and the costs for that job only: labor, supplies, travel and any other direct costs. The net profit and margin shown are for that one job.</p>
 
-      <h3>5. Does the calculator calculate taxes?</h3>
-      <p>
-        No. It estimates profit based only on the revenue and expenses entered.
-        Tax treatment depends on your circumstances and location.
-      </p>
+      <h3>What is a good profit margin for a cleaning business?</h3>
+      <p>There is no single right number. It depends on your location, services, pricing and whether you use employees. A useful approach is to compare the margin of each job and each month, then focus on the jobs and periods that fall below your own average.</p>
+
+      <h3>What is the difference between profit margin and markup?</h3>
+      <p>Margin is profit divided by revenue. Markup is profit divided by cost. For example, if a job costs $125 and you charge $250, your profit is $125. That is a 50% margin but a 100% markup.</p>
+
+      <h3>Which expenses should I include?</h3>
+      <p>Include labor, supplies, travel, equipment, insurance, marketing, software and any other business costs that apply. If you do the cleaning yourself, include a wage for your own time, otherwise your profit will look higher than it really is.</p>
+
+      <h3>Can I use this calculator for one cleaning job?</h3>
+      <p>Yes. Enter the revenue and expenses for that job to estimate its profit. You can also use it for a week, a month or a full year.</p>
+
+      <h3>Does the calculator calculate taxes?</h3>
+      <p>No. It estimates profit based only on the revenue and expenses entered. Tax treatment depends on your circumstances and location.</p>
+
     </section>
 
-    <section class="card">
+    <section class="card amber-top">
       <h2>Explore More Free Cleaning Business Tools</h2>
 
       <div class="links">
-        <a href="index.html">Home</a>
+        <a href="./">Home</a>
         <a href="cleaning-pricing.html">Pricing Calculator</a>
         <a href="cleaning-quote.html">Quote Generator</a>
         <a href="cleaning-checklist.html">Cleaning Checklist</a>
@@ -462,6 +742,29 @@ footer a {
   const currencySelect = document.getElementById("currency");
   const errorElement = document.getElementById("error");
 
+  const expenseIds = [
+    "labor",
+    "supplies",
+    "travel",
+    "equipment",
+    "insurance",
+    "marketing",
+    "admin",
+    "other"
+  ];
+
+  const defaults = {
+    revenue: "250",
+    labor: "80",
+    supplies: "15",
+    travel: "10",
+    equipment: "0",
+    insurance: "0",
+    marketing: "0",
+    admin: "0",
+    other: "20"
+  };
+
   function getNumber(id) {
     const input = document.getElementById(id);
     const value = input.value.trim();
@@ -492,12 +795,12 @@ footer a {
 
     try {
       const revenue = getNumber("revenue");
-      const labor = getNumber("labor");
-      const supplies = getNumber("supplies");
-      const travel = getNumber("travel");
-      const other = getNumber("other");
 
-      const expenses = labor + supplies + travel + other;
+      let expenses = 0;
+      expenseIds.forEach(function (id) {
+        expenses += getNumber(id);
+      });
+
       const profit = revenue - expenses;
 
       const margin = revenue > 0
@@ -535,11 +838,10 @@ footer a {
   }
 
   function resetCalculator() {
-    document.getElementById("revenue").value = "250";
-    document.getElementById("labor").value = "80";
-    document.getElementById("supplies").value = "15";
-    document.getElementById("travel").value = "10";
-    document.getElementById("other").value = "20";
+    Object.keys(defaults).forEach(function (id) {
+      document.getElementById(id).value = defaults[id];
+    });
+
     currencySelect.value = "USD";
 
     calculateProfit();
@@ -552,29 +854,23 @@ footer a {
     .addEventListener("click", resetCalculator);
 
   document.getElementById("printBtn")
-  .addEventListener("click", function () {
-    calculateProfit();
+    .addEventListener("click", function () {
+      calculateProfit();
 
-    if (!errorElement.hidden) {
-      return;
-    }
+      if (!errorElement.hidden) {
+        return;
+      }
 
-    try {
-      window.print();
-    } catch (error) {
-      alert("Printing is not supported in this preview. Open the page in your browser and try again.");
-    }
-  });
+      try {
+        window.print();
+      } catch (error) {
+        alert("Printing is not supported in this preview. Open the page in your browser and try again.");
+      }
+    });
 
   currencySelect.addEventListener("change", calculateProfit);
 
-  [
-    "revenue",
-    "labor",
-    "supplies",
-    "travel",
-    "other"
-  ].forEach(function (id) {
+  ["revenue"].concat(expenseIds).forEach(function (id) {
     document.getElementById(id).addEventListener("input", calculateProfit);
     document.getElementById(id).addEventListener("change", calculateProfit);
   });
