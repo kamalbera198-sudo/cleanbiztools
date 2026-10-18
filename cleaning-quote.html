@@ -3,237 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Free Cleaning Quote Calculator | CleanBizTools</title>
-
-<meta name="description" content="Create a cleaning service quote online for residential and commercial cleaning. Estimate cleaning costs, extra services, discounts, and total prices for free.">
-
+<title>Free Cleaning Quote Calculator & Generator | CleanBizTools</title>
+<meta name="description" content="Create a cleaning service quote online for residential and commercial cleaning. Estimate costs, extra services, discounts, tax, and print or save the quote as PDF for free.">
 <meta name="robots" content="index,follow">
-
+<meta name="theme-color" content="#075985">
+<link rel="canonical" href="https://kamalbera198-sudo.github.io/cleanbiztools/cleaning-quote.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Cleaning Quote Calculator & Generator | CleanBizTools">
+<meta property="og:description" content="Create a cleaning quote with extra services, discount, tax and validity date. Print or save as PDF. Free.">
+<meta property="og:url" content="https://kamalbera198-sudo.github.io/cleanbiztools/cleaning-quote.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Cleaning Quote Calculator","url":"https://kamalbera198-sudo.github.io/cleanbiztools/cleaning-quote.html","applicationCategory":"BusinessApplication","operatingSystem":"Any","description":"Free cleaning quote calculator for residential and commercial cleaning businesses.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is this cleaning quote calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can use this calculator to prepare a cleaning quote for free."}},
+{"@type":"Question","name":"Can I use it for deep cleaning?","acceptedAnswer":{"@type":"Answer","text":"Yes. Select Deep Cleaning from the service menu. It applies a 1.5 multiplier to your base rate. You can change the base rate to match your pricing."}},
+{"@type":"Question","name":"Can I change the currency?","acceptedAnswer":{"@type":"Answer","text":"Yes. Select USD, INR, GBP, EUR, CAD, or AUD. Currency selection changes the displayed symbol, not the exchange rate or the entered prices."}},
+{"@type":"Question","name":"Can I save the quote as a PDF?","acceptedAnswer":{"@type":"Answer","text":"Choose Print / Save PDF. Only the quote is printed. In the print dialog, select Save as PDF."}},
+{"@type":"Question","name":"Is the calculated price guaranteed?","acceptedAnswer":{"@type":"Answer","text":"No. It is based on the values you enter. Confirm the scope of work and final price with your customer."}},
+{"@type":"Question","name":"What is the difference between a quote and an estimate?","acceptedAnswer":{"@type":"Answer","text":"An estimate is an approximate price that may change. A quote is a more fixed price for a defined scope of work, usually valid for a set number of days."}},
+{"@type":"Question","name":"How do I price a cleaning job?","acceptedAnswer":{"@type":"Answer","text":"Start from your labor, supplies and travel costs, add your target profit, then enter your rate per 100 sq ft. The Pricing Calculator and Hourly Rate Calculator can help."}},
+{"@type":"Question","name":"Is my customer information saved?","acceptedAnswer":{"@type":"Answer","text":"No. The details you enter stay in your browser and are not sent to or stored on a server."}},
+{"@type":"Question","name":"What should I write in the notes of a cleaning quote?","acceptedAnswer":{"@type":"Answer","text":"List the tasks that are included and excluded, who provides supplies, access arrangements, and your cancellation terms."}},
+{"@type":"Question","name":"How long should a cleaning quote be valid?","acceptedAnswer":{"@type":"Answer","text":"Many cleaning businesses use 7 to 30 days. Choose a period that reflects how quickly your costs and schedule change, and enter it in the Valid For field."}},
+{"@type":"Question","name":"Should I charge more for a first-time deep clean?","acceptedAnswer":{"@type":"Answer","text":"Many cleaners do, because the first visit usually takes longer. Quote the first visit as Deep Cleaning and later visits as Standard Cleaning."}}
+]}
+</script>
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
-  line-height: 1.6;
-}
-
-header {
-  background: linear-gradient(135deg, #0f766e, #2563eb);
-  color: white;
-  padding: 28px 15px;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 30px;
-}
-
-header p {
-  margin-bottom: 0;
-}
-
-nav {
-  background: #ffffff;
-  padding: 13px 8px;
-  text-align: center;
-  box-shadow: 0 2px 8px #00000010;
-}
-
-nav a {
-  display: inline-block;
-  margin: 5px 8px;
-  color: #0f766e;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.container {
-  max-width: 900px;
-  margin: 25px auto;
-  padding: 0 14px;
-}
-
-.card {
-  background: white;
-  padding: 22px;
-  margin-bottom: 20px;
-  border-radius: 14px;
-  box-shadow: 0 5px 18px #0000000d;
-}
-
-h2 {
-  color: #0f766e;
-  margin-top: 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  font-size: 16px;
-  background: white;
-}
-
-textarea {
-  min-height: 90px;
-  resize: vertical;
-}
-
-button {
-  border: none;
-  padding: 13px 18px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 8px 5px 0 0;
-}
-
-.calculate {
-  background: #0f766e;
-  color: white;
-}
-
-.reset {
-  background: #e2e8f0;
-  color: #1e293b;
-}
-
-.print {
-  background: #2563eb;
-  color: white;
-}
-
-.result {
-  background: #ecfdf5;
-  border: 2px solid #10b981;
-  border-radius: 12px;
-  padding: 18px;
-  margin-top: 20px;
-}
-
-.total {
-  font-size: 32px;
-  font-weight: bold;
-  color: #047857;
-  overflow-wrap: anywhere;
-}
-
-.result p {
-  overflow-wrap: anywhere;
-}
-
-.small {
-  color: #64748b;
-  font-size: 14px;
-}
-
-footer {
-  text-align: center;
-  background: #0f172a;
-  color: white;
-  padding: 25px 12px;
-}
-
-footer a {
-  color: #99f6e4;
-  margin: 5px;
-  text-decoration: none;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  header h1 {
-    font-size: 25px;
-  }
-
-  .card {
-    padding: 16px;
-  }
-}
-
-@media print {
-  nav,
-  .no-print,
-  footer,
-  header p {
-    display: none !important;
-  }
-
-  body {
-    background: white;
-  }
-
-  .card {
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#1e293b;line-height:1.6}
+header{background:linear-gradient(135deg,#0f766e,#2563eb);color:#fff;padding:28px 15px;text-align:center}
+header h1{margin:0;font-size:30px}
+header p{margin-bottom:0}
+nav{background:#fff;padding:13px 8px;text-align:center;box-shadow:0 2px 8px #00000010}
+nav a{display:inline-block;margin:5px 8px;color:#0f766e;font-weight:bold;text-decoration:none}
+nav a[aria-current]{color:#2563eb;text-decoration:underline}
+.container{max-width:900px;margin:25px auto;padding:0 14px}
+.card{background:#fff;padding:22px;margin-bottom:20px;border-radius:14px;box-shadow:0 5px 18px #0000000d}
+h2{color:#0f766e;margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+label{display:block;margin-bottom:5px;font-weight:bold}
+input,select,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+textarea{min-height:80px;resize:vertical}
+button{border:none;padding:13px 18px;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;margin:8px 5px 0 0}
+.calculate{background:#0f766e;color:#fff}
+.reset{background:#e2e8f0;color:#1e293b}
+.print{background:#2563eb;color:#fff}
+.result{background:#ecfdf5;border:2px solid #10b981;border-radius:12px;padding:18px}
+.result p{margin:6px 0;overflow-wrap:anywhere}
+.total{font-size:32px;font-weight:bold;color:#047857;overflow-wrap:anywhere}
+.small{color:#64748b;font-size:14px}
+#notesOutput,#termsOutput{white-space:pre-wrap}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:8px;border-bottom:1px solid #e2e8f0;text-align:left}
+td:last-child,th:last-child{text-align:right}
+.wrap{overflow-x:auto}
+footer{text-align:center;background:#0f172a;color:#fff;padding:25px 12px}
+footer a{color:#99f6e4;margin:5px;text-decoration:none}
+[hidden]{display:none!important}
+@media(max-width:600px){.grid{grid-template-columns:1fr}header h1{font-size:25px}.card{padding:16px}}
+@media print{
+header,nav,footer,.no-print,main>section:not(#quoteSection){display:none!important}
+body{background:#fff}
+.card{box-shadow:none;border:none;padding:0}
+.result{border:1px solid #999;background:#fff}
 }
 </style>
 </head>
-
 <body>
 
 <header>
   <h1>Cleaning Quote Calculator</h1>
-  <p>Create a cleaning service estimate in seconds — CleanBizTools</p>
+  <p>Create a cleaning service quote in seconds — CleanBizTools</p>
 </header>
 
 <nav>
   <a href="index.html">Home</a>
   <a href="cleaning-pricing.html">Pricing Calculator</a>
+  <a href="cleaning-quote.html" aria-current="page">Quote Calculator</a>
   <a href="cleaning-profit.html">Profit Calculator</a>
   <a href="cleaning-checklist.html">Cleaning Checklist</a>
+  <a href="cleaning-startup-cost.html">Startup Cost</a>
+  <a href="cleaning-hourly-rate.html">Hourly Rate</a>
 </nav>
 
 <main class="container">
 
 <section class="card">
-  <h2>Customer Information</h2>
-
+  <h2>Business and Customer Information</h2>
   <div class="grid">
-    <div>
-      <label for="customer">Customer Name</label>
-      <input id="customer" type="text" placeholder="Enter customer name">
-    </div>
-
-    <div>
-      <label for="phone">Phone or Email</label>
-      <input id="phone" type="text" placeholder="Contact information">
-    </div>
-
-    <div>
-      <label for="address">Property Address</label>
-      <input id="address" type="text" placeholder="Enter property address">
-    </div>
-
-    <div>
-      <label for="currency">Currency</label>
+    <div><label for="business">Your Business Name</label><input id="business" type="text" placeholder="Your business name"></div>
+    <div><label for="quoteNo">Quote Number (optional)</label><input id="quoteNo" type="text" placeholder="e.g. Q-1001"></div>
+    <div><label for="quoteDate">Quote Date</label><input id="quoteDate" type="date"></div>
+    <div><label for="validDays">Valid For (days)</label><input id="validDays" type="number" min="0" step="1" value="14"></div>
+    <div><label for="customer">Customer Name</label><input id="customer" type="text" placeholder="Enter customer name"></div>
+    <div><label for="phone">Phone or Email</label><input id="phone" type="text" placeholder="Contact information"></div>
+    <div><label for="address">Property Address</label><input id="address" type="text" placeholder="Enter property address"></div>
+    <div><label for="currency">Currency</label>
       <select id="currency">
         <option value="USD">$ USD</option>
         <option value="INR">₹ INR</option>
@@ -244,153 +111,186 @@ footer a {
       </select>
     </div>
   </div>
+  <p class="small">Details you enter stay in your browser. This page does not send or store them.</p>
 </section>
 
 <section class="card">
   <h2>Cleaning Service Details</h2>
-
   <div class="grid">
-    <div>
-      <label for="service">Cleaning Type</label>
+    <div><label for="service">Cleaning Type (multiplies base rate)</label>
       <select id="service">
-        <option value="1">Standard Cleaning</option>
-        <option value="1.5">Deep Cleaning</option>
-        <option value="1.7">Move-In / Move-Out Cleaning</option>
-        <option value="1.3">Office Cleaning</option>
+        <option value="1" data-name="Standard Cleaning">Standard Cleaning (×1)</option>
+        <option value="1.5" data-name="Deep Cleaning">Deep Cleaning (×1.5)</option>
+        <option value="1.7" data-name="Move-In / Move-Out Cleaning">Move-In / Move-Out Cleaning (×1.7)</option>
+        <option value="1.3" data-name="Office Cleaning">Office Cleaning (×1.3)</option>
       </select>
     </div>
-
-    <div>
-      <label for="size">Property Size (sq ft)</label>
-      <input id="size" type="number" min="0" value="1500">
+    <div><label for="frequency">Frequency</label>
+      <select id="frequency">
+        <option>One-time</option>
+        <option>Weekly</option>
+        <option>Every 2 weeks</option>
+        <option>Monthly</option>
+      </select>
     </div>
-
-    <div>
-      <label for="rate">Base Rate per 100 sq ft</label>
-      <input id="rate" type="number" min="0" step="0.01" value="5">
-    </div>
-
-    <div>
-      <label for="bathrooms">Extra Bathrooms</label>
-      <input id="bathrooms" type="number" min="0" step="1" value="0">
-    </div>
-
-    <div>
-      <label for="bathroomPrice">Price per Extra Bathroom</label>
-      <input id="bathroomPrice" type="number" min="0" step="0.01" value="15">
-    </div>
-
-    <div>
-      <label for="extras">Additional Services Cost</label>
-      <input id="extras" type="number" min="0" step="0.01" value="0">
-    </div>
-
-    <div>
-      <label for="discount">Discount (%)</label>
-      <input id="discount" type="number" min="0" max="100" step="0.1" value="0">
-    </div>
+    <div><label for="size">Property Size (sq ft)</label><input id="size" type="number" min="0" value="1500"></div>
+    <div><label for="rate">Base Rate per 100 sq ft</label><input id="rate" type="number" min="0" step="0.01" value="5"></div>
+    <div><label for="bathrooms">Extra Bathrooms</label><input id="bathrooms" type="number" min="0" step="1" value="0"></div>
+    <div><label for="bathroomPrice">Price per Extra Bathroom</label><input id="bathroomPrice" type="number" min="0" step="0.01" value="15"></div>
+    <div><label for="extras">Additional Services Cost</label><input id="extras" type="number" min="0" step="0.01" value="0"></div>
+    <div><label for="discount">Discount (%)</label><input id="discount" type="number" min="0" max="100" step="0.1" value="0"></div>
+    <div><label for="minCharge">Minimum Charge (before tax)</label><input id="minCharge" type="number" min="0" step="0.01" value="0"></div>
+    <div><label for="tax">Tax / VAT / GST (%)</label><input id="tax" type="number" min="0" max="100" step="0.1" value="0"></div>
   </div>
-
-  <p class="small">
-    Enter your own rates. The calculator does not determine local market prices.
-  </p>
+  <p class="small">Enter your own rates. The discount applies to the base cost, extra bathrooms and additional services. The calculator does not determine local market prices.</p>
 
   <label for="notes">Additional Notes</label>
   <textarea id="notes" placeholder="List special requests or included services"></textarea>
+  <label for="terms" style="margin-top:12px">Payment Terms</label>
+  <textarea id="terms">Payment is due on completion of the service.</textarea>
 
   <div class="no-print">
-    <button class="calculate" id="calculateBtn" type="button">
-      Calculate Quote
-    </button>
-
-    <button class="reset" id="resetBtn" type="button">
-      Reset
-    </button>
-
-    <button class="print" id="printBtn" type="button">
-      Print / Save PDF
-    </button>
+    <button class="calculate" id="calculateBtn" type="button">Calculate Quote</button>
+    <button class="reset" id="resetBtn" type="button">Reset</button>
+    <button class="print" id="printBtn" type="button">Print / Save PDF</button>
   </div>
+</section>
 
+<section class="card" id="quoteSection">
   <div class="result" id="result" aria-live="polite">
-    <h2>Cleaning Quote Result</h2>
+    <h2>Cleaning Quote</h2>
+    <p id="rowBusiness" hidden>From: <strong id="resultBusiness"></strong></p>
+    <p id="rowNo" hidden>Quote No: <strong id="resultNo"></strong></p>
+    <p>Date: <strong id="resultDate"></strong></p>
+    <p id="rowValid" hidden>Valid until: <strong id="resultValid"></strong></p>
     <p>Customer: <strong id="resultCustomer">Not provided</strong></p>
     <p>Contact: <strong id="resultPhone">Not provided</strong></p>
     <p>Address: <strong id="resultAddress">Not provided</strong></p>
-    <p>Service: <strong id="resultService">Standard Cleaning</strong></p>
+    <p>Service: <strong id="resultService">Standard Cleaning</strong> (<span id="resultFreq">One-time</span>)</p>
     <p>Property Size: <strong id="resultSize">1,500 sq ft</strong></p>
-
     <hr>
-
     <p>Base Cleaning Cost: <strong id="baseOutput">$75.00</strong></p>
-    <p>Extra Bathrooms: <strong id="bathOutput">$0.00</strong></p>
-    <p>Additional Services: <strong id="extrasOutput">$0.00</strong></p>
-    <p>Discount: <strong id="discountOutput">$0.00</strong></p>
-
+    <p id="rowBath" hidden>Extra Bathrooms: <strong id="bathOutput">$0.00</strong></p>
+    <p id="rowExtras" hidden>Additional Services: <strong id="extrasOutput">$0.00</strong></p>
+    <p id="rowDiscount" hidden>Discount: <strong id="discountOutput">$0.00</strong></p>
+    <p id="rowMin" hidden>Minimum Charge Adjustment: <strong id="minOutput">$0.00</strong></p>
+    <p id="rowTax" hidden>Tax: <strong id="taxOutput">$0.00</strong></p>
     <p>Estimated Total</p>
     <div class="total" id="totalOutput">$75.00</div>
-
     <p class="small" id="notesOutput"></p>
-    <p class="small">This is an estimate, not a final invoice.</p>
+    <p class="small" id="termsOutput"></p>
+    <p class="small">This quote is based on the scope of work and details above. Final price is confirmed with the customer.</p>
   </div>
 </section>
 
 <section class="card">
   <h2>How to Create a Cleaning Quote</h2>
-
-  <p>
-    A cleaning quote helps a residential or commercial cleaning business
-    estimate the cost of a job before work begins. Enter the property size,
-    select the cleaning service, add extra services, and apply a discount
-    if needed. The calculator will display an estimated total.
-  </p>
+  <p>A cleaning quote tells a customer what a job will cost before work begins. Enter your business and customer details, choose the cleaning type and property size, add extra services, discount and tax, then print or save the quote as a PDF. The result updates as you type.</p>
 
   <h3>What should a cleaning quote include?</h3>
-
   <ul>
+    <li>Your business name, quote number and quote date.</li>
     <li>Customer contact information and property address.</li>
-    <li>The type of cleaning service requested.</li>
-    <li>Property size and your base rate.</li>
-    <li>Additional services and any extra charges.</li>
-    <li>Discounts, estimated total, and service notes.</li>
+    <li>The type of cleaning service and how often it repeats.</li>
+    <li>Property size, your rate, and any extra services.</li>
+    <li>Discount, tax, total price and how long the quote is valid.</li>
+    <li>Service notes and payment terms.</li>
+  </ul>
+
+  <h3>Quote vs estimate</h3>
+  <p>An estimate is an approximate price that may change after the job is seen. A quote is a firmer price for a defined scope of work, normally valid for a set number of days. Use the notes field to state exactly what is included.</p>
+
+  <h3>Sample quote</h3>
+  <p>1,500 sq ft deep clean at a base rate of 5 per 100 sq ft, 2 extra bathrooms at 15 each, 20 for additional services, 10% discount.</p>
+  <div class="wrap"><table>
+    <tr><th>Item</th><th>Amount</th></tr>
+    <tr><td>Base cost (15 × 5 × 1.5)</td><td>112.50</td></tr>
+    <tr><td>Extra bathrooms (2 × 15)</td><td>30.00</td></tr>
+    <tr><td>Additional services</td><td>20.00</td></tr>
+    <tr><td>Discount (10% of 162.50)</td><td>−16.25</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>146.25</strong></td></tr>
+  </table></div>
+
+  <h3>How to write a cleaning quote step by step</h3>
+  <ol>
+    <li>Confirm the scope: which rooms, how large, and which tasks are included or excluded.</li>
+    <li>Choose the cleaning type and how often the service repeats.</li>
+    <li>Enter the property size and your base rate. The calculator applies the cleaning type multiplier.</li>
+    <li>Add extra bathrooms and extra services such as inside the oven, inside the fridge, or interior windows.</li>
+    <li>Apply any discount, minimum charge and tax.</li>
+    <li>Set how long the quote is valid and your payment terms.</li>
+    <li>Print or save the quote as a PDF and send it with a short message.</li>
+  </ol>
+
+  <h3>Residential vs commercial cleaning quotes</h3>
+  <p><strong>Residential:</strong> price mainly by home size, number of bathrooms, pets, current condition and access. A first visit often takes longer, so many cleaners quote the first clean as a deep clean and later visits as standard cleans.</p>
+  <p><strong>Commercial:</strong> price by floor area, number of restrooms, visit schedule (often after hours), who supplies consumables, and contract length. Commercial work is usually recurring, so state the frequency and any minimum charge clearly.</p>
+
+  <h3>What to write in the notes</h3>
+  <ul>
+    <li>Tasks that are included, and tasks that are not (for example inside cabinets or heavy mold removal).</li>
+    <li>Who provides supplies and equipment.</li>
+    <li>Access arrangements such as keys, entry codes or pets on site.</li>
+    <li>Your cancellation or rescheduling terms.</li>
+  </ul>
+
+  <h3>Sample message to send with the quote</h3>
+  <p>"Hi [Name], thank you for contacting [Business]. Attached is your cleaning quote for [address], valid until [date]. It includes the tasks listed in the notes. Reply to this message to confirm a date, or let me know if you would like anything added or removed."</p>
+
+  <h3>Common cleaning quote mistakes</h3>
+  <ul>
+    <li>Not stating exactly what is included, which leads to disputes later.</li>
+    <li>Leaving out travel, supplies or equipment costs. Check your margin with the <a href="cleaning-profit.html">Profit Calculator</a>.</li>
+    <li>Forgetting a validity date, so an old price can be requested months later.</li>
+    <li>Quoting a first-time clean at the standard rate when it takes much longer.</li>
+    <li>Forgetting tax where it applies.</li>
+  </ul>
+
+  <h3>Tips to win more cleaning jobs</h3>
+  <ul>
+    <li>Send the quote quickly, ideally the same day you get the request.</li>
+    <li>Itemize the price so the customer sees what they are paying for.</li>
+    <li>Offer a recurring-service discount for weekly or monthly customers.</li>
+    <li>Follow up politely after two or three days if you have not heard back.</li>
   </ul>
 
   <h3>Who can use this calculator?</h3>
-
-  <p>
-    Independent cleaners, residential cleaning businesses, office cleaners,
-    and cleaning service professionals can use this free tool to prepare
-    preliminary estimates. Review the final quote before sending it to a customer.
-  </p>
+  <p>Independent cleaners, residential cleaning businesses, office cleaners, and other cleaning professionals can use this free tool to prepare quotes. Review the final quote before sending it to a customer.</p>
 
   <h3>Related Cleaning Business Tools</h3>
-
   <ul>
     <li><a href="cleaning-pricing.html">Cleaning Pricing Calculator</a></li>
     <li><a href="cleaning-profit.html">Cleaning Business Profit Calculator</a></li>
+    <li><a href="cleaning-hourly-rate.html">Cleaning Hourly Rate Calculator</a></li>
     <li><a href="cleaning-checklist.html">Cleaning Checklist</a></li>
     <li><a href="cleaning-startup-cost.html">Cleaning Business Startup Cost Calculator</a></li>
-    <li><a href="cleaning-hourly-rate.html">Cleaning Hourly Rate Calculator</a></li>
   </ul>
 </section>
 
 <section class="card">
   <h2>Frequently Asked Questions</h2>
-
   <h3>Is this cleaning quote calculator free?</h3>
-  <p>Yes. You can use this calculator to prepare a basic cleaning estimate for free.</p>
-
+  <p>Yes. You can use this calculator to prepare a cleaning quote for free.</p>
   <h3>Can I use it for deep cleaning?</h3>
-  <p>Yes. Select Deep Cleaning from the service menu. You can also change the rate to match your pricing.</p>
-
+  <p>Yes. Select Deep Cleaning from the service menu. It applies a 1.5 multiplier to your base rate. You can change the base rate to match your pricing.</p>
   <h3>Can I change the currency?</h3>
   <p>Yes. Select USD, INR, GBP, EUR, CAD, or AUD. Currency selection changes the displayed symbol, not the exchange rate or the entered prices.</p>
-
   <h3>Can I save the quote as a PDF?</h3>
-  <p>Choose Print / Save PDF. If your browser supports printing, select Save as PDF in the print dialog.</p>
-
+  <p>Choose Print / Save PDF. Only the quote is printed. In the print dialog, select Save as PDF.</p>
   <h3>Is the calculated price guaranteed?</h3>
-  <p>No. It is an estimate based on the values you enter. Confirm the scope of work and final price with your customer.</p>
+  <p>No. It is based on the values you enter. Confirm the scope of work and final price with your customer.</p>
+  <h3>What is the difference between a quote and an estimate?</h3>
+  <p>An estimate is an approximate price that may change. A quote is a more fixed price for a defined scope of work, usually valid for a set number of days.</p>
+  <h3>How do I price a cleaning job?</h3>
+  <p>Start from your labor, supplies and travel costs, add your target profit, then enter your rate per 100 sq ft. The <a href="cleaning-pricing.html">Pricing Calculator</a> and <a href="cleaning-hourly-rate.html">Hourly Rate Calculator</a> can help.</p>
+  <h3>Is my customer information saved?</h3>
+  <p>No. The details you enter stay in your browser and are not sent to or stored on a server.</p>
+  <h3>What should I write in the notes of a cleaning quote?</h3>
+  <p>List the tasks that are included and excluded, who provides supplies, access arrangements, and your cancellation terms.</p>
+  <h3>How long should a cleaning quote be valid?</h3>
+  <p>Many cleaning businesses use 7 to 30 days. Choose a period that reflects how quickly your costs and schedule change, and enter it in the Valid For field.</p>
+  <h3>Should I charge more for a first-time deep clean?</h3>
+  <p>Many cleaners do, because the first visit usually takes longer. Quote the first visit as Deep Cleaning and later visits as Standard Cleaning.</p>
 </section>
 
 </main>
@@ -410,113 +310,129 @@ footer a {
 <script>
 (function () {
   "use strict";
+  const $ = function (id) { return document.getElementById(id); };
 
-  const $ = function (id) {
-    return document.getElementById(id);
-  };
-
-  function getNumber(id) {
-    const value = Number($(id).value);
-    return Number.isFinite(value) ? value : 0;
+  function num(id) {
+    const v = Number($(id).value);
+    return Number.isFinite(v) ? v : 0;
   }
 
   function money(amount) {
-    const currency = $("currency").value;
-
-    const symbols = {
-      USD: "$",
-      INR: "₹",
-      GBP: "£",
-      EUR: "€",
-      CAD: "C$",
-      AUD: "A$"
-    };
-
-    return (symbols[currency] || "$") +
-      amount.toLocaleString("en-US", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
+    const symbols = { USD: "$", INR: "₹", GBP: "£", EUR: "€", CAD: "C$", AUD: "A$" };
+    return (symbols[$("currency").value] || "$") +
+      amount.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
+  function today() {
+    const d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+
+  function fmtDate(s, addDays) {
+    const p = String(s).split("-").map(Number);
+    if (p.length !== 3 || p.some(isNaN)) return "";
+    const d = new Date(p[0], p[1] - 1, p[2] + addDays);
+    return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  }
+
+  function row(id, show) { $(id).hidden = !show; }
+  function text(id, value) { $(id).textContent = value; }
+
   function calculateQuote() {
-    const size = Math.max(0, getNumber("size"));
-    const rate = Math.max(0, getNumber("rate"));
-    const serviceMultiplier = Math.max(0, getNumber("service"));
-    const bathrooms = Math.max(0, Math.floor(getNumber("bathrooms")));
-    const bathroomPrice = Math.max(0, getNumber("bathroomPrice"));
-    const extras = Math.max(0, getNumber("extras"));
+    const size = Math.max(0, num("size"));
+    const rate = Math.max(0, num("rate"));
+    const mult = Math.max(0, num("service"));
+    const baths = Math.max(0, Math.floor(num("bathrooms")));
+    const bathPrice = Math.max(0, num("bathroomPrice"));
+    const extras = Math.max(0, num("extras"));
+    const discPct = Math.min(100, Math.max(0, num("discount")));
+    const minCharge = Math.max(0, num("minCharge"));
+    const taxPct = Math.min(100, Math.max(0, num("tax")));
+    const validDays = Math.max(0, Math.floor(num("validDays")));
 
-    const discountPercent = Math.min(
-      100,
-      Math.max(0, getNumber("discount"))
-    );
+    const base = (size / 100) * rate * mult;
+    const bathCost = baths * bathPrice;
+    const subtotal = base + bathCost + extras;
+    const discount = subtotal * discPct / 100;
+    const afterDiscount = subtotal - discount;
+    const minAdj = Math.max(0, minCharge - afterDiscount);
+    const taxable = afterDiscount + minAdj;
+    const tax = taxable * taxPct / 100;
+    const total = taxable + tax;
 
-    const base = (size / 100) * rate * serviceMultiplier;
-    const bathroomCost = bathrooms * bathroomPrice;
-    const subtotal = base + bathroomCost + extras;
-    const discountAmount = subtotal * discountPercent / 100;
-    const total = Math.max(0, subtotal - discountAmount);
+    const sel = $("service");
+    text("resultService", sel.options[sel.selectedIndex].getAttribute("data-name"));
+    text("resultFreq", $("frequency").value);
+    text("resultSize", size.toLocaleString("en-US") + " sq ft");
 
-    const serviceSelect = $("service");
-    const serviceName =
-      serviceSelect.options[serviceSelect.selectedIndex].text;
+    const business = $("business").value.trim();
+    const quoteNo = $("quoteNo").value.trim();
+    text("resultBusiness", business);
+    row("rowBusiness", !!business);
+    text("resultNo", quoteNo);
+    row("rowNo", !!quoteNo);
 
-    $("resultCustomer").textContent =
-      $("customer").value.trim() || "Not provided";
+    const date = $("quoteDate").value || today();
+    text("resultDate", fmtDate(date, 0));
+    text("resultValid", fmtDate(date, validDays));
+    row("rowValid", validDays > 0);
 
-    $("resultPhone").textContent =
-      $("phone").value.trim() || "Not provided";
+    text("resultCustomer", $("customer").value.trim() || "Not provided");
+    text("resultPhone", $("phone").value.trim() || "Not provided");
+    text("resultAddress", $("address").value.trim() || "Not provided");
 
-    $("resultAddress").textContent =
-      $("address").value.trim() || "Not provided";
+    text("baseOutput", money(base));
+    text("bathOutput", money(bathCost));
+    row("rowBath", bathCost > 0);
+    text("extrasOutput", money(extras));
+    row("rowExtras", extras > 0);
+    text("discountOutput", "−" + money(discount));
+    row("rowDiscount", discount > 0);
+    text("minOutput", money(minAdj));
+    row("rowMin", minAdj > 0);
+    text("taxOutput", money(tax));
+    row("rowTax", tax > 0);
+    text("totalOutput", money(total));
 
-    $("resultService").textContent = serviceName;
-
-    $("resultSize").textContent =
-      size.toLocaleString("en-US") + " sq ft";
-
-    $("baseOutput").textContent = money(base);
-    $("bathOutput").textContent = money(bathroomCost);
-    $("extrasOutput").textContent = money(extras);
-    $("discountOutput").textContent = money(discountAmount);
-    $("totalOutput").textContent = money(total);
-
-    $("notesOutput").textContent =
-      $("notes").value.trim()
-        ? "Notes: " + $("notes").value.trim()
-        : "";
-
-    $("year").textContent = new Date().getFullYear();
+    const notes = $("notes").value.trim();
+    const terms = $("terms").value.trim();
+    text("notesOutput", notes ? "Notes: " + notes : "");
+    text("termsOutput", terms ? "Terms: " + terms : "");
   }
 
   function resetQuote() {
-    $("customer").value = "";
-    $("phone").value = "";
-    $("address").value = "";
+    ["business", "quoteNo", "customer", "phone", "address", "notes"].forEach(function (id) { $(id).value = ""; });
+    $("quoteDate").value = today();
+    $("validDays").value = "14";
     $("currency").value = "USD";
     $("service").value = "1";
+    $("frequency").selectedIndex = 0;
     $("size").value = "1500";
     $("rate").value = "5";
     $("bathrooms").value = "0";
     $("bathroomPrice").value = "15";
     $("extras").value = "0";
     $("discount").value = "0";
-    $("notes").value = "";
-
+    $("minCharge").value = "0";
+    $("tax").value = "0";
+    $("terms").value = "Payment is due on completion of the service.";
     calculateQuote();
   }
 
+  document.querySelectorAll("main input, main select, main textarea").forEach(function (el) {
+    el.addEventListener("input", calculateQuote);
+    el.addEventListener("change", calculateQuote);
+  });
+
   $("calculateBtn").addEventListener("click", calculateQuote);
   $("resetBtn").addEventListener("click", resetQuote);
-
   $("printBtn").addEventListener("click", function () {
     calculateQuote();
     window.print();
   });
 
   $("year").textContent = new Date().getFullYear();
-
+  $("quoteDate").value = today();
   calculateQuote();
 })();
 </script>
