@@ -3,19 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Move Out Cleaning Cost Calculator | CleanBizTools</title>
-
 <meta name="description" content="Free move out cleaning cost calculator for houses and apartments. Estimate prices by property size, bedrooms, bathrooms, condition and extra services.">
-
 <meta name="robots" content="index, follow, max-image-preview:large">
-
 <link rel="canonical" href="https://kamalbera198-sudo.github.io/cleanbiztools/move-out-cleaning-calculator.html">
-
 <meta name="theme-color" content="#0f766e">
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B9%3C/text%3E%3C/svg%3E">
-
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="CleanBizTools">
@@ -26,444 +19,266 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="CleanBizTools - free cleaning business calculators">
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Move Out Cleaning Cost Calculator | CleanBizTools">
 <meta name="twitter:description" content="Estimate move out and end of tenancy cleaning prices for free.">
 <meta name="twitter:image" content="https://kamalbera198-sudo.github.io/cleanbiztools/og-image.png">
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f0fdfa;
-  color: #1f2937;
-  line-height: 1.65;
-}
-
-header {
-  background: linear-gradient(135deg, #115e59, #0f766e, #0d9488);
-  color: white;
-  padding: 25px 16px;
-}
-
-.header-inner {
-  max-width: 1050px;
-  margin: auto;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 29px;
-}
-
-header p {
-  margin-bottom: 0;
-}
-
-nav {
-  background: #ffffff;
-  padding: 13px;
-  text-align: center;
-  border-bottom: 1px solid #ccfbf1;
-}
-
-nav a {
-  display: inline-block;
-  margin: 5px 9px;
-  color: #0f766e;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: #c2410c;
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid #f59e0b;
-  outline-offset: 3px;
-}
-
-.container {
-  width: 92%;
-  max-width: 1050px;
-  margin: 25px auto;
-}
-
-.card {
-  background: white;
-  border-radius: 16px;
-  padding: 23px;
-  margin-bottom: 23px;
-  box-shadow: 0 5px 20px rgba(15, 118, 110, 0.08);
-  border: 1px solid #ccfbf1;
-}
-
-h2 {
-  color: #115e59;
-  margin-top: 0;
-}
-
-h3 {
-  color: #0f766e;
-}
-
-.intro {
-  font-size: 17px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 17px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-input, select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 9px;
-  font-size: 16px;
-  background: #fff;
-}
-
-input:focus, select:focus {
-  outline: 2px solid #5eead4;
-  border-color: #0f766e;
-}
-
-.help {
-  font-size: 13px;
-  color: #64748b;
-  margin: 5px 0 0;
-}
-
-.checkbox-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 12px 0;
-}
-
-.checkbox-row input {
-  width: auto;
-  margin-top: 6px;
-  transform: scale(1.15);
-}
-
-.checkbox-row label {
-  font-weight: normal;
-  margin: 0;
-}
-
-button {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  background: #0f766e;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  background: #115e59;
-}
-
-.error {
-  background: #fef2f2;
-  border-left: 4px solid #dc2626;
-  color: #991b1b;
-  padding: 12px 14px;
-  border-radius: 6px;
-  font-size: 15px;
-  margin: 16px 0 0;
-}
-
-.result {
-  display: none;
-  background: linear-gradient(135deg, #ecfdf5, #ccfbf1);
-  border: 2px solid #5eead4;
-  border-radius: 14px;
-  padding: 20px;
-  margin-top: 22px;
-}
-
-.result.show {
-  display: block;
-}
-
-.result-total {
-  font-size: 32px;
-  font-weight: bold;
-  color: #115e59;
-  overflow-wrap: anywhere;
-}
-
-.result-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.result-item {
-  background: white;
-  padding: 13px;
-  border-radius: 10px;
-}
-
-.result-item strong {
-  display: block;
-  color: #0f766e;
-  font-size: 19px;
-  overflow-wrap: anywhere;
-}
-
-.note {
-  background: #fff7ed;
-  border-left: 4px solid #f97316;
-  padding: 13px;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-.faq {
-  border-bottom: 1px solid #e2e8f0;
-  padding: 12px 0;
-}
-
-.faq:last-child {
-  border-bottom: none;
-}
-
-.faq h3 {
-  font-size: 17px;
-  margin-bottom: 5px;
-}
-
-footer {
-  background: #134e4a;
-  color: white;
-  padding: 25px 15px;
-  text-align: center;
-}
-
-footer a {
-  color: #99f6e4;
-  margin: 0 7px;
-  text-decoration: none;
-}
-
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 24px;
-  }
-
-  .grid, .result-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 17px;
-  }
-
-  .result-total {
-    font-size: 27px;
-  }
-}
-
-@media print {
-  header, nav, footer, form, .no-print, .error,
-  #printButton, .note {
-    display: none !important;
-  }
-
-  body {
-    background: white;
-  }
-
-  .container {
-    width: 100%;
-    margin: 0;
-  }
-
-  .card {
-    box-shadow: none;
-    border: none;
-  }
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f0fdfa;color:#1f2937;line-height:1.65}
+header{background:linear-gradient(135deg,#115e59,#0f766e,#0d9488);color:white;padding:25px 16px}
+.header-inner{max-width:1050px;margin:auto}
+header h1{margin:0;font-size:29px}
+header p{margin-bottom:0}
+nav{background:#fff;padding:13px;text-align:center;border-bottom:1px solid #ccfbf1}
+nav a{display:inline-block;margin:5px 9px;color:#0f766e;font-weight:bold;text-decoration:none;font-size:14px}
+nav a:hover{color:#c2410c}
+a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+.container{width:92%;max-width:1050px;margin:25px auto}
+.card{background:white;border-radius:16px;padding:23px;margin-bottom:23px;box-shadow:0 5px 20px rgba(15,118,110,.08);border:1px solid #ccfbf1}
+h2{color:#115e59;margin-top:0}
+h3{color:#0f766e}
+.intro{font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+label{display:block;font-weight:bold;margin-bottom:6px}
+input,select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;font-size:16px;background:#fff}
+input:focus,select:focus{outline:2px solid #5eead4;border-color:#0f766e}
+.help{font-size:13px;color:#64748b;margin:5px 0 0}
+.checkbox-row{display:flex;align-items:flex-start;gap:10px;margin:12px 0}
+.checkbox-row input{width:auto;margin-top:6px;transform:scale(1.15)}
+.checkbox-row label{font-weight:normal;margin:0}
+button{width:100%;padding:14px;border:none;border-radius:10px;background:#0f766e;color:white;font-size:17px;font-weight:bold;cursor:pointer;margin-top:20px}
+button:hover{background:#115e59}
+.error{background:#fef2f2;border-left:4px solid #dc2626;color:#991b1b;padding:12px 14px;border-radius:6px;font-size:15px;margin:16px 0 0}
+.result{display:none;background:linear-gradient(135deg,#ecfdf5,#ccfbf1);border:2px solid #5eead4;border-radius:14px;padding:20px;margin-top:22px}
+.result.show{display:block}
+.result-total{font-size:32px;font-weight:bold;color:#115e59;overflow-wrap:anywhere}
+.result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:15px}
+.result-item{background:white;padding:13px;border-radius:10px}
+.result-item strong{display:block;color:#0f766e;font-size:19px;overflow-wrap:anywhere}
+.note{background:#fff7ed;border-left:4px solid #f97316;padding:13px;border-radius:6px;font-size:14px}
+.faq{border-bottom:1px solid #e2e8f0;padding:12px 0}
+.faq:last-child{border-bottom:none}
+.faq h3{font-size:17px;margin-bottom:5px}
+footer{background:#134e4a;color:white;padding:25px 15px;text-align:center}
+footer a{color:#99f6e4;margin:0 7px;text-decoration:none}
+@media(max-width:600px){header h1{font-size:24px}.grid,.result-grid{grid-template-columns:1fr}.card{padding:17px}.result-total{font-size:27px}}
+@media print{header,nav,footer,form,.no-print,.error,#printButton,.note{display:none!important}body{background:white}.container{width:100%;margin:0}.card{box-shadow:none;border:none}}
 </style>
-
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Move Out Cleaning Cost Calculator",
-  "url": "https://kamalbera198-sudo.github.io/cleanbiztools/move-out-cleaning-calculator.html",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Any",
-  "isAccessibleForFree": true,
-  "description": "Estimate move out and end of tenancy cleaning prices based on property size, bedrooms, bathrooms, cleaning condition and additional services.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Move Out Cleaning Cost Calculator",
+ "url": "https://kamalbera198-sudo.github.io/cleanbiztools/move-out-cleaning-calculator.html",
+ "applicationCategory": "BusinessApplication",
+ "operatingSystem": "Any",
+ "isAccessibleForFree": true,
+ "description": "Estimate move out and end of tenancy cleaning prices based on property size, bedrooms, bathrooms, cleaning condition and additional services.",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ }
 }
 </script>
-
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much does move out cleaning cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The cost varies with property size, location, condition, cleaning requirements and additional services. Enter your local rates to generate an estimate."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is included in move out cleaning?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Typical services include cleaning floors, surfaces, kitchens, bathrooms and accessible areas. Confirm the exact tasks with your cleaning provider or customer."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is move out cleaning the same as end of tenancy cleaning?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "These terms often describe similar cleaning services when someone leaves a rental property. Requirements differ by location and rental agreement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do cleaning businesses set a profitable price?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Calculate labor, supplies and overhead, then account for the profit margin you want to achieve. Compare your estimate with local competitors and the scope of work."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use this calculator outside the United States?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. You can select several currencies and enter rates and costs appropriate for your local market. The calculator does not convert currencies automatically."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can tenants use this calculator?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Tenants, landlords, property managers and cleaning businesses can use it to prepare an initial budget or quote."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does move out cleaning cost per square foot?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Price per square foot depends on your local rates, the condition of the property and the services included. Enter your own rate per square foot in the calculator, and the result shows the price per square foot for the whole job, including extras."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does it cost to clean a 2 bedroom apartment for move out?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The price depends on the apartment's size, condition, location and extra services. Enter 2 bedrooms, the number of bathrooms and your local rates in the calculator to estimate a price for that apartment."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much should I charge for a move out cleaning job?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Add up your labor, supplies and overhead, add the profit margin you want, and compare the result with a size-based price and your local market. The calculator does both comparisons and uses the higher price."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do oven and carpet cleaning cost extra for move out cleaning?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "They are often charged as extras. Tick the services the customer wants and enter your own charges, and the calculator adds them on top of the base price."
-      }
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How much does move out cleaning cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The cost varies with property size, location, condition, cleaning requirements and additional services. Enter your local rates to generate an estimate."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is included in move out cleaning?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Typical services include cleaning floors, surfaces, kitchens, bathrooms and accessible areas. Confirm the exact tasks with your cleaning provider or customer."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is move out cleaning the same as end of tenancy cleaning?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "These terms often describe similar cleaning services when someone leaves a rental property. Requirements differ by location and rental agreement."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do cleaning businesses set a profitable price?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Calculate labor, supplies and overhead, then account for the profit margin you want to achieve. Compare your estimate with local competitors and the scope of work."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I use this calculator outside the United States?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. You can select several currencies and enter rates and costs appropriate for your local market. The calculator does not convert currencies automatically."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can tenants use this calculator?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Tenants, landlords, property managers and cleaning businesses can use it to prepare an initial budget or quote."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does move out cleaning cost per square foot?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Price per square foot depends on your local rates, the condition of the property and the services included. Enter your own rate per square foot in the calculator, and the result shows the price per square foot for the whole job, including extras."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does it cost to clean a 2 bedroom apartment for move out?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The price depends on the apartment's size, condition, location and extra services. Enter 2 bedrooms, the number of bathrooms and your local rates in the calculator to estimate a price for that apartment."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much should I charge for a move out cleaning job?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Add up your labor, supplies and overhead, add the profit margin you want, and compare the result with a size-based price and your local market. The calculator does both comparisons and uses the higher price."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do oven and carpet cleaning cost extra for move out cleaning?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "They are often charged as extras. Tick the services the customer wants and enter your own charges, and the calculator adds them on top of the base price."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does end of tenancy cleaning cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The price depends on the size and condition of the property, your location, the services included and who does the work. Enter your own local rates in the calculator to estimate a price for end of tenancy cleaning."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does it cost to clean a 3 bedroom house for move out?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The cost depends on the size of the house, its condition, your location and any extras. Enter 3 bedrooms, the number of bathrooms, the square footage and your local rates in the calculator to estimate a price for that house."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much does it cost to clean a 1 bedroom apartment for move out?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A 1 bedroom apartment is usually quicker to clean than a house, but the price still depends on size, condition, location and extras. Enter 1 bedroom, your bathroom count and your local rates to get an estimate."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How long does move out cleaning take?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It depends on the size and condition of the property and how many people are cleaning. Heavily soiled kitchens and bathrooms, and extras such as ovens and carpets, add time. Enter the labor cost for the time you expect the job to take."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Who pays for move out cleaning, the tenant or the landlord?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It depends on the lease and local rules. Many leases ask tenants to leave the property clean, but requirements differ, so check your rental agreement or ask your landlord or property manager."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Should I hire a professional move out cleaner or clean it myself?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Cleaning it yourself saves money but takes time and effort. A professional service can be faster and follow a set checklist. Use the calculator to compare a professional estimate with your own time and supply costs."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is a move out cleaning checklist?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It is a room-by-room list of cleaning tasks for a property being vacated, such as kitchens, bathrooms, floors, doors and a final inspection. Use a printable checklist alongside your quote so everyone knows what is included."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I write a move out cleaning quote?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "List the property details, the tasks included, any extras and the total price. Use this calculator to work out the price, then put the result and the agreed scope of work into a written quote."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What does the profit margin mean in this calculator?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The profit margin is the share of the final price that is profit after your business costs. A 30 percent margin means 30 percent of the customer price is profit, not 30 percent added on top of your costs."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why does the calculator show a size-based or cost-based price?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The calculator works out one price from the size of the property and another from your costs and profit margin, then uses the higher one so the job is not underpriced. The Pricing Basis box shows which one was used."
+   }
+  }
+ ]
 }
 </script>
 </head>
-
 <body>
-
 <header>
   <div class="header-inner">
     <h1>Move Out Cleaning Cost Calculator</h1>
     <p>Smart Cleaning Estimates for Every Property | CleanBizTools</p>
   </div>
 </header>
-
 <nav aria-label="Main navigation">
   <a href="./">Home</a>
   <a href="cleaning-pricing.html">Cleaning Price Calculator</a>
+  <a href="move-out-cleaning-calculator.html">Move Out Cleaning Cost</a>
+  <a href="airbnb-cleaning-cost-calculator.html">Airbnb Cleaning Cost</a>
   <a href="cleaning-profit.html">Profit Calculator</a>
   <a href="cleaning-quote.html">Quote Generator</a>
   <a href="cleaning-hourly-rate.html">Hourly Rate</a>
   <a href="cleaning-startup-cost.html">Startup Costs</a>
   <a href="cleaning-checklist.html">Cleaning Checklist</a>
 </nav>
-
 <main class="container">
-
 <section class="card no-print">
   <h2>Estimate Your Move Out Cleaning Price</h2>
-
-  <p class="intro">
-    Moving out of a house or apartment? Use this free
-    <strong>move out cleaning cost calculator</strong> to estimate
-    a cleaning price or prepare a move out cleaning quote based on property size, bedrooms, bathrooms,
-    cleaning condition and extra services.
-  </p>
-
-  <p>
-    This tool is designed for cleaning businesses, landlords,
-    tenants and property managers worldwide. Adjust the rates to
-    match your local market and currency.
-  </p>
+  <p class="intro">Moving out of a house or apartment? Use this free <strong>move out cleaning cost calculator</strong> to estimate a cleaning price or prepare a move out cleaning quote based on property size, bedrooms, bathrooms, cleaning condition and extra services.</p>
+  <p>This tool is designed for cleaning businesses, landlords, tenants and property managers worldwide. Adjust the rates to match your local market and currency.</p>
 </section>
-
 <section class="card">
   <h2 class="no-print">🧹 Cleaning Cost Calculator</h2>
-
   <form id="calculator" novalidate>
-
     <div class="grid">
-
       <div>
         <label for="currency">Currency</label>
         <select id="currency">
@@ -476,402 +291,339 @@ footer a {
         </select>
         <p class="help">Currency selection changes the display, not the exchange rate.</p>
       </div>
-
       <div>
         <label for="area">Property Size (Square Feet)</label>
-        <input id="area" type="number" min="1" max="100000" step="any"
-               value="1000" required>
+        <input id="area" type="number" min="1" max="100000" step="any" value="1000" required>
       </div>
-
       <div>
         <label for="bedrooms">Number of Bedrooms</label>
-        <input id="bedrooms" type="number" min="0" max="50" step="1"
-               value="2" required>
+        <input id="bedrooms" type="number" min="0" max="50" step="1" value="2" required>
       </div>
-
       <div>
         <label for="bathrooms">Number of Bathrooms</label>
-        <input id="bathrooms" type="number" min="0" max="50" step="1"
-               value="1" required>
+        <input id="bathrooms" type="number" min="0" max="50" step="1" value="1" required>
       </div>
-
       <div>
         <label for="condition">Cleaning Condition</label>
         <select id="condition">
-          <option value="1">Light — Well maintained</option>
-          <option value="1.25" selected>Medium — Normal cleaning</option>
-          <option value="1.6">Heavy — Extra work required</option>
+          <option value="1">Light - Well maintained</option>
+          <option value="1.25" selected>Medium - Normal cleaning</option>
+          <option value="1.6">Heavy - Extra work required</option>
         </select>
         <p class="help">Applies to the size-based part of the price.</p>
       </div>
-
       <div>
         <label for="rate">Base Rate per Square Foot</label>
-        <input id="rate" type="number" min="0" max="100000"
-               step="0.01" value="0.15" required>
+        <input id="rate" type="number" min="0" max="100000" step="0.01" value="0.15" required>
         <p class="help">Enter a rate suitable for your selected currency and market.</p>
       </div>
-
       <div>
         <label for="bedroomCharge">Charge per Bedroom</label>
-        <input id="bedroomCharge" type="number" min="0" max="100000000"
-               step="0.01" value="10" required>
+        <input id="bedroomCharge" type="number" min="0" max="100000000" step="0.01" value="10" required>
         <p class="help">Added for each bedroom, on top of the square-foot rate.</p>
       </div>
-
       <div>
         <label for="bathroomCharge">Charge per Bathroom</label>
-        <input id="bathroomCharge" type="number" min="0" max="100000000"
-               step="0.01" value="20" required>
+        <input id="bathroomCharge" type="number" min="0" max="100000000" step="0.01" value="20" required>
         <p class="help">Added for each bathroom, on top of the square-foot rate.</p>
       </div>
-
       <div>
         <label for="labor">Estimated Labor Cost</label>
-        <input id="labor" type="number" min="0" max="100000000"
-               step="0.01" value="60" required>
+        <input id="labor" type="number" min="0" max="100000000" step="0.01" value="60" required>
         <p class="help">Include labor for any extra services you plan to charge for.</p>
       </div>
-
       <div>
         <label for="supplies">Cleaning Supplies Cost</label>
-        <input id="supplies" type="number" min="0" max="100000000"
-               step="0.01" value="15" required>
+        <input id="supplies" type="number" min="0" max="100000000" step="0.01" value="15" required>
       </div>
-
       <div>
         <label for="overhead">Other Business Costs</label>
-        <input id="overhead" type="number" min="0" max="100000000"
-               step="0.01" value="10" required>
+        <input id="overhead" type="number" min="0" max="100000000" step="0.01" value="10" required>
       </div>
-
       <div>
         <label for="margin">Desired Profit Margin (%)</label>
-        <input id="margin" type="number" min="0" max="99"
-               step="0.1" value="30" required>
+        <input id="margin" type="number" min="0" max="99" step="0.1" value="30" required>
       </div>
-
     </div>
-
     <h3>✨ Additional Cleaning Services</h3>
-
     <div class="checkbox-row">
       <input type="checkbox" id="oven">
-      <label for="oven">Inside oven cleaning — additional charge</label>
+      <label for="oven">Inside oven cleaning - additional charge</label>
     </div>
-
     <div class="checkbox-row">
       <input type="checkbox" id="fridge">
-      <label for="fridge">Inside refrigerator cleaning — additional charge</label>
+      <label for="fridge">Inside refrigerator cleaning - additional charge</label>
     </div>
-
     <div class="checkbox-row">
       <input type="checkbox" id="windows">
-      <label for="windows">Interior window cleaning — additional charge</label>
+      <label for="windows">Interior window cleaning - additional charge</label>
     </div>
-
     <div class="checkbox-row">
       <input type="checkbox" id="carpets">
-      <label for="carpets">Carpet deep cleaning — additional charge</label>
+      <label for="carpets">Carpet deep cleaning - additional charge</label>
     </div>
-
     <div class="grid">
       <div>
         <label for="ovenPrice">Oven Cleaning Charge</label>
-        <input id="ovenPrice" type="number" min="0" max="100000000"
-               step="0.01" value="25">
+        <input id="ovenPrice" type="number" min="0" max="100000000" step="0.01" value="25" >
       </div>
-
       <div>
         <label for="fridgePrice">Refrigerator Cleaning Charge</label>
-        <input id="fridgePrice" type="number" min="0" max="100000000"
-               step="0.01" value="20">
+        <input id="fridgePrice" type="number" min="0" max="100000000" step="0.01" value="20" >
       </div>
-
       <div>
         <label for="windowPrice">Window Cleaning Charge</label>
-        <input id="windowPrice" type="number" min="0" max="100000000"
-               step="0.01" value="30">
+        <input id="windowPrice" type="number" min="0" max="100000000" step="0.01" value="30" >
       </div>
-
       <div>
         <label for="carpetPrice">Carpet Cleaning Charge</label>
-        <input id="carpetPrice" type="number" min="0" max="100000000"
-               step="0.01" value="40">
+        <input id="carpetPrice" type="number" min="0" max="100000000" step="0.01" value="40" >
       </div>
     </div>
-
     <p class="error" id="error" role="alert" hidden></p>
-
     <button type="submit">Calculate Cleaning Cost</button>
-
   </form>
-
   <div class="result" id="result" aria-live="polite">
     <h2>📊 Your Estimated Cleaning Price</h2>
-
     <p>Suggested customer price</p>
     <div class="result-total" id="total">$0.00</div>
-
     <div class="result-grid">
-
       <div class="result-item">
         <span>Estimated Business Cost</span>
         <strong id="businessCost">$0.00</strong>
       </div>
-
       <div class="result-item">
         <span>Estimated Profit</span>
         <strong id="profit">$0.00</strong>
       </div>
-
       <div class="result-item">
         <span>Profit Margin</span>
         <strong id="actualMargin">0%</strong>
       </div>
-
       <div class="result-item">
         <span>Price per Square Foot</span>
         <strong id="perFoot">$0.00</strong>
       </div>
-
       <div class="result-item">
         <span>Cleaning Difficulty</span>
         <strong id="difficulty">Medium</strong>
       </div>
-
       <div class="result-item">
         <span>Pricing Basis</span>
         <strong id="basis">Size-based</strong>
       </div>
-
     </div>
-
-    <p class="note">
-      This is an estimate, not a guaranteed market price.
-      Adjust rates according to your location, labor requirements
-      and the actual property condition.
-    </p>
-
+    <p class="note">This is an estimate, not a guaranteed market price. Adjust rates according to your location, labor requirements and the actual property condition.</p>
     <button type="button" id="printButton">Print Estimate</button>
   </div>
 </section>
-
 <section class="card no-print">
   <h2>How to Calculate Move Out Cleaning Costs</h2>
-
-  <p>
-    Move out cleaning prices depend on property size, cleaning time,
-    the number of rooms and the level of dirt. Additional services,
-    such as oven or carpet cleaning, may increase the final quote.
-  </p>
-
+  <p>Move out cleaning prices depend on property size, cleaning time, the number of rooms and the level of dirt. Additional services, such as oven or carpet cleaning, may increase the final quote.</p>
   <h3>1. Enter the Property Size</h3>
-  <p>
-    Enter the property's approximate floor area in square feet.
-    Use a consistent measurement when comparing properties.
-  </p>
-
+  <p>Enter the property's approximate floor area in square feet. Use a consistent measurement when comparing properties.</p>
   <h3>2. Add Bedrooms and Bathrooms</h3>
-  <p>
-    Enter the number of bedrooms and bathrooms, along with the charge you
-    apply per room. Bathrooms usually take more time than other rooms,
-    so many cleaners charge more for them.
-  </p>
-
+  <p>Enter the number of bedrooms and bathrooms, along with the charge you apply per room. Bathrooms usually take more time than other rooms, so many cleaners charge more for them.</p>
   <h3>3. Choose the Cleaning Condition</h3>
-  <p>
-    Light cleaning is suitable for well-maintained properties.
-    Medium cleaning covers normal move-out work. Heavy cleaning
-    accounts for properties that require additional time and effort.
-  </p>
-
+  <p>Light cleaning is suitable for well-maintained properties. Medium cleaning covers normal move-out work. Heavy cleaning accounts for properties that require additional time and effort.</p>
   <h3>4. Add Extra Services</h3>
-  <p>
-    Select any extra services requested by the customer and enter
-    the relevant charges. Extra services are added on top of the base price.
-  </p>
-
+  <p>Select any extra services requested by the customer and enter the relevant charges. Extra services are added on top of the base price.</p>
   <h3>5. Review Costs and Profit</h3>
-  <p>
-    Enter estimated labor, supplies and other business expenses.
-    The calculator compares a size-based price with a cost-based price
-    that covers your expenses and desired profit margin, then uses the
-    higher of the two so the job is not underpriced. Extra services are
-    added afterwards.
-  </p>
+  <p>Enter estimated labor, supplies and other business expenses. The calculator compares a size-based price with a cost-based price that covers your expenses and desired profit margin, then uses the higher of the two so the job is not underpriced. Extra services are added afterwards.</p>
 </section>
-
+<section class="card no-print">
+  <h2>What Affects Move Out Cleaning Prices?</h2>
+  <p>There is no single price for a move out clean. The final cost depends on several factors, and this calculator lets you enter your own rates for each one.</p>
+  <ul>
+    <li><strong>Property size:</strong> larger homes take more time and supplies.</li>
+    <li><strong>Bedrooms and bathrooms:</strong> bathrooms and kitchens usually need the most work.</li>
+    <li><strong>Condition:</strong> a well-kept property is faster to clean than one with built-up grime.</li>
+    <li><strong>Extras:</strong> oven, refrigerator, window and carpet cleaning are often charged separately.</li>
+    <li><strong>Labor, supplies and overhead:</strong> your own costs set the minimum price you can accept.</li>
+    <li><strong>Location:</strong> local wages and market rates change what customers expect to pay.</li>
+  </ul>
+</section>
+<section class="card no-print">
+  <h2>Move Out Cleaning Price for Apartments, Houses and Rentals</h2>
+  <h3>Apartment Move Out Cleaning</h3>
+  <p>Apartments are usually smaller, so the size-based price is lower, but kitchens and bathrooms still take time. Enter the apartment's square footage, bedrooms and bathrooms to estimate a move out cleaning price.</p>
+  <h3>House Move Out Cleaning</h3>
+  <p>Houses have more rooms, floors and surfaces. Add each bedroom and bathroom, then choose the cleaning condition to see how a larger property changes the estimate.</p>
+  <h3>End of Tenancy and Rental Cleaning</h3>
+  <p>End of tenancy cleaning usually means leaving a rental property clean for the landlord or the next tenant. Requirements differ by lease and location, so check the rental agreement and agree the tasks before you quote or book.</p>
+</section>
+<section class="card no-print">
+  <h2>How to Quote a Move Out Cleaning Job</h2>
+  <ol>
+    <li>Visit or ask for photos of the property and confirm its size, rooms and condition.</li>
+    <li>Enter the details above to get a suggested price.</li>
+    <li>Check the result against your costs with the <a href="cleaning-profit.html">cleaning business profit calculator</a>.</li>
+    <li>Compare the labor time with your <a href="cleaning-hourly-rate.html">cleaning hourly rate</a>.</li>
+    <li>Write the price and the agreed tasks into a quote using the <a href="cleaning-quote.html">cleaning quote generator</a>.</li>
+    <li>Use the <a href="cleaning-checklist.html">free printable cleaning checklist</a> on the day to complete every task.</li>
+  </ol>
+  <p>Cleaners who also handle short-term rentals can use the <a href="airbnb-cleaning-cost-calculator.html">Airbnb cleaning cost calculator</a>, and anyone starting out can plan expenses with the <a href="cleaning-startup-cost.html">cleaning business startup cost calculator</a>.</p>
+</section>
+<section class="card no-print">
+  <h2>Worked Example Using the Default Values</h2>
+  <p>With the numbers already in the calculator (1,000 square feet, 2 bedrooms, 1 bathroom, medium condition and a rate of 0.15 per square foot), the size-based price is (150 + 20 + 20) &times; 1.25 = 237.50. Your costs of 85 and a 30% margin give a cost-based price of about 121.43. The calculator uses the higher figure, so the suggested price is 237.50, which is about 0.24 per square foot. Ticking oven and carpet cleaning adds 25 and 40, so the price becomes 302.50. Change any rate to match your own market.</p>
+  <p>These are example numbers only, not real market prices. See the <a href="cleaning-pricing.html">house cleaning price calculator</a> to price regular home cleaning in the same way.</p>
+</section>
 <section class="card no-print">
   <h2>Move Out Cleaning Cost Calculator FAQs</h2>
-
   <div class="faq">
     <h3>How much does move out cleaning cost?</h3>
-    <p>
-      The cost varies with property size, location, condition,
-      cleaning requirements and additional services. Enter your
-      local rates to generate an estimate.
-    </p>
+    <p>The cost varies with property size, location, condition, cleaning requirements and additional services. Enter your local rates to generate an estimate.</p>
   </div>
 
   <div class="faq">
     <h3>What is included in move out cleaning?</h3>
-    <p>
-      Typical services include cleaning floors, surfaces, kitchens,
-      bathrooms and accessible areas. Confirm the exact tasks with
-      your cleaning provider or customer.
-    </p>
+    <p>Typical services include cleaning floors, surfaces, kitchens, bathrooms and accessible areas. Confirm the exact tasks with your cleaning provider or customer.</p>
   </div>
 
   <div class="faq">
     <h3>Is move out cleaning the same as end of tenancy cleaning?</h3>
-    <p>
-      These terms often describe similar cleaning services when
-      someone leaves a rental property. Requirements differ by
-      location and rental agreement.
-    </p>
+    <p>These terms often describe similar cleaning services when someone leaves a rental property. Requirements differ by location and rental agreement.</p>
   </div>
 
   <div class="faq">
     <h3>How do cleaning businesses set a profitable price?</h3>
-    <p>
-      Calculate labor, supplies and overhead, then account for the
-      profit margin you want to achieve. Compare your estimate with
-      local competitors and the scope of work.
-    </p>
+    <p>Calculate labor, supplies and overhead, then account for the profit margin you want to achieve. Compare your estimate with local competitors and the scope of work.</p>
   </div>
 
   <div class="faq">
     <h3>Can I use this calculator outside the United States?</h3>
-    <p>
-      Yes. You can select several currencies and enter rates and
-      costs appropriate for your local market. The calculator does
-      not convert currencies automatically.
-    </p>
+    <p>Yes. You can select several currencies and enter rates and costs appropriate for your local market. The calculator does not convert currencies automatically.</p>
   </div>
 
   <div class="faq">
     <h3>Can tenants use this calculator?</h3>
-    <p>
-      Yes. Tenants, landlords, property managers and cleaning
-      businesses can use it to prepare an initial budget or quote.
-    </p>
+    <p>Yes. Tenants, landlords, property managers and cleaning businesses can use it to prepare an initial budget or quote.</p>
   </div>
 
   <div class="faq">
     <h3>How much does move out cleaning cost per square foot?</h3>
-    <p>
-      Price per square foot depends on your local rates, the condition of the property and the services included. Enter your own rate per square foot in the calculator, and the result shows the price per square foot for the whole job, including extras.
-    </p>
+    <p>Price per square foot depends on your local rates, the condition of the property and the services included. Enter your own rate per square foot in the calculator, and the result shows the price per square foot for the whole job, including extras.</p>
   </div>
 
   <div class="faq">
     <h3>How much does it cost to clean a 2 bedroom apartment for move out?</h3>
-    <p>
-      The price depends on the apartment's size, condition, location and extra services. Enter 2 bedrooms, the number of bathrooms and your local rates in the calculator to estimate a price for that apartment.
-    </p>
+    <p>The price depends on the apartment's size, condition, location and extra services. Enter 2 bedrooms, the number of bathrooms and your local rates in the calculator to estimate a price for that apartment.</p>
   </div>
 
   <div class="faq">
     <h3>How much should I charge for a move out cleaning job?</h3>
-    <p>
-      Add up your labor, supplies and overhead, add the profit margin you want, and compare the result with a size-based price and your local market. The calculator does both comparisons and uses the higher price.
-    </p>
+    <p>Add up your labor, supplies and overhead, add the profit margin you want, and compare the result with a size-based price and your local market. The calculator does both comparisons and uses the higher price.</p>
   </div>
 
   <div class="faq">
     <h3>Do oven and carpet cleaning cost extra for move out cleaning?</h3>
-    <p>
-      They are often charged as extras. Tick the services the customer wants and enter your own charges, and the calculator adds them on top of the base price.
-    </p>
+    <p>They are often charged as extras. Tick the services the customer wants and enter your own charges, and the calculator adds them on top of the base price.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How much does end of tenancy cleaning cost?</h3>
+    <p>The price depends on the size and condition of the property, your location, the services included and who does the work. Enter your own local rates in the calculator to estimate a price for end of tenancy cleaning.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How much does it cost to clean a 3 bedroom house for move out?</h3>
+    <p>The cost depends on the size of the house, its condition, your location and any extras. Enter 3 bedrooms, the number of bathrooms, the square footage and your local rates in the calculator to estimate a price for that house.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How much does it cost to clean a 1 bedroom apartment for move out?</h3>
+    <p>A 1 bedroom apartment is usually quicker to clean than a house, but the price still depends on size, condition, location and extras. Enter 1 bedroom, your bathroom count and your local rates to get an estimate.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How long does move out cleaning take?</h3>
+    <p>It depends on the size and condition of the property and how many people are cleaning. Heavily soiled kitchens and bathrooms, and extras such as ovens and carpets, add time. Enter the labor cost for the time you expect the job to take.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Who pays for move out cleaning, the tenant or the landlord?</h3>
+    <p>It depends on the lease and local rules. Many leases ask tenants to leave the property clean, but requirements differ, so check your rental agreement or ask your landlord or property manager.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Should I hire a professional move out cleaner or clean it myself?</h3>
+    <p>Cleaning it yourself saves money but takes time and effort. A professional service can be faster and follow a set checklist. Use the calculator to compare a professional estimate with your own time and supply costs.</p>
+  </div>
+
+  <div class="faq">
+    <h3>What is a move out cleaning checklist?</h3>
+    <p>It is a room-by-room list of cleaning tasks for a property being vacated, such as kitchens, bathrooms, floors, doors and a final inspection. Use a printable checklist alongside your quote so everyone knows what is included.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How do I write a move out cleaning quote?</h3>
+    <p>List the property details, the tasks included, any extras and the total price. Use this calculator to work out the price, then put the result and the agreed scope of work into a written quote.</p>
+  </div>
+
+  <div class="faq">
+    <h3>What does the profit margin mean in this calculator?</h3>
+    <p>The profit margin is the share of the final price that is profit after your business costs. A 30 percent margin means 30 percent of the customer price is profit, not 30 percent added on top of your costs.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Why does the calculator show a size-based or cost-based price?</h3>
+    <p>The calculator works out one price from the size of the property and another from your costs and profit margin, then uses the higher one so the job is not underpriced. The Pricing Basis box shows which one was used.</p>
   </div>
 </section>
-
 <section class="card no-print">
   <h2>Explore More Free Cleaning Business Tools</h2>
-
-  <p>
-    Use these additional CleanBizTools resources to plan cleaning
-    services and manage a cleaning business.
-  </p>
-
+  <p>Use these additional CleanBizTools resources to plan cleaning services and manage a cleaning business.</p>
   <ul>
-    <li><a href="cleaning-pricing.html">House Cleaning Price Calculator</a></li>
-    <li><a href="airbnb-cleaning-cost-calculator.html">Airbnb Cleaning Cost Calculator</a></li>
-    <li><a href="cleaning-profit.html">Cleaning Business Profit Calculator</a></li>
-    <li><a href="cleaning-quote.html">Cleaning Quote Generator</a></li>
-    <li><a href="cleaning-hourly-rate.html">Cleaning Hourly Rate Calculator</a></li>
-    <li><a href="cleaning-startup-cost.html">Cleaning Business Startup Cost Calculator</a></li>
-    <li><a href="cleaning-checklist.html">Free Printable Cleaning Checklist</a></li>
+    <li><a href="cleaning-pricing.html">House Cleaning Price Calculator</a> - price regular and deep cleans</li>
+    <li><a href="airbnb-cleaning-cost-calculator.html">Airbnb Cleaning Cost Calculator</a> - price short-term rental turnovers</li>
+    <li><a href="cleaning-profit.html">Cleaning Business Profit Calculator</a> - check margins and profit</li>
+    <li><a href="cleaning-quote.html">Cleaning Quote Generator</a> - turn a price into a customer quote</li>
+    <li><a href="cleaning-hourly-rate.html">Cleaning Hourly Rate Calculator</a> - find the rate you need per hour</li>
+    <li><a href="cleaning-startup-cost.html">Cleaning Business Startup Cost Calculator</a> - plan your start-up budget</li>
+    <li><a href="cleaning-checklist.html">Free Printable Cleaning Checklist</a> - includes a move out cleaning checklist</li>
   </ul>
 </section>
-
 </main>
-
 <footer>
   <p><strong>CleanBizTools</strong> — Free Tools for Cleaning Businesses</p>
-  <p>
-    <a href="./">Home</a> |
-    <a href="cleaning-pricing.html">Pricing Calculator</a> |
-    <a href="cleaning-checklist.html">Cleaning Checklist</a> |
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="privacy-policy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms of Use</a>
-  </p>
+  <p><a href="./">Home</a> | <a href="cleaning-pricing.html">Pricing Calculator</a> | <a href="cleaning-checklist.html">Cleaning Checklist</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
   <p>Estimates are for informational purposes and may not reflect actual local prices.</p>
   <p>&copy; 2026 CleanBizTools</p>
 </footer>
-
 <script>
 const form = document.getElementById("calculator");
 const resultBox = document.getElementById("result");
 const errorBox = document.getElementById("error");
+const currencySymbols = {USD:"$",INR:"₹",GBP:"£",EUR:"€",CAD:"CA$",AUD:"A$"};
 
-const currencySymbols = {
-  USD: "$",
-  INR: "₹",
-  GBP: "£",
-  EUR: "€",
-  CAD: "CA$",
-  AUD: "A$"
-};
-
-// Required numeric fields: returns NaN when empty or invalid.
-function getNumber(id) {
-  const value = document.getElementById(id).valueAsNumber;
+// Reads the text of any field (input or dropdown) and converts it to a number.
+function readNumber(id) {
+  const raw = String(document.getElementById(id).value).trim();
+  if (raw === "") return NaN;
+  const value = Number(raw);
   return Number.isFinite(value) ? value : NaN;
 }
-
-// Optional fields: an empty value counts as 0.
+function getNumber(id) { return readNumber(id); }
 function getOptional(id) {
-  const value = document.getElementById(id).valueAsNumber;
+  const value = readNumber(id);
   return Number.isFinite(value) ? value : 0;
 }
-
 function money(value, currency) {
   const symbol = currencySymbols[currency] || "$";
-
-  return symbol + Number(value).toLocaleString("en-US", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
+  return symbol + Number(value).toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2});
 }
-
 function showError(message) {
   errorBox.textContent = message;
   errorBox.hidden = false;
   resultBox.classList.remove("show");
 }
-
 function clearError() {
   errorBox.textContent = "";
   errorBox.hidden = true;
 }
-
 function calculateEstimate() {
   clearError();
-
   const area = getNumber("area");
   const bedrooms = getNumber("bedrooms");
   const bathrooms = getNumber("bathrooms");
@@ -884,121 +636,57 @@ function calculateEstimate() {
   const margin = getNumber("margin");
   const condition = getNumber("condition");
   const currency = document.getElementById("currency").value;
-
-  const required = [
-    area, bedrooms, bathrooms, rate, bedroomCharge, bathroomCharge,
-    labor, supplies, overhead, margin, condition
-  ];
-
+  const required = [area, bedrooms, bathrooms, rate, bedroomCharge, bathroomCharge, labor, supplies, overhead, margin, condition];
   if (required.some(v => !Number.isFinite(v))) {
     showError("Please fill in every required field with a valid number.");
     return;
   }
-
   const extraPrices = {
     oven: getOptional("ovenPrice"),
     fridge: getOptional("fridgePrice"),
     windows: getOptional("windowPrice"),
     carpets: getOptional("carpetPrice")
   };
-
-  if (required.some(v => v < 0) ||
-      Object.values(extraPrices).some(v => v < 0)) {
+  if (required.some(v => v < 0) || Object.values(extraPrices).some(v => v < 0)) {
     showError("Please enter non-negative numbers only.");
     return;
   }
-
-  if (
-    area < 1 || area > 100000 ||
-    bedrooms > 50 || bathrooms > 50 ||
-    rate > 100000 ||
-    bedroomCharge > 100000000 || bathroomCharge > 100000000 ||
-    labor > 100000000 || supplies > 100000000 || overhead > 100000000 ||
-    margin >= 100
-  ) {
+  if (area < 1 || area > 100000 || bedrooms > 50 || bathrooms > 50 || rate > 100000 ||
+      bedroomCharge > 100000000 || bathroomCharge > 100000000 ||
+      labor > 100000000 || supplies > 100000000 || overhead > 100000000 || margin >= 100) {
     showError("Please check your entries. Property size must be at least 1, and the profit margin must be below 100%.");
     return;
   }
-
   let extras = 0;
-
-  if (document.getElementById("oven").checked) {
-    extras += extraPrices.oven;
-  }
-
-  if (document.getElementById("fridge").checked) {
-    extras += extraPrices.fridge;
-  }
-
-  if (document.getElementById("windows").checked) {
-    extras += extraPrices.windows;
-  }
-
-  if (document.getElementById("carpets").checked) {
-    extras += extraPrices.carpets;
-  }
-
-  // Size-based price: area, bedrooms and bathrooms, scaled by condition.
-  const sizePrice = (area * rate +
-                     bedrooms * bedroomCharge +
-                     bathrooms * bathroomCharge) * condition;
-
+  if (document.getElementById("oven").checked) extras += extraPrices.oven;
+  if (document.getElementById("fridge").checked) extras += extraPrices.fridge;
+  if (document.getElementById("windows").checked) extras += extraPrices.windows;
+  if (document.getElementById("carpets").checked) extras += extraPrices.carpets;
+  const sizePrice = (area * rate + bedrooms * bedroomCharge + bathrooms * bathroomCharge) * condition;
   const businessCost = labor + supplies + overhead;
-
-  // Cost-based price: covers expenses and the requested profit margin.
   const costPrice = businessCost / (1 - margin / 100);
-
-  // Use whichever price is higher to avoid underpricing the job,
-  // then add the extra services on top so they are never lost.
   const basePrice = Math.max(sizePrice, costPrice);
   const total = basePrice + extras;
-
   const profit = total - businessCost;
   const actualMargin = total > 0 ? (profit / total) * 100 : 0;
-
-  document.getElementById("total").textContent =
-    money(total, currency);
-
-  document.getElementById("businessCost").textContent =
-    money(businessCost, currency);
-
-  document.getElementById("profit").textContent =
-    money(profit, currency);
-
-  document.getElementById("actualMargin").textContent =
-    actualMargin.toFixed(1) + "%";
-
-  document.getElementById("perFoot").textContent =
-    money(total / area, currency);
-
-  document.getElementById("basis").textContent =
-    costPrice > sizePrice ? "Cost-based" : "Size-based";
-
-  const conditionText = {
-    "1": "Light",
-    "1.25": "Medium",
-    "1.6": "Heavy"
-  };
-
-  document.getElementById("difficulty").textContent =
-    conditionText[String(condition)] || "Custom";
-
+  document.getElementById("total").textContent = money(total, currency);
+  document.getElementById("businessCost").textContent = money(businessCost, currency);
+  document.getElementById("profit").textContent = money(profit, currency);
+  document.getElementById("actualMargin").textContent = actualMargin.toFixed(1) + "%";
+  document.getElementById("perFoot").textContent = money(total / area, currency);
+  document.getElementById("basis").textContent = costPrice > sizePrice ? "Cost-based" : "Size-based";
+  const conditionText = {"1":"Light","1.25":"Medium","1.6":"Heavy"};
+  document.getElementById("difficulty").textContent = conditionText[String(condition)] || "Custom";
   resultBox.classList.add("show");
-  resultBox.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+  resultBox.scrollIntoView({behavior:"smooth", block:"start"});
 }
-
 form.addEventListener("submit", function(event) {
   event.preventDefault();
   calculateEstimate();
 });
-
 document.getElementById("printButton").addEventListener("click", function() {
   window.print();
 });
 </script>
-
 </body>
 </html>
