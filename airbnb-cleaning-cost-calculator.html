@@ -3,559 +3,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Airbnb Cleaning Cost Calculator | CleanBizTools</title>
-
 <meta name="description" content="Use our free Airbnb cleaning cost calculator to estimate vacation rental turnover cleaning prices, labor costs, supplies, add-on services and profit.">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://kamalbera198-sudo.github.io/cleanbiztools/airbnb-cleaning-cost-calculator.html">
-
-<meta name="keywords" content="Airbnb cleaning cost calculator, vacation rental cleaning calculator, Airbnb turnover cleaning cost, short term rental cleaning prices, Airbnb cleaning pricing calculator, vacation rental cleaning fees, Airbnb cleaning business profit">
-
+<meta name="theme-color" content="#1769ff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B9%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="Airbnb Cleaning Cost Calculator | CleanBizTools">
 <meta property="og:description" content="Calculate Airbnb turnover cleaning prices, expenses and estimated profit with our free calculator.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="CleanBizTools">
 <meta property="og:url" content="https://kamalbera198-sudo.github.io/cleanbiztools/airbnb-cleaning-cost-calculator.html">
-
+<meta property="og:image" content="https://kamalbera198-sudo.github.io/cleanbiztools/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Airbnb Cleaning Cost Calculator | CleanBizTools">
+<meta name="twitter:description" content="Estimate Airbnb turnover cleaning prices and profit for free.">
+<meta name="twitter:image" content="https://kamalbera198-sudo.github.io/cleanbiztools/og-image.png">
 <style>
-:root {
-  --primary: #1769ff;
-  --secondary: #0d9488;
-  --dark: #172033;
-  --light: #f4f7fb;
-  --border: #dce4ef;
-  --text: #344054;
-  --white: #ffffff;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--light);
-  color: var(--text);
-  line-height: 1.65;
-}
-
-header {
-  background: linear-gradient(120deg, #123c8c, #1769ff, #0d9488);
-  color: white;
-  padding: 23px 16px;
-}
-
-.header-inner {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.logo {
-  font-size: 28px;
-  font-weight: 800;
-  color: white;
-  text-decoration: none;
-}
-
-.tagline {
-  margin: 2px 0 12px;
-  font-size: 14px;
-  opacity: 0.92;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-nav a {
-  color: white;
-  font-size: 14px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.hero {
-  background: linear-gradient(120deg, #e3edff, #e0faf4);
-  padding: 38px 16px;
-  text-align: center;
-}
-
-.hero-inner {
-  max-width: 850px;
-  margin: auto;
-}
-
-.hero h1 {
-  color: #142d57;
-  font-size: clamp(28px, 5vw, 42px);
-  line-height: 1.2;
-  margin: 0 0 14px;
-}
-
-.hero p {
-  max-width: 720px;
-  margin: auto;
-}
-
-.container {
-  width: min(100% - 28px, 1000px);
-  margin: 26px auto;
-}
-
-.card {
-  background: var(--white);
-  padding: 24px;
-  border-radius: 17px;
-  box-shadow: 0 5px 24px rgba(20, 40, 80, 0.07);
-  margin-bottom: 22px;
-  border: 1px solid #e9eef5;
-}
-
-.card h2 {
-  margin-top: 0;
-  color: #172f59;
-}
-
-.section-intro {
-  margin-top: -6px;
-  color: #667085;
-  font-size: 14px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 17px;
-}
-
-.field {
-  min-width: 0;
-}
-
-.field label {
-  display: block;
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 7px;
-  color: #263750;
-}
-
-input,
-select {
-  display: block;
-  width: 100%;
-  min-width: 0;
-  min-height: 46px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  background: white;
-  color: #172033;
-  padding: 11px 12px;
-  font: inherit;
-  font-size: 16px;
-}
-
-input:focus,
-select:focus {
-  outline: 3px solid rgba(23, 105, 255, 0.15);
-  border-color: var(--primary);
-}
-
-small,
-.help {
-  display: block;
-  font-size: 12px;
-  color: #667085;
-  margin-top: 5px;
-}
-
-.subheading {
-  color: #1769ff;
-  font-size: 18px;
-  margin: 25px 0 12px;
-}
-
-.addon-list {
-  display: grid;
-  gap: 14px;
-}
-
-.addon {
-  padding: 15px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #fbfdff;
-}
-
-.addon-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.addon-top input[type="checkbox"] {
-  width: 20px;
-  min-height: 20px;
-  height: 20px;
-  margin-top: 4px;
-  flex-shrink: 0;
-  accent-color: var(--primary);
-}
-
-.addon-top label {
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.addon .field label {
-  font-size: 13px;
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-button {
-  border: 0;
-  border-radius: 10px;
-  padding: 13px 19px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.calculate {
-  background: var(--primary);
-  color: white;
-  flex: 1 1 180px;
-}
-
-.calculate:hover {
-  background: #0c50d7;
-}
-
-.reset {
-  background: #e8edf5;
-  color: #263750;
-}
-
-.print {
-  background: #0d9488;
-  color: white;
-}
-
-.error {
-  display: none;
-  background: #fff0f0;
-  color: #a61b1b;
-  padding: 12px 14px;
-  border-radius: 9px;
-  margin-top: 18px;
-  border: 1px solid #ffcaca;
-}
-
-.results {
-  display: none;
-  margin-top: 24px;
-  border-radius: 15px;
-  padding: 20px;
-  background: linear-gradient(135deg, #e8f1ff, #e2fbf3);
-  border: 1px solid #c8e5e5;
-}
-
-.results h2 {
-  margin-top: 0;
-}
-
-.result-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.result-item {
-  background: white;
-  border-radius: 12px;
-  padding: 16px;
-  border: 1px solid #e0e8f0;
-}
-
-.result-label {
-  font-size: 13px;
-  color: #667085;
-  display: block;
-}
-
-.result-value {
-  font-size: clamp(20px, 4vw, 27px);
-  font-weight: 800;
-  color: #163a70;
-  overflow-wrap: anywhere;
-}
-
-.profit {
-  color: #087f5b;
-}
-
-.loss {
-  color: #b42318;
-}
-
-.result-note {
-  font-size: 13px;
-  margin-bottom: 0;
-}
-
-.content-card h2 {
-  font-size: 24px;
-}
-
-.content-card h3 {
-  font-size: 18px;
-  color: #1769ff;
-  margin-bottom: 5px;
-}
-
-.content-card p,
-.content-card li {
-  line-height: 1.8;
-}
-
-.content-card a {
-  color: #1769ff;
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--border);
-  padding: 14px 0;
-}
-
-.faq-item:last-child {
-  border-bottom: 0;
-}
-
-.faq-item h3 {
-  margin: 0 0 6px;
-  color: #263750;
-  font-size: 17px;
-}
-
-.faq-item p {
-  margin: 0;
-}
-
-footer {
-  margin-top: 40px;
-  padding: 30px 16px;
-  background: #142033;
-  color: #e5eaf3;
-}
-
-.footer-inner {
-  max-width: 1000px;
-  margin: auto;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 20px;
-  margin: 15px 0;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-footer p {
-  font-size: 13px;
-  margin-bottom: 0;
-}
-
-@media (max-width: 600px) {
-  .grid,
-  .result-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 17px;
-  }
-
-  .hero {
-    padding: 30px 15px;
-  }
-
-  nav {
-    gap: 10px 14px;
-  }
-}
-
-@media print {
-  body {
-    background: white;
-    color: black;
-  }
-
-  header,
-  nav,
-  .hero,
-  .actions,
-  #calculator,
-  .content-card,
-  .faq-card,
-  footer,
-  .no-print {
-    display: none !important;
-  }
-
-  .container {
-    width: 100%;
-    margin: 0;
-  }
-
-  .card,
-  .results {
-    display: block !important;
-    box-shadow: none;
-    border: 1px solid #aaa;
-    background: white;
-    color: black;
-  }
-
-  .result-item {
-    border: 1px solid #aaa;
-  }
-
-  .result-value,
-  .profit,
-  .loss {
-    color: black !important;
-  }
-}
+:root{--primary:#1769ff;--secondary:#0d9488;--dark:#172033;--light:#f4f7fb;--border:#dce4ef;--text:#344054;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--text);line-height:1.65}
+header{background:linear-gradient(120deg,#123c8c,#1769ff,#0d9488);color:white;padding:23px 16px}
+.header-inner{max-width:1100px;margin:auto}
+.logo{font-size:28px;font-weight:800;color:white;text-decoration:none}
+.tagline{margin:2px 0 12px;font-size:14px;opacity:.92}
+nav{display:flex;flex-wrap:wrap;gap:14px}
+nav a{color:white;font-size:14px;text-decoration:none;font-weight:600}
+nav a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+.hero{background:linear-gradient(120deg,#e3edff,#e0faf4);padding:38px 16px;text-align:center}
+.hero-inner{max-width:850px;margin:auto}
+.hero h1{color:#142d57;font-size:clamp(28px,5vw,42px);line-height:1.2;margin:0 0 14px}
+.hero p{max-width:720px;margin:auto}
+.container{width:min(100% - 28px,1000px);margin:26px auto}
+.card{background:var(--white);padding:24px;border-radius:17px;box-shadow:0 5px 24px rgba(20,40,80,.07);margin-bottom:22px;border:1px solid #e9eef5}
+.card h2{margin-top:0;color:#172f59}
+.section-intro{margin-top:-6px;color:#667085;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.field{min-width:0}
+.field label{display:block;font-weight:700;font-size:14px;margin-bottom:7px;color:#263750}
+input,select{display:block;width:100%;min-width:0;min-height:46px;border:1px solid #cbd5e1;border-radius:10px;background:white;color:#172033;padding:11px 12px;font:inherit;font-size:16px}
+input:focus,select:focus{outline:3px solid rgba(23,105,255,.15);border-color:var(--primary)}
+small,.help{display:block;font-size:12px;color:#667085;margin-top:5px}
+.subheading{color:#1769ff;font-size:18px;margin:25px 0 12px}
+.addon-list{display:grid;gap:14px}
+.addon{padding:15px;border:1px solid var(--border);border-radius:12px;background:#fbfdff}
+.addon-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+.addon-top input[type=checkbox]{width:20px;min-height:20px;height:20px;margin-top:4px;flex-shrink:0;accent-color:var(--primary)}
+.addon-top label{font-weight:700;cursor:pointer}
+.addon .field label{font-size:13px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+button{border:0;border-radius:10px;padding:13px 19px;font-size:15px;font-weight:700;cursor:pointer}
+.calculate{background:var(--primary);color:white;flex:1 1 180px}
+.calculate:hover{background:#0c50d7}
+.reset{background:#e8edf5;color:#263750}
+.print{background:#0d9488;color:white}
+.error{display:none;background:#fff0f0;color:#a61b1b;padding:12px 14px;border-radius:9px;margin-top:18px;border:1px solid #ffcaca}
+.results{display:none;margin-top:24px;border-radius:15px;padding:20px;background:linear-gradient(135deg,#e8f1ff,#e2fbf3);border:1px solid #c8e5e5}
+.results h2{margin-top:0}
+.result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.result-item{background:white;border-radius:12px;padding:16px;border:1px solid #e0e8f0}
+.result-label{font-size:13px;color:#667085;display:block}
+.result-value{font-size:clamp(20px,4vw,27px);font-weight:800;color:#163a70;overflow-wrap:anywhere}
+.profit{color:#087f5b}
+.loss{color:#b42318}
+.result-note{font-size:13px;margin-bottom:0}
+.content-card h2{font-size:24px}
+.content-card h3{font-size:18px;color:#1769ff;margin-bottom:5px}
+.content-card p,.content-card li{line-height:1.8}
+.content-card a{color:#1769ff}
+.faq-item{border-bottom:1px solid var(--border);padding:14px 0}
+.faq-item:last-child{border-bottom:0}
+.faq-item h3{margin:0 0 6px;color:#263750;font-size:17px}
+.faq-item p{margin:0}
+footer{margin-top:40px;padding:30px 16px;background:#142033;color:#e5eaf3}
+.footer-inner{max-width:1000px;margin:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:12px 20px;margin:15px 0}
+.footer-links a{color:white;text-decoration:none;font-size:14px}
+.footer-links a:hover{text-decoration:underline}
+footer p{font-size:13px;margin-bottom:0}
+@media(max-width:600px){.grid,.result-grid{grid-template-columns:1fr}.card{padding:17px}.hero{padding:30px 15px}nav{gap:10px 14px}}
+@media print{body{background:white;color:black}header,nav,.hero,.actions,#cleaningForm,.content-card,footer,.no-print{display:none!important}.container{width:100%;margin:0}.card,.results{box-shadow:none;border:1px solid #aaa;background:white;color:black}.result-item{border:1px solid #aaa}.result-value,.profit,.loss{color:black!important}}
 </style>
-
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Airbnb Cleaning Cost Calculator",
-  "url": "https://kamalbera198-sudo.github.io/cleanbiztools/airbnb-cleaning-cost-calculator.html",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Any",
-  "description": "Free Airbnb turnover cleaning price calculator for estimating cleaning costs, optional add-on services and profit.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Airbnb Cleaning Cost Calculator",
+ "url": "https://kamalbera198-sudo.github.io/cleanbiztools/airbnb-cleaning-cost-calculator.html",
+ "applicationCategory": "BusinessApplication",
+ "operatingSystem": "Any",
+ "isAccessibleForFree": true,
+ "description": "Free Airbnb turnover cleaning price calculator for estimating cleaning costs, optional add-on services and profit.",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ }
 }
 </script>
-
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do I calculate Airbnb cleaning costs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Estimate the property size, bedrooms, bathrooms, cleaning rate, labor, laundry, supplies and overhead. Add any optional services and multiply the turnover price by the number of turnovers."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are Airbnb cleaning add-ons?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Optional Airbnb cleaning add-ons can include deep cleaning, window cleaning, guest supplies restocking and dishwashing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I calculate cleaning business profit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Enter estimated labor, laundry, supplies and overhead expenses to estimate total cost and profit based on the calculated price."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this Airbnb cleaning calculator free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The CleanBizTools Airbnb cleaning cost calculator is free to use and does not require an account."
-      }
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How do I calculate Airbnb cleaning costs?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Enter the property size, bedrooms, bathrooms, your cleaning rates and your costs for labor, laundry, supplies and overhead. Add any optional services, then calculate the turnover price and multiply it by the number of turnovers."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is an Airbnb turnover cleaning?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Turnover cleaning is the cleaning and preparation done between guest stays. Tasks often include cleaning rooms and bathrooms, resetting the kitchen, changing linens and preparing the property for the next arrival."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What are Airbnb cleaning add-ons?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Optional add-ons can include deep cleaning, window cleaning, guest supplies restocking and dishwashing. Tick a service and enter its extra price per turnover, and the calculator adds it to the estimate."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I calculate cleaning business profit?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Enter your labor, laundry, supplies and overhead costs per turnover. The calculator shows total costs and the estimated profit based on the price it calculates."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why do I need to enter labor and supply costs?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "These costs show how much the job may cost your business and how much profit could remain after the included expenses."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much should I charge for Airbnb cleaning?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Add up your labor, laundry, supplies and overhead, add the profit margin you want, and compare the result with a size-based price and your local market. The calculator does both comparisons and uses the higher price before adding any extras."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the difference between an Airbnb cleaning fee and a cleaning service price?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A cleaning fee is what a host adds to the guest's booking. A cleaning service price is what a cleaner or cleaning company charges the host. This calculator estimates the cleaning service price."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How long does an Airbnb turnover take?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It depends on the size of the property, the number of bathrooms, the amount of laundry and the condition it is left in. Enter the labor cost for the time you expect to spend."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Should laundry be included in the Airbnb cleaning price?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Many cleaners treat laundry as a separate cost because washing and drying linen takes time and materials. Enter your laundry cost per turnover so it is covered in the price."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What does the profit margin mean in this calculator?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The profit margin is the share of the final price that is profit after your business costs. A 30 percent margin means 30 percent of the customer price is profit, not 30 percent added on top of your costs."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I use this calculator outside the United States?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Select an available currency for displaying your estimates. Currency selection changes the displayed symbol; it does not convert amounts between currencies."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is this calculator free?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. The CleanBizTools Airbnb cleaning cost calculator is free to use and does not require an account."
+   }
+  }
+ ]
 }
 </script>
 </head>
-
 <body>
-
 <header>
   <div class="header-inner">
     <a class="logo" href="./">CleanBizTools</a>
     <p class="tagline">Practical Tools for Cleaning Businesses</p>
-
     <nav aria-label="Main navigation">
       <a href="./">Home</a>
       <a href="cleaning-pricing.html">Cleaning Price Calculator</a>
+      <a href="move-out-cleaning-calculator.html">Move Out Cleaning Cost</a>
       <a href="cleaning-profit.html">Profit Calculator</a>
       <a href="cleaning-quote.html">Quote Generator</a>
+      <a href="cleaning-hourly-rate.html">Hourly Rate</a>
+      <a href="cleaning-startup-cost.html">Startup Costs</a>
       <a href="cleaning-checklist.html">Cleaning Checklist</a>
     </nav>
   </div>
 </header>
-
 <section class="hero">
   <div class="hero-inner">
     <h1>Airbnb Cleaning Cost Calculator</h1>
-    <p>
-      Estimate vacation rental turnover cleaning prices, operating costs
-      and potential profit. Add optional cleaning services to create
-      a more complete price estimate for your clients.
-    </p>
+    <p>Estimate vacation rental turnover cleaning prices, operating costs and potential profit. Add optional cleaning services to create a more complete price estimate for your clients.</p>
   </div>
 </section>
-
 <main class="container">
-
   <section class="card" id="calculator">
-    <h2>Calculate Your Airbnb Cleaning Price</h2>
-    <p class="section-intro">
-      Enter your property details and costs. All number fields start empty.
-      Select an add-on only when you want to include that service.
-    </p>
-
+    <h2 class="no-print">Calculate Your Airbnb Cleaning Price</h2>
+    <p class="section-intro no-print">The boxes start with example numbers. Replace them with your own property details, rates and costs. Select an add-on only when you want to include that service.</p>
     <form id="cleaningForm" novalidate>
-
       <div class="grid">
-
         <div class="field">
           <label for="currency">Currency</label>
           <select id="currency" name="currency">
@@ -569,44 +250,37 @@ footer p {
             <option value="BDT">BDT — ৳</option>
           </select>
         </div>
-
         <div class="field">
           <label for="size">Property Size (square feet)</label>
-          <input type="number" id="size" min="0.01" step="any"
-                 placeholder="Enter property size" required>
+          <input type="number" id="size" min="1" step="any" value="900" required>
         </div>
-
         <div class="field">
           <label for="bedrooms">Number of Bedrooms</label>
-          <input type="number" id="bedrooms" min="0" step="1"
-                 placeholder="Enter bedrooms" required>
+          <input type="number" id="bedrooms" min="0" step="1" value="2" required>
         </div>
-
         <div class="field">
           <label for="bathrooms">Number of Bathrooms</label>
-          <input type="number" id="bathrooms" min="0" step="any"
-                 placeholder="Enter bathrooms" required>
+          <input type="number" id="bathrooms" min="0" step="any" value="1" required>
         </div>
-
-        <div class="field">
-          <label for="guests">Maximum Number of Guests</label>
-          <input type="number" id="guests" min="0" step="1"
-                 placeholder="Enter guest capacity" required>
-        </div>
-
         <div class="field">
           <label for="turnovers">Number of Cleaning Turnovers</label>
-          <input type="number" id="turnovers" min="1" step="1"
-                 placeholder="Enter number of turnovers" required>
+          <input type="number" id="turnovers" min="1" step="1" value="4" required>
           <small>How many times will you clean during the selected period?</small>
         </div>
-
         <div class="field">
           <label for="rate">Base Cleaning Rate per Square Foot</label>
-          <input type="number" id="rate" min="0" step="any"
-                 placeholder="Enter rate per square foot" required>
+          <input type="number" id="rate" min="0" step="any" value="0.10" required>
         </div>
-
+        <div class="field">
+          <label for="bedroomCharge">Charge per Bedroom</label>
+          <input type="number" id="bedroomCharge" min="0" step="any" value="8" required>
+          <small>Added for each bedroom, on top of the square-foot rate.</small>
+        </div>
+        <div class="field">
+          <label for="bathroomCharge">Charge per Bathroom</label>
+          <input type="number" id="bathroomCharge" min="0" step="any" value="12" required>
+          <small>Added for each bathroom, on top of the square-foot rate.</small>
+        </div>
         <div class="field">
           <label for="condition">Property Cleaning Condition</label>
           <select id="condition">
@@ -615,18 +289,10 @@ footer p {
             <option value="1.4">Heavy cleaning required (+40%)</option>
           </select>
         </div>
-
       </div>
-
       <h3 class="subheading">Optional Airbnb Cleaning Add-ons</h3>
-
-      <p class="section-intro">
-        These services are optional. Tick a service and enter its additional
-        price per turnover. Leave the price empty if the service is not selected.
-      </p>
-
+      <p class="section-intro">These services are optional. Tick a service to add its price per turnover. Unticked services are ignored.</p>
       <div class="addon-list">
-
         <div class="addon">
           <div class="addon-top">
             <input type="checkbox" id="deepCheck">
@@ -634,11 +300,9 @@ footer p {
           </div>
           <div class="field">
             <label for="deepPrice">Deep Cleaning Price per Turnover</label>
-            <input type="number" id="deepPrice" min="0" step="any"
-                   placeholder="Enter additional price">
+            <input type="number" id="deepPrice" min="0" step="any" value="40">
           </div>
         </div>
-
         <div class="addon">
           <div class="addon-top">
             <input type="checkbox" id="windowCheck">
@@ -646,11 +310,9 @@ footer p {
           </div>
           <div class="field">
             <label for="windowPrice">Window Cleaning Price per Turnover</label>
-            <input type="number" id="windowPrice" min="0" step="any"
-                   placeholder="Enter additional price">
+            <input type="number" id="windowPrice" min="0" step="any" value="30">
           </div>
         </div>
-
         <div class="addon">
           <div class="addon-top">
             <input type="checkbox" id="restockCheck">
@@ -658,11 +320,9 @@ footer p {
           </div>
           <div class="field">
             <label for="restockPrice">Restocking Price per Turnover</label>
-            <input type="number" id="restockPrice" min="0" step="any"
-                   placeholder="Enter additional price">
+            <input type="number" id="restockPrice" min="0" step="any" value="10">
           </div>
         </div>
-
         <div class="addon">
           <div class="addon-top">
             <input type="checkbox" id="dishesCheck">
@@ -670,608 +330,369 @@ footer p {
           </div>
           <div class="field">
             <label for="dishesPrice">Dishwashing Price per Turnover</label>
-            <input type="number" id="dishesPrice" min="0" step="any"
-                   placeholder="Enter additional price">
+            <input type="number" id="dishesPrice" min="0" step="any" value="15">
           </div>
         </div>
-
       </div>
-
       <h3 class="subheading">Cleaning Business Costs</h3>
-
       <div class="grid">
-
         <div class="field">
           <label for="labor">Labor Cost per Turnover</label>
-          <input type="number" id="labor" min="0" step="any"
-                 placeholder="Enter labor cost" required>
+          <input type="number" id="labor" min="0" step="any" value="45" required>
         </div>
-
         <div class="field">
           <label for="laundry">Laundry Cost per Turnover</label>
-          <input type="number" id="laundry" min="0" step="any"
-                 placeholder="Enter laundry cost" required>
+          <input type="number" id="laundry" min="0" step="any" value="15" required>
         </div>
-
         <div class="field">
           <label for="supplies">Cleaning Supplies Cost per Turnover</label>
-          <input type="number" id="supplies" min="0" step="any"
-                 placeholder="Enter supplies cost" required>
+          <input type="number" id="supplies" min="0" step="any" value="10" required>
         </div>
-
         <div class="field">
           <label for="overhead">Other Operating Costs per Turnover</label>
-          <input type="number" id="overhead" min="0" step="any"
-                 placeholder="Enter overhead cost" required>
+          <input type="number" id="overhead" min="0" step="any" value="8" required>
         </div>
-
         <div class="field">
           <label for="margin">Target Profit Margin (%)</label>
-          <input type="number" id="margin" min="0" max="99.9" step="any"
-                 placeholder="Enter profit margin" required>
+          <input type="number" id="margin" min="0" max="99.9" step="any" value="30" required>
           <small>Enter a percentage from 0 to less than 100.</small>
         </div>
-
       </div>
-
       <div class="actions">
         <button class="calculate" type="submit">Calculate Cleaning Price</button>
-        <button class="reset" type="reset">Reset</button>
+        <button class="reset" type="reset">Reset to Examples</button>
         <button class="print" type="button" id="printButton">Print Results</button>
       </div>
-
       <div class="error" id="errorMessage" role="alert" aria-live="polite"></div>
-
     </form>
-
     <section class="results" id="results" aria-live="polite">
       <h2>Your Cleaning Price Estimate</h2>
-
       <div class="result-grid">
-
         <div class="result-item">
           <span class="result-label">Recommended Price per Turnover</span>
           <span class="result-value" id="pricePerTurnover">—</span>
         </div>
-
         <div class="result-item">
           <span class="result-label">Total Price for All Turnovers</span>
           <span class="result-value" id="totalPrice">—</span>
         </div>
-
         <div class="result-item">
           <span class="result-label">Total Estimated Business Costs</span>
           <span class="result-value" id="totalCost">—</span>
         </div>
-
         <div class="result-item">
           <span class="result-label">Estimated Total Profit</span>
           <span class="result-value profit" id="totalProfit">—</span>
         </div>
-
         <div class="result-item">
           <span class="result-label">Estimated Profit per Turnover</span>
           <span class="result-value profit" id="profitPerTurnover">—</span>
         </div>
-
         <div class="result-item">
           <span class="result-label">Selected Add-ons per Turnover</span>
           <span class="result-value" id="selectedAddons">—</span>
         </div>
-
       </div>
-
-      <p class="result-note">
-        This is an estimate, not a guaranteed market price. Actual prices
-        depend on local labor rates, property condition, service scope,
-        competition and customer requirements.
-      </p>
+      <p class="result-note">This is an estimate, not a guaranteed market price. Actual prices depend on local labor rates, property condition, service scope, competition and customer requirements.</p>
     </section>
-
   </section>
-
   <section class="card content-card">
     <h2>How to Price Airbnb Cleaning Services</h2>
-
-    <p>
-      Setting a suitable vacation rental cleaning fee helps cleaning
-      businesses cover their expenses and earn a profit. Airbnb turnover
-      cleaning may involve changing linens, cleaning bathrooms, preparing
-      kitchens, removing rubbish and checking the property between guests.
-    </p>
-
-    <p>
-      The right price depends on property size, bedroom and bathroom count,
-      the condition of the rental, labor requirements, laundry, supplies
-      and the number of turnovers. Additional tasks should be priced
-      separately when they require extra time or materials.
-    </p>
-
-    <h3>1. Consider Property Size</h3>
-    <p>
-      Larger properties generally require more cleaning time. Use the
-      property's square footage as one factor when estimating a base price.
-      Adjust your rate to match the service level and your local market.
-    </p>
-
+    <p>Setting a suitable vacation rental cleaning fee helps cleaning businesses cover their expenses and earn a profit. Airbnb turnover cleaning may involve changing linens, cleaning bathrooms, preparing kitchens, removing rubbish and checking the property between guests.</p>
+    <p>The right price depends on property size, bedroom and bathroom count, the condition of the rental, labor requirements, laundry, supplies and the number of turnovers. Additional tasks should be priced separately when they require extra time or materials.</p>
+    <h3>1. Consider Property Size, Bedrooms and Bathrooms</h3>
+    <p>Larger properties generally require more cleaning time. The calculator multiplies the square footage by your rate, then adds a charge for each bedroom and bathroom. Bathrooms usually take longer, so many cleaners charge more for them.</p>
     <h3>2. Calculate Your Operating Costs</h3>
-    <p>
-      Include staff wages, laundry, cleaning products, transport and other
-      business expenses. Ignoring these costs can make a cleaning job appear
-      profitable when the actual profit is much smaller.
-    </p>
-
+    <p>Include staff wages, laundry, cleaning products, transport and other business expenses. Ignoring these costs can make a cleaning job appear profitable when the actual profit is much smaller.</p>
     <h3>3. Price Optional Services Separately</h3>
-    <p>
-      Deep cleaning, window cleaning, guest supply restocking and
-      dishwashing can require extra work. Use the optional add-ons in this
-      calculator to include these services when requested by a property
-      owner or manager.
-    </p>
-
+    <p>Deep cleaning, window cleaning, guest supply restocking and dishwashing can require extra work. Use the optional add-ons in this calculator to include these services when requested by a property owner or manager.</p>
     <h3>4. Review Your Profit Margin</h3>
-    <p>
-      A profit margin is the share of your selling price that remains after
-      the included business costs. This calculator estimates a price based
-      on your entered target margin and compares it with the base property
-      estimate.
-    </p>
-
+    <p>A profit margin is the share of your selling price that remains after the included business costs. The calculator works out a size-based price and a cost-based price from your target margin, then uses the higher of the two so the job is not underpriced. Add-ons are added afterwards.</p>
     <h3>Airbnb Cleaning Price Formula</h3>
-    <p>
-      <strong>Estimated Total Price</strong> = Recommended Price per
-      Turnover × Number of Turnovers.
-    </p>
-    <p>
-      <strong>Estimated Total Profit</strong> = Total Price − Estimated
-      Business Costs.
-    </p>
-
-    <p>
-      The results are planning estimates. Check local cleaning rates and
-      confirm the requested tasks with the property owner before preparing
-      a final quote.
-    </p>
+    <p><strong>Size-based price</strong> = (Square feet × Rate + Bedrooms × Bedroom charge + Bathrooms × Bathroom charge) × Condition factor.</p>
+    <p><strong>Cost-based price</strong> = Business costs per turnover ÷ (1 − Profit margin).</p>
+    <p><strong>Price per turnover</strong> = Higher of the two prices + Selected add-ons. <strong>Total price</strong> = Price per turnover × Number of turnovers.</p>
+    <p>The results are planning estimates. Check local cleaning rates and confirm the requested tasks with the property owner before preparing a final quote.</p>
   </section>
-
+  <section class="card content-card">
+    <h2>Worked Example Using the Example Numbers</h2>
+    <p>With the numbers already in the calculator (900 square feet at a rate of 0.10, 2 bedrooms at 8 each, 1 bathroom at 12 and standard condition), the size-based price is 90 + 16 + 12 = 118. Costs of 45 + 15 + 10 + 8 = 78 and a 30% margin give a cost-based price of about 111.43. The calculator uses the higher figure, so the price is 118 per turnover. For 4 turnovers that is a total of 472, costs of 312 and an estimated profit of 160. Ticking the deep cleaning add-on (40) raises the price to 158 per turnover. These are example numbers, not real market prices.</p>
+  </section>
+  <section class="card content-card">
+    <h2>Airbnb Cleaning Fee vs Cleaning Service Price</h2>
+    <p>Hosts often add a cleaning fee to the guest's booking, while a cleaner or cleaning company charges the host a service price for each turnover. This calculator helps cleaners work out the service price they should charge the host, including laundry, supplies, labor and profit.</p>
+    <p>Hosts can also use the result to check whether their cleaning fee covers what they pay for turnovers. Fees and rules vary by listing and platform, so check your own listing settings.</p>
+    <p>Cleaners who need a task list for each visit can use the <a href="cleaning-checklist.html">printable Airbnb cleaning checklist</a>, and those who also clean empty rentals can price that work with the <a href="move-out-cleaning-calculator.html">move out cleaning cost calculator</a>.</p>
+  </section>
   <section class="card content-card">
     <h2>Who Can Use This Calculator?</h2>
     <ul>
       <li>Independent Airbnb and vacation rental cleaners.</li>
       <li>Short-term rental cleaning companies.</li>
       <li>Cleaning business owners preparing client quotes.</li>
-      <li>Property managers estimating turnover service budgets.</li>
+      <li>Property managers and hosts estimating turnover service budgets.</li>
       <li>Cleaning professionals comparing expenses and potential profit.</li>
       <li>New cleaning businesses planning their service prices.</li>
     </ul>
-
     <h2>More Free Cleaning Business Tools</h2>
-    <p>
-      Explore these tools to help organize your cleaning business:
-    </p>
+    <p>Explore these tools to help organize your cleaning business:</p>
     <ul>
-      <li><a href="cleaning-pricing.html">Cleaning Price Calculator</a></li>
-      <li><a href="cleaning-profit.html">Cleaning Business Profit Calculator</a></li>
-      <li><a href="cleaning-quote.html">Cleaning Quote Generator</a></li>
-      <li><a href="cleaning-hourly-rate.html">Cleaning Hourly Rate Calculator</a></li>
-      <li><a href="cleaning-startup-cost.html">Cleaning Business Startup Cost Calculator</a></li>
-      <li><a href="cleaning-checklist.html">Printable Cleaning Checklist</a></li>
+      <li><a href="cleaning-pricing.html">Cleaning Price Calculator</a> - price regular and deep cleans</li>
+      <li><a href="move-out-cleaning-calculator.html">Move Out Cleaning Cost Calculator</a> - price empty-property cleans</li>
+      <li><a href="cleaning-profit.html">Cleaning Business Profit Calculator</a> - check margins and profit</li>
+      <li><a href="cleaning-quote.html">Cleaning Quote Generator</a> - turn a price into a client quote</li>
+      <li><a href="cleaning-hourly-rate.html">Cleaning Hourly Rate Calculator</a> - find the rate you need per hour</li>
+      <li><a href="cleaning-startup-cost.html">Cleaning Business Startup Cost Calculator</a> - plan your start-up budget</li>
+      <li><a href="cleaning-checklist.html">Printable Cleaning Checklist</a> - includes an Airbnb turnover checklist</li>
     </ul>
   </section>
-
   <section class="card faq-card content-card">
     <h2>Frequently Asked Questions</h2>
-
     <div class="faq-item">
       <h3>How do I calculate Airbnb cleaning costs?</h3>
-      <p>
-        Enter the property details, cleaning rate and operating expenses.
-        Select any additional services, then calculate the estimated
-        turnover price, total costs and profit.
-      </p>
+      <p>Enter the property size, bedrooms, bathrooms, your cleaning rates and your costs for labor, laundry, supplies and overhead. Add any optional services, then calculate the turnover price and multiply it by the number of turnovers.</p>
     </div>
 
     <div class="faq-item">
       <h3>What is an Airbnb turnover cleaning?</h3>
-      <p>
-        Turnover cleaning is the cleaning and preparation performed between
-        guest stays. Tasks often include cleaning rooms and bathrooms,
-        resetting the kitchen, changing linens and preparing the property
-        for the next arrival.
-      </p>
+      <p>Turnover cleaning is the cleaning and preparation done between guest stays. Tasks often include cleaning rooms and bathrooms, resetting the kitchen, changing linens and preparing the property for the next arrival.</p>
     </div>
 
     <div class="faq-item">
-      <h3>Can I include deep cleaning and window cleaning?</h3>
-      <p>
-        Yes. Select the relevant add-on and enter its additional price per
-        turnover. The calculator will include that amount in the estimate.
-      </p>
+      <h3>What are Airbnb cleaning add-ons?</h3>
+      <p>Optional add-ons can include deep cleaning, window cleaning, guest supplies restocking and dishwashing. Tick a service and enter its extra price per turnover, and the calculator adds it to the estimate.</p>
     </div>
 
     <div class="faq-item">
-      <h3>Can I include guest supplies restocking and dishwashing?</h3>
-      <p>
-        Yes. Both are optional services. Select the relevant checkbox and
-        enter its price if you want it included in your cleaning quote.
-      </p>
+      <h3>Can I calculate cleaning business profit?</h3>
+      <p>Yes. Enter your labor, laundry, supplies and overhead costs per turnover. The calculator shows total costs and the estimated profit based on the price it calculates.</p>
     </div>
 
     <div class="faq-item">
       <h3>Why do I need to enter labor and supply costs?</h3>
-      <p>
-        These costs help estimate how much the job may cost your business
-        and how much profit could remain after the included expenses.
-      </p>
+      <p>These costs show how much the job may cost your business and how much profit could remain after the included expenses.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How much should I charge for Airbnb cleaning?</h3>
+      <p>Add up your labor, laundry, supplies and overhead, add the profit margin you want, and compare the result with a size-based price and your local market. The calculator does both comparisons and uses the higher price before adding any extras.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is the difference between an Airbnb cleaning fee and a cleaning service price?</h3>
+      <p>A cleaning fee is what a host adds to the guest's booking. A cleaning service price is what a cleaner or cleaning company charges the host. This calculator estimates the cleaning service price.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How long does an Airbnb turnover take?</h3>
+      <p>It depends on the size of the property, the number of bathrooms, the amount of laundry and the condition it is left in. Enter the labor cost for the time you expect to spend.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Should laundry be included in the Airbnb cleaning price?</h3>
+      <p>Many cleaners treat laundry as a separate cost because washing and drying linen takes time and materials. Enter your laundry cost per turnover so it is covered in the price.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What does the profit margin mean in this calculator?</h3>
+      <p>The profit margin is the share of the final price that is profit after your business costs. A 30 percent margin means 30 percent of the customer price is profit, not 30 percent added on top of your costs.</p>
     </div>
 
     <div class="faq-item">
       <h3>Can I use this calculator outside the United States?</h3>
-      <p>
-        Yes. Select an available currency for displaying your estimates.
-        Currency selection changes the displayed currency symbol; it does
-        not convert amounts between currencies.
-      </p>
+      <p>Yes. Select an available currency for displaying your estimates. Currency selection changes the displayed symbol; it does not convert amounts between currencies.</p>
     </div>
 
     <div class="faq-item">
       <h3>Is this calculator free?</h3>
-      <p>
-        Yes. You can use the calculator without creating an account.
-      </p>
+      <p>Yes. The CleanBizTools Airbnb cleaning cost calculator is free to use and does not require an account.</p>
     </div>
   </section>
-
 </main>
-
 <footer>
   <div class="footer-inner">
     <a class="logo" href="./">CleanBizTools</a>
     <p>Practical tools to help cleaning businesses plan, price and grow.</p>
-
     <div class="footer-links">
       <a href="about.html">About</a>
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms.html">Terms &amp; Conditions</a>
       <a href="contact.html">Contact</a>
       <a href="disclaimer.html">Disclaimer</a>
     </div>
-
-    <p>
-      © <span id="currentYear"></span> CleanBizTools. All rights reserved.
-    </p>
+    <p>© <span id="currentYear"></span> CleanBizTools. All rights reserved.</p>
   </div>
 </footer>
-
 <script>
 (function () {
   "use strict";
-
   const form = document.getElementById("cleaningForm");
   const errorMessage = document.getElementById("errorMessage");
   const results = document.getElementById("results");
-
-  const currencySymbols = {
-    USD: "$",
-    INR: "₹",
-    GBP: "£",
-    EUR: "€",
-    CAD: "C$",
-    AUD: "A$",
-    JPY: "¥",
-    BDT: "৳"
-  };
-
-  document.getElementById("currentYear").textContent =
-    new Date().getFullYear();
+  const currencySymbols = {USD:"$",INR:"₹",GBP:"£",EUR:"€",CAD:"C$",AUD:"A$",JPY:"¥",BDT:"৳"};
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
 
   function getNumber(id) {
-    const input = document.getElementById(id);
-
-    if (input.value.trim() === "") {
-      return null;
-    }
-
-    const number = Number(input.value);
-
-    if (!Number.isFinite(number)) {
-      return null;
-    }
-
-    return number;
+    const raw = document.getElementById(id).value.trim();
+    if (raw === "") return null;
+    const number = Number(raw);
+    return Number.isFinite(number) ? number : null;
   }
-
   function showError(message, inputId) {
     errorMessage.textContent = message;
     errorMessage.style.display = "block";
-
     if (inputId) {
       const input = document.getElementById(inputId);
       input.focus();
-      input.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
+      input.scrollIntoView({behavior: "smooth", block: "center"});
     }
   }
-
   function clearError() {
     errorMessage.textContent = "";
     errorMessage.style.display = "none";
   }
-
   function formatMoney(amount) {
     const currency = document.getElementById("currency").value;
     const symbol = currencySymbols[currency] || "$";
-
-    return symbol + " " + amount.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
+    const digits = currency === "JPY" ? 0 : 2;
+    return symbol + " " + amount.toLocaleString("en-US", {minimumFractionDigits: digits, maximumFractionDigits: digits});
   }
-
   function validateRequiredFields() {
-    const requiredFields = [
-      { id: "size", name: "Property Size" },
-      { id: "bedrooms", name: "Number of Bedrooms" },
-      { id: "bathrooms", name: "Number of Bathrooms" },
-      { id: "guests", name: "Maximum Number of Guests" },
-      { id: "turnovers", name: "Number of Cleaning Turnovers" },
-      { id: "rate", name: "Base Cleaning Rate" },
-      { id: "labor", name: "Labor Cost" },
-      { id: "laundry", name: "Laundry Cost" },
-      { id: "supplies", name: "Cleaning Supplies Cost" },
-      { id: "overhead", name: "Other Operating Costs" },
-      { id: "margin", name: "Target Profit Margin" }
+    const fields = [
+      {id:"size", name:"Property Size"},
+      {id:"bedrooms", name:"Number of Bedrooms"},
+      {id:"bathrooms", name:"Number of Bathrooms"},
+      {id:"turnovers", name:"Number of Cleaning Turnovers"},
+      {id:"rate", name:"Base Cleaning Rate"},
+      {id:"bedroomCharge", name:"Charge per Bedroom"},
+      {id:"bathroomCharge", name:"Charge per Bathroom"},
+      {id:"labor", name:"Labor Cost"},
+      {id:"laundry", name:"Laundry Cost"},
+      {id:"supplies", name:"Cleaning Supplies Cost"},
+      {id:"overhead", name:"Other Operating Costs"},
+      {id:"margin", name:"Target Profit Margin"}
     ];
-
-    for (const field of requiredFields) {
-      const input = document.getElementById(field.id);
+    for (const field of fields) {
       const value = getNumber(field.id);
-
-      if (input.value.trim() === "" || value === null) {
-        showError(
-          "Please enter a number for " + field.name + ".",
-          field.id
-        );
+      if (value === null) {
+        showError("Please enter a number for " + field.name + ".", field.id);
         return false;
       }
-
       if (value < 0) {
-        showError(
-          field.name + " cannot be negative.",
-          field.id
-        );
+        showError(field.name + " cannot be negative.", field.id);
         return false;
       }
     }
-
     if (getNumber("size") <= 0) {
       showError("Property Size must be greater than zero.", "size");
       return false;
     }
-
     if (!Number.isInteger(getNumber("bedrooms"))) {
       showError("Please enter a whole number of bedrooms.", "bedrooms");
       return false;
     }
-
-    if (!Number.isInteger(getNumber("guests"))) {
-      showError("Please enter a whole number of guests.", "guests");
+    if (!Number.isInteger(getNumber("turnovers")) || getNumber("turnovers") < 1) {
+      showError("Number of turnovers must be a whole number of at least 1.", "turnovers");
       return false;
     }
-
-    if (
-      !Number.isInteger(getNumber("turnovers")) ||
-      getNumber("turnovers") < 1
-    ) {
-      showError(
-        "Number of turnovers must be a whole number of at least 1.",
-        "turnovers"
-      );
-      return false;
-    }
-
     if (getNumber("margin") >= 100) {
-      showError(
-        "Profit margin must be less than 100%.",
-        "margin"
-      );
+      showError("Profit margin must be less than 100%.", "margin");
       return false;
     }
-
     return true;
   }
-
   function getSelectedAddons() {
     const addons = [
-      { checkbox: "deepCheck", price: "deepPrice", name: "Deep Cleaning" },
-      { checkbox: "windowCheck", price: "windowPrice", name: "Window Cleaning" },
-      { checkbox: "restockCheck", price: "restockPrice", name: "Guest Supplies Restocking" },
-      { checkbox: "dishesCheck", price: "dishesPrice", name: "Dishwashing" }
+      {checkbox:"deepCheck", price:"deepPrice", name:"Deep Cleaning"},
+      {checkbox:"windowCheck", price:"windowPrice", name:"Window Cleaning"},
+      {checkbox:"restockCheck", price:"restockPrice", name:"Guest Supplies Restocking"},
+      {checkbox:"dishesCheck", price:"dishesPrice", name:"Dishwashing"}
     ];
-
     let total = 0;
-    const selectedNames = [];
-
+    const names = [];
     for (const addon of addons) {
-      const checkbox = document.getElementById(addon.checkbox);
-      const priceInput = document.getElementById(addon.price);
-
-      if (!checkbox.checked) {
-        continue;
-      }
-
+      if (!document.getElementById(addon.checkbox).checked) continue;
       const price = getNumber(addon.price);
-
-      if (priceInput.value.trim() === "" || price === null) {
-        showError(
-          "Please enter the price for " + addon.name + ".",
-          addon.price
-        );
+      if (price === null) {
+        showError("Please enter the price for " + addon.name + ".", addon.price);
         return null;
       }
-
       if (price < 0) {
-        showError(
-          addon.name + " price cannot be negative.",
-          addon.price
-        );
+        showError(addon.name + " price cannot be negative.", addon.price);
         return null;
       }
-
       total += price;
-      selectedNames.push(addon.name);
+      names.push(addon.name);
     }
-
-    return {
-      total: total,
-      names: selectedNames
-    };
+    return {total: total, names: names};
   }
-
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     clearError();
-
-    if (!validateRequiredFields()) {
-      return;
-    }
-
+    if (!validateRequiredFields()) return;
     const addons = getSelectedAddons();
-
-    if (addons === null) {
-      return;
-    }
-
+    if (addons === null) return;
     const size = getNumber("size");
     const bedrooms = getNumber("bedrooms");
     const bathrooms = getNumber("bathrooms");
     const turnovers = getNumber("turnovers");
     const rate = getNumber("rate");
+    const bedroomCharge = getNumber("bedroomCharge");
+    const bathroomCharge = getNumber("bathroomCharge");
     const labor = getNumber("labor");
     const laundry = getNumber("laundry");
     const supplies = getNumber("supplies");
     const overhead = getNumber("overhead");
     const margin = getNumber("margin");
+    const condition = Number(document.getElementById("condition").value);
 
-    const condition = Number(
-      document.getElementById("condition").value
-    );
+    // Size-based price: area, bedrooms and bathrooms, scaled by condition.
+    const sizePrice = (size * rate + bedrooms * bedroomCharge + bathrooms * bathroomCharge) * condition;
+    const costPerTurnover = labor + laundry + supplies + overhead;
+    // Cost-based price: covers expenses and the target profit margin.
+    const costPrice = costPerTurnover / (1 - margin / 100);
+    // Use the higher price, then add selected add-ons on top.
+    const pricePerTurnover = Math.max(sizePrice, costPrice) + addons.total;
+    const totalPrice = pricePerTurnover * turnovers;
+    const totalCost = costPerTurnover * turnovers;
+    const totalProfit = totalPrice - totalCost;
+    const profitPerTurnover = pricePerTurnover - costPerTurnover;
 
-    /*
-      Base estimate:
-      Property size × rate × condition factor
-      + bedroom and bathroom allowances.
-    */
-
-    const roomAllowance =
-      bedrooms * rate * 20 +
-      bathrooms * rate * 30;
-
-    const basePricePerTurnover =
-      (size * rate * condition) + roomAllowance;
-
-    /*
-      Business operating costs per turnover.
-      Add-on prices are added to the recommended selling price.
-    */
-
-    const costPerTurnover =
-      labor + laundry + supplies + overhead;
-
-    const costBasedPrice =
-      costPerTurnover / (1 - margin / 100);
-
-    const baseRecommendedPrice = Math.max(
-      basePricePerTurnover,
-      costBasedPrice
-    );
-
-    const pricePerTurnover =
-      baseRecommendedPrice + addons.total;
-
-    const totalPrice =
-      pricePerTurnover * turnovers;
-
-    const totalCost =
-      costPerTurnover * turnovers;
-
-    const totalProfit =
-      totalPrice - totalCost;
-
-    const profitPerTurnover =
-      pricePerTurnover - costPerTurnover;
-
-    if (
-      !Number.isFinite(pricePerTurnover) ||
-      !Number.isFinite(totalPrice) ||
-      !Number.isFinite(totalCost) ||
-      !Number.isFinite(totalProfit)
-    ) {
-      showError(
-        "The calculation could not be completed. Please check your numbers."
-      );
+    if (![pricePerTurnover, totalPrice, totalCost, totalProfit].every(Number.isFinite)) {
+      showError("The calculation could not be completed. Please check your numbers.");
       return;
     }
-
-    document.getElementById("pricePerTurnover").textContent =
-      formatMoney(pricePerTurnover);
-
-    document.getElementById("totalPrice").textContent =
-      formatMoney(totalPrice);
-
-    document.getElementById("totalCost").textContent =
-      formatMoney(totalCost);
-
-    document.getElementById("totalProfit").textContent =
-      formatMoney(totalProfit);
-
-    document.getElementById("profitPerTurnover").textContent =
-      formatMoney(profitPerTurnover);
-
+    document.getElementById("pricePerTurnover").textContent = formatMoney(pricePerTurnover);
+    document.getElementById("totalPrice").textContent = formatMoney(totalPrice);
+    document.getElementById("totalCost").textContent = formatMoney(totalCost);
+    document.getElementById("totalProfit").textContent = formatMoney(totalProfit);
+    document.getElementById("profitPerTurnover").textContent = formatMoney(profitPerTurnover);
     document.getElementById("selectedAddons").textContent =
-      addons.names.length > 0
-        ? addons.names.join(", ") + " (" + formatMoney(addons.total) + ")"
-        : "None selected";
-
-    const totalProfitElement = document.getElementById("totalProfit");
-    const perTurnoverElement = document.getElementById("profitPerTurnover");
-
-    totalProfitElement.classList.toggle("loss", totalProfit < 0);
-    totalProfitElement.classList.toggle("profit", totalProfit >= 0);
-
-    perTurnoverElement.classList.toggle("loss", profitPerTurnover < 0);
-    perTurnoverElement.classList.toggle("profit", profitPerTurnover >= 0);
-
+      addons.names.length > 0 ? addons.names.join(", ") + " (" + formatMoney(addons.total) + ")" : "None selected";
+    const tp = document.getElementById("totalProfit");
+    const pp = document.getElementById("profitPerTurnover");
+    tp.classList.toggle("loss", totalProfit < 0);
+    tp.classList.toggle("profit", totalProfit >= 0);
+    pp.classList.toggle("loss", profitPerTurnover < 0);
+    pp.classList.toggle("profit", profitPerTurnover >= 0);
     results.style.display = "block";
-
-    results.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    results.scrollIntoView({behavior: "smooth", block: "start"});
   });
-
   form.addEventListener("reset", function () {
     clearError();
     results.style.display = "none";
-
     document.getElementById("selectedAddons").textContent = "—";
     document.getElementById("totalProfit").classList.remove("loss");
     document.getElementById("profitPerTurnover").classList.remove("loss");
   });
-
   document.getElementById("printButton").addEventListener("click", function () {
     if (results.style.display !== "block") {
       showError("Please calculate your cleaning price before printing.");
       return;
     }
-
     window.print();
   });
-
 })();
 </script>
-
 </body>
 </html>
